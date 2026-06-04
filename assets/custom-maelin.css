@@ -1,0 +1,89 @@
+/* Maelin Studio — Global Design Tokens */
+:root {
+  --maelin-gold: #B8860B;
+  --maelin-gold-light: #E2B84A;
+  --maelin-cream-1: #FDFCFA;
+  --maelin-cream-2: #F9F7F4;
+  --maelin-cream-3: #F3EFE8;
+  --maelin-dark: #1A1A1A;
+  --maelin-section-padding: 130px;
+  --maelin-section-padding-mobile: 70px;
+}
+
+.maelin-section-label {
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--maelin-gold);
+  margin-bottom: 1.6rem;
+}
+
+.maelin-heading {
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  line-height: 1.15;
+}
+
+.maelin-heading--large {
+  font-size: 4.56rem;
+}
+
+.maelin-heading--xlarge {
+  font-size: 5.4rem;
+}
+
+.maelin-accent-italic {
+  font-style: italic;
+}
+
+.maelin-btn {
+  display: inline-block;
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.maelin-btn:hover {
+  opacity: 0.8;
+}
+
+.maelin-btn--primary {
+  background: var(--maelin-dark);
+  color: var(--maelin-cream-1);
+  border: none;
+  padding: 1.8rem 4.8rem;
+}
+
+.maelin-btn--secondary {
+  background: transparent;
+  color: var(--maelin-dark);
+  border: 1px solid var(--maelin-dark);
+  padding: 1.8rem 4.8rem;
+}
+
+.maelin-btn--nav {
+  padding: 1.2rem 2.8rem;
+}
+
+@media screen and (max-width: 749px) {
+  :root {
+    --maelin-section-padding: var(--maelin-section-padding-mobile);
+  }
+
+  .maelin-heading--large {
+    font-size: 3.2rem;
+  }
+
+  .maelin-heading--xlarge {
+    font-size: 3.8rem;
+  }
+}
