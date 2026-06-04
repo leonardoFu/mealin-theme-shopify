@@ -3,8 +3,8 @@
     background-color: var(--maelin-cream-1);
     padding: 2.4rem 0;
     overflow: hidden;
-    border-top: 1px solid rgba(26, 26, 26, 0.08);
-    border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+    border-top: 1px solid var(--maelin-border);
+    border-bottom: 1px solid var(--maelin-border);
   }
 
   .marquee-ticker__track {
@@ -24,18 +24,23 @@
   }
 
   .marquee-ticker__item {
-    font-family: var(--font-body-family);
-    font-size: 1.2rem;
-    letter-spacing: 0.3rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.4rem;
     text-transform: uppercase;
-    color: var(--maelin-dark);
+    color: var(--maelin-ink-faded);
     white-space: nowrap;
-    padding: 0 2rem;
+    padding: 0 4.8rem;
   }
 
-  .marquee-ticker__separator {
-    color: var(--maelin-gold);
-    font-size: 0.8rem;
+  .marquee-ticker__dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--maelin-gold);
+    flex-shrink: 0;
   }
 
   @keyframes marquee-scroll {
@@ -53,12 +58,9 @@
     {%- for i in (1..2) -%}
       <div class="marquee-ticker__group">
         {%- for block in section.blocks -%}
-          {%- unless forloop.first -%}
-            <span class="marquee-ticker__separator">&#9670;</span>
-          {%- endunless -%}
           <span class="marquee-ticker__item" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+          <span class="marquee-ticker__dot"></span>
         {%- endfor -%}
-        <span class="marquee-ticker__separator">&#9670;</span>
       </div>
     {%- endfor -%}
   </div>
