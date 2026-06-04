@@ -49,6 +49,7 @@
 
 .maelin-accent-italic {
   font-style: italic;
+  color: var(--maelin-gold);
 }
 
 .maelin-btn {
