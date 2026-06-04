@@ -15,6 +15,10 @@
   --maelin-ink-faded: #9A9A9A;
   --maelin-bone: #E8E2D8;
   --maelin-border: #E5DFD5;
+  --serif: 'Playfair Display', 'Georgia', serif;
+  --serif-elegant: 'Cormorant Garamond', 'Georgia', serif;
+  --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --script: 'Great Vibes', cursive;
 }
 
 .maelin-section-label {
