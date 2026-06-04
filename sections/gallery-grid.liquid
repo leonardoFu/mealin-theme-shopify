@@ -1,16 +1,20 @@
 <style>
   .gallery-grid {
     background-color: var(--maelin-cream-1);
-    padding: var(--maelin-section-padding) 0;
+    padding: 9rem 6rem;
+    border-top: 1px solid var(--maelin-border);
+  }
+
+  .gallery-grid__inner {
+    max-width: var(--page-width);
+    margin: 0 auto;
   }
 
   .gallery-grid__header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    max-width: var(--page-width);
-    margin: 0 auto 4rem;
-    padding: 0 5rem;
+    align-items: flex-end;
+    margin-bottom: 4rem;
   }
 
   .gallery-grid__header-left {
@@ -18,59 +22,72 @@
     flex-direction: column;
   }
 
+  .gallery-grid__header-left .maelin-section-label {
+    margin-bottom: 1rem;
+  }
+
+  .gallery-grid__heading {
+    font-family: var(--font-heading-family);
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--maelin-dark);
+    letter-spacing: -0.02rem;
+  }
+
   .gallery-grid__link {
     font-family: var(--font-body-family);
     font-size: 1.1rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.25rem;
     text-transform: uppercase;
     color: var(--maelin-gold);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
+    transition: color 0.3s;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--maelin-gold);
   }
 
   .gallery-grid__link:hover {
-    opacity: 0.7;
+    color: var(--maelin-gold-dark);
   }
 
   .gallery-grid__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    max-width: var(--page-width);
-    margin: 0 auto;
-    padding: 0 5rem;
+    gap: 1.6rem;
   }
 
   .gallery-grid__card {
     position: relative;
-    aspect-ratio: 1;
-    border-radius: 0.8rem;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
     background-color: var(--maelin-cream-2);
+    border: 1px solid var(--maelin-border);
     cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s;
+  }
+
+  .gallery-grid__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
   }
 
   .gallery-grid__card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  .gallery-grid__card:hover img {
-    transform: scale(1.03);
+    display: block;
   }
 
   .gallery-grid__overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(26, 26, 26, 0.6);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(transparent, rgba(26, 26, 26, 0.7));
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s;
   }
 
   .gallery-grid__card:hover .gallery-grid__overlay {
@@ -87,66 +104,82 @@
 
   .gallery-grid__overlay-subtitle {
     font-family: var(--font-body-family);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
   }
 
-  @media screen and (max-width: 989px) {
+  .gallery-grid__overlay-price {
+    font-family: var(--font-heading-family);
+    font-size: 1.4rem;
+    color: var(--maelin-gold-light);
+    margin-top: 0.6rem;
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 1100px) {
     .gallery-grid__cards {
       grid-template-columns: repeat(2, 1fr);
-      padding: 0 3rem;
-    }
-    .gallery-grid__header {
-      padding: 0 3rem;
     }
   }
 
   @media screen and (max-width: 749px) {
+    .gallery-grid {
+      padding: 6rem 2.4rem;
+    }
+
     .gallery-grid__cards {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
     }
   }
 </style>
 
 <section class="gallery-grid">
-  <div class="gallery-grid__header">
-    <div class="gallery-grid__header-left">
-      {%- if section.settings.section_label != blank -%}
-        <p class="maelin-section-label">{{ section.settings.section_label }}</p>
-      {%- endif -%}
-      {%- if section.settings.heading != blank -%}
-        <h2 class="maelin-heading" style="font-size: 2.8rem;">{{ section.settings.heading }}</h2>
+  <div class="gallery-grid__inner">
+    <div class="gallery-grid__header">
+      <div class="gallery-grid__header-left">
+        {%- if section.settings.section_label != blank -%}
+          <p class="maelin-section-label">{{ section.settings.section_label }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="gallery-grid__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.gallery_link_label != blank -%}
+        <a href="{{ section.settings.gallery_link }}" class="gallery-grid__link">
+          {{ section.settings.gallery_link_label }} &rarr;
+        </a>
       {%- endif -%}
     </div>
-    {%- if section.settings.gallery_link_label != blank -%}
-      <a href="{{ section.settings.gallery_link }}" class="gallery-grid__link">
-        {{ section.settings.gallery_link_label }} &rarr;
-      </a>
-    {%- endif -%}
-  </div>
 
-  <div class="gallery-grid__cards">
-    {%- for block in section.blocks -%}
-      <div class="gallery-grid__card" {{ block.shopify_attributes }}>
-        {%- if block.settings.image != blank -%}
-          {{ block.settings.image | image_url: width: 600 | image_tag:
-            loading: 'lazy',
-            widths: '300, 450, 600',
-            sizes: '(min-width: 990px) 25vw, (min-width: 750px) 50vw, 100vw'
-          }}
-        {%- else -%}
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-        {%- endif -%}
-        <div class="gallery-grid__overlay">
-          {%- if block.settings.title != blank -%}
-            <h3 class="gallery-grid__overlay-title">{{ block.settings.title }}</h3>
+    <div class="gallery-grid__cards">
+      {%- for block in section.blocks -%}
+        <div class="gallery-grid__card" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 600 | image_tag:
+              loading: 'lazy',
+              widths: '300, 450, 600',
+              sizes: '(min-width: 1100px) 25vw, (min-width: 750px) 50vw, 50vw'
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
           {%- endif -%}
-          {%- if block.settings.subtitle != blank -%}
-            <p class="gallery-grid__overlay-subtitle">{{ block.settings.subtitle }}</p>
-          {%- endif -%}
+          <div class="gallery-grid__overlay">
+            {%- if block.settings.title != blank -%}
+              <h3 class="gallery-grid__overlay-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.subtitle != blank -%}
+              <p class="gallery-grid__overlay-subtitle">{{ block.settings.subtitle }}</p>
+            {%- endif -%}
+            {%- if block.settings.price != blank -%}
+              <p class="gallery-grid__overlay-price">{{ block.settings.price }}</p>
+            {%- endif -%}
+          </div>
         </div>
-      </div>
-    {%- endfor -%}
+      {%- endfor -%}
+    </div>
   </div>
 </section>
 
@@ -202,6 +235,12 @@
           "id": "subtitle",
           "label": "Subtitle",
           "default": "Oil on Canvas — 24 x 30 cm"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$300"
         }
       ]
     }
