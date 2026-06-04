@@ -1,0 +1,221 @@
+<style>
+  .gallery-grid {
+    background-color: var(--maelin-cream-1);
+    padding: var(--maelin-section-padding) 0;
+  }
+
+  .gallery-grid__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: var(--page-width);
+    margin: 0 auto 4rem;
+    padding: 0 5rem;
+  }
+
+  .gallery-grid__header-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery-grid__link {
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--maelin-gold);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .gallery-grid__link:hover {
+    opacity: 0.7;
+  }
+
+  .gallery-grid__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+
+  .gallery-grid__card {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background-color: var(--maelin-cream-2);
+    cursor: pointer;
+  }
+
+  .gallery-grid__card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-grid__card:hover img {
+    transform: scale(1.03);
+  }
+
+  .gallery-grid__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-grid__card:hover .gallery-grid__overlay {
+    opacity: 1;
+  }
+
+  .gallery-grid__overlay-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  .gallery-grid__overlay-subtitle {
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media screen and (max-width: 989px) {
+    .gallery-grid__cards {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 3rem;
+    }
+    .gallery-grid__header {
+      padding: 0 3rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .gallery-grid__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="gallery-grid">
+  <div class="gallery-grid__header">
+    <div class="gallery-grid__header-left">
+      {%- if section.settings.section_label != blank -%}
+        <p class="maelin-section-label">{{ section.settings.section_label }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="maelin-heading" style="font-size: 2.8rem;">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.gallery_link_label != blank -%}
+      <a href="{{ section.settings.gallery_link }}" class="gallery-grid__link">
+        {{ section.settings.gallery_link_label }} &rarr;
+      </a>
+    {%- endif -%}
+  </div>
+
+  <div class="gallery-grid__cards">
+    {%- for block in section.blocks -%}
+      <div class="gallery-grid__card" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 600 | image_tag:
+            loading: 'lazy',
+            widths: '300, 450, 600',
+            sizes: '(min-width: 990px) 25vw, (min-width: 750px) 50vw, 100vw'
+          }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        <div class="gallery-grid__overlay">
+          {%- if block.settings.title != blank -%}
+            <h3 class="gallery-grid__overlay-title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.subtitle != blank -%}
+            <p class="gallery-grid__overlay-subtitle">{{ block.settings.subtitle }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gallery Grid",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section label",
+      "default": "RECENT COMMISSIONS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Clients' Treasured Portraits"
+    },
+    {
+      "type": "text",
+      "id": "gallery_link_label",
+      "label": "Gallery link label",
+      "default": "View Full Gallery"
+    },
+    {
+      "type": "url",
+      "id": "gallery_link",
+      "label": "Gallery link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Gallery Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Portrait Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Oil on Canvas — 24 x 30 cm"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gallery Grid",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
