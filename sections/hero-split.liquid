@@ -1,58 +1,125 @@
 <style>
   .hero-split {
     background-color: var(--maelin-cream-2);
-    padding: var(--maelin-section-padding) 0;
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
   }
 
   .hero-split__grid {
-    display: grid;
-    grid-template-columns: 45% 55%;
-    gap: 6rem;
+    display: flex;
     align-items: center;
-    max-width: var(--page-width);
-    margin: 0 auto;
-    padding: 0 5rem;
+    width: 100%;
+  }
+
+  .hero-split__content {
+    flex: 0 0 48%;
+    padding: 0 6rem 0 8rem;
+    max-width: 62rem;
+    position: relative;
+    z-index: 2;
   }
 
   .hero-split__heading {
-    font-size: 5.4rem;
+    font-size: clamp(3.6rem, 4.5vw, 5.8rem);
     font-family: var(--font-heading-family);
     font-weight: 400;
     letter-spacing: -0.05rem;
-    line-height: 1.1;
-    margin: 1.6rem 0 2.4rem;
+    line-height: 1.15;
+    margin: 0 0 2.8rem;
     color: var(--maelin-dark);
   }
 
   .hero-split__body {
     font-family: var(--font-heading-family);
     font-style: italic;
-    font-size: 1.5rem;
-    line-height: 1.7;
-    color: rgba(26, 26, 26, 0.7);
-    margin-bottom: 3.2rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--maelin-ink-medium);
+    margin-bottom: 4.8rem;
+    max-width: 48rem;
   }
 
   .hero-split__buttons {
     display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    align-items: flex-start;
+    gap: 1.6rem;
+    flex-wrap: wrap;
   }
 
   .hero-split__image-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    padding: 6rem;
+    min-height: 92vh;
+  }
+
+  .hero-split__image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    width: 65%;
+    height: 70%;
+    background: radial-gradient(ellipse, rgba(184,134,11,0.06) 0%, transparent 70%);
+    pointer-events: none;
   }
 
   .hero-split__frame {
-    border: 4px solid var(--maelin-gold);
+    position: relative;
+    z-index: 1;
+    border: 3px solid var(--maelin-gold);
+    box-shadow:
+      inset 0 0 0 8px var(--maelin-cream-2),
+      inset 0 0 0 9px rgba(184,134,11,0.3),
+      0 0 0 3px var(--maelin-gold-soft),
+      0 0 0 6px var(--maelin-gold-muted),
+      0 20px 60px rgba(0,0,0,0.08),
+      0 8px 24px rgba(0,0,0,0.04);
+    background: var(--maelin-cream-2);
+    max-width: 42rem;
+    width: 100%;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
   }
 
   .hero-split__frame img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-split__painting-label {
+    position: absolute;
+    bottom: -4.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .hero-split__painting-name {
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    color: var(--maelin-dark);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-split__painting-meta {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    color: var(--maelin-ink-faded);
+    margin-top: 0.4rem;
+    font-weight: 300;
   }
 
   .hero-split__signature {
@@ -65,14 +132,53 @@
   }
 
   @media screen and (max-width: 989px) {
-    .hero-split__grid {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-      padding: 0 3rem;
+    .hero-split {
+      min-height: auto;
+      padding: 8rem 4rem;
+      flex-direction: column;
     }
 
-    .hero-split__heading {
-      font-size: 3.8rem;
+    .hero-split__content {
+      flex: none;
+      padding: 0;
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .hero-split__body {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-split__buttons {
+      justify-content: center;
+    }
+
+    .hero-split__image-wrapper {
+      flex: none;
+      min-height: auto;
+      padding: 0;
+    }
+
+    .hero-split__frame {
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .hero-split {
+      padding: 6rem 2.4rem;
+    }
+
+    .hero-split__frame {
+      max-width: 30rem;
+    }
+
+    .hero-split__buttons {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
@@ -103,7 +209,7 @@
       <div class="hero-split__buttons">
         {%- if section.settings.button_label_1 != blank -%}
           <a href="{{ section.settings.button_link_1 }}" class="maelin-btn maelin-btn--primary">
-            &larr; {{ section.settings.button_label_1 }}
+            <span>&larr; {{ section.settings.button_label_1 }}</span>
           </a>
         {%- endif -%}
         {%- if section.settings.button_label_2 != blank -%}
@@ -126,10 +232,16 @@
         {%- else -%}
           {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
         {%- endif -%}
+
+        {%- if section.settings.painting_name != blank -%}
+          <div class="hero-split__painting-label">
+            <div class="hero-split__painting-name">{{ section.settings.painting_name }}</div>
+            {%- if section.settings.painting_meta != blank -%}
+              <div class="hero-split__painting-meta">{{ section.settings.painting_meta }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
       </div>
-      {%- if section.settings.signature != blank -%}
-        <p class="hero-split__signature">{{ section.settings.signature }}</p>
-      {%- endif -%}
     </div>
   </div>
 </section>
@@ -172,9 +284,15 @@
     },
     {
       "type": "text",
-      "id": "signature",
-      "label": "Signature text",
-      "default": "Maelin"
+      "id": "painting_name",
+      "label": "Painting name",
+      "default": "Golden Elegance"
+    },
+    {
+      "type": "text",
+      "id": "painting_meta",
+      "label": "Painting details",
+      "default": "Oil on Canvas — 40 × 50 cm"
     },
     {
       "type": "text",
