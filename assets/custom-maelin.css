@@ -87,3 +87,21 @@
     font-size: 3.8rem;
   }
 }
+
+/* Announcement Bar — Dark with gold accent */
+.utility-bar {
+  border-bottom: none;
+}
+
+.announcement-bar__message {
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.color-scheme-4 .announcement-bar__message,
+[class*="color-scheme-4"] .announcement-bar__message {
+  color: rgba(255, 255, 255, 0.9);
+}

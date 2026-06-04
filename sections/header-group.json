@@ -8,9 +8,9 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "COMMISSION YOUR PET'S PORTRAIT — HAND-PAINTED IN OIL ON CANVAS — FREE WORLDWIDE SHIPPING",
             "text_alignment": "center",
-            "color_scheme": "scheme-1",
+            "color_scheme": "scheme-4",
             "link": ""
           }
         }
