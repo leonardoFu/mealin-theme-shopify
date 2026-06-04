@@ -4,62 +4,83 @@
     padding: var(--maelin-section-padding) 0;
   }
 
+  .process-steps__inner {
+    max-width: var(--page-width);
+    margin: 0 auto;
+  }
+
   .process-steps__header {
     text-align: center;
-    max-width: var(--page-width);
-    margin: 0 auto 6rem;
-    padding: 0 5rem;
+    margin-bottom: 8.8rem;
   }
 
   .process-steps__heading {
     margin-top: 1.6rem;
   }
 
+  .process-steps__header-body {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--maelin-ink-medium);
+    line-height: 1.9;
+    max-width: 56rem;
+    margin: 2.2rem auto 0;
+    font-weight: 300;
+  }
+
   .process-steps__grid {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0;
-    max-width: var(--page-width);
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.6rem;
     padding: 0 5rem;
     position: relative;
   }
 
+  .process-steps__grid::before {
+    content: '';
+    position: absolute;
+    top: 2.7rem;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--maelin-gold-muted), var(--maelin-gold-muted), transparent);
+  }
+
   .process-steps__step {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
     position: relative;
-    max-width: 26rem;
-    padding: 0 2rem;
   }
 
   .process-steps__icon-wrapper {
-    width: 6rem;
-    height: 6rem;
-    border: 1.5px solid var(--maelin-gold);
+    width: 5.4rem;
+    height: 5.4rem;
+    border: 1px solid var(--maelin-gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--maelin-gold);
-    margin-bottom: 2rem;
+    margin: 0 auto 2.8rem;
     position: relative;
     z-index: 1;
     background-color: var(--maelin-cream-3);
+    transition: all 0.4s;
   }
 
-  .process-steps__line {
-    position: absolute;
-    top: 3rem;
-    left: 25%;
-    right: 25%;
-    height: 1px;
-    background-color: rgba(26, 26, 26, 0.15);
-    z-index: 0;
+  .process-steps__icon-wrapper svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: var(--maelin-gold);
+    transition: fill 0.4s;
+  }
+
+  .process-steps__step:hover .process-steps__icon-wrapper {
+    background: var(--maelin-gold);
+  }
+
+  .process-steps__step:hover .process-steps__icon-wrapper svg {
+    fill: #fff;
   }
 
   .process-steps__title {
@@ -68,35 +89,33 @@
     font-weight: 500;
     letter-spacing: 0.03rem;
     color: var(--maelin-dark);
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
   }
 
   .process-steps__description {
-    font-family: var(--font-body-family);
-    font-size: 1.3rem;
-    line-height: 1.6;
-    color: rgba(26, 26, 26, 0.6);
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--maelin-ink-medium);
   }
 
-  @media screen and (max-width: 989px) {
+  @media screen and (max-width: 1100px) {
     .process-steps__grid {
-      flex-wrap: wrap;
-      gap: 4rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5.6rem;
       padding: 0 3rem;
     }
 
-    .process-steps__step {
-      flex: 0 0 45%;
-    }
-
-    .process-steps__line {
+    .process-steps__grid::before {
       display: none;
     }
   }
 
   @media screen and (max-width: 749px) {
-    .process-steps__step {
-      flex: 0 0 100%;
+    .process-steps__grid {
+      grid-template-columns: 1fr;
     }
 
     .process-steps__header {
@@ -106,35 +125,39 @@
 </style>
 
 <section class="process-steps">
-  <div class="process-steps__header">
-    {%- if section.settings.section_label != blank -%}
-      <p class="maelin-section-label">{{ section.settings.section_label }}</p>
-    {%- endif -%}
-    {%- if section.settings.heading != blank -%}
-      <h2 class="maelin-heading maelin-heading--large process-steps__heading">{{ section.settings.heading }}</h2>
-    {%- endif -%}
-  </div>
+  <div class="process-steps__inner" style="padding: 0 6rem;">
+    <div class="process-steps__header">
+      {%- if section.settings.section_label != blank -%}
+        <p class="maelin-section-label">{{ section.settings.section_label }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="maelin-heading maelin-heading--large process-steps__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body_text != blank -%}
+        <p class="process-steps__header-body">{{ section.settings.body_text }}</p>
+      {%- endif -%}
+    </div>
 
-  <div class="process-steps__grid">
-    <div class="process-steps__line"></div>
-    {%- for block in section.blocks -%}
-      <div class="process-steps__step" {{ block.shopify_attributes }}>
-        <div class="process-steps__icon-wrapper">
-          {%- case block.settings.icon -%}
-            {%- when 'upload' -%}{% render 'icon-upload' %}
-            {%- when 'palette' -%}{% render 'icon-palette' %}
-            {%- when 'brush' -%}{% render 'icon-brush' %}
-            {%- when 'gift' -%}{% render 'icon-gift' %}
-          {%- endcase -%}
+    <div class="process-steps__grid">
+      {%- for block in section.blocks -%}
+        <div class="process-steps__step" {{ block.shopify_attributes }}>
+          <div class="process-steps__icon-wrapper">
+            {%- case block.settings.icon -%}
+              {%- when 'upload' -%}{% render 'icon-upload' %}
+              {%- when 'palette' -%}{% render 'icon-palette' %}
+              {%- when 'brush' -%}{% render 'icon-brush' %}
+              {%- when 'gift' -%}{% render 'icon-gift' %}
+            {%- endcase -%}
+          </div>
+          {%- if block.settings.title != blank -%}
+            <h3 class="process-steps__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <p class="process-steps__description">{{ block.settings.description }}</p>
+          {%- endif -%}
         </div>
-        {%- if block.settings.title != blank -%}
-          <h3 class="process-steps__title">{{ block.settings.title }}</h3>
-        {%- endif -%}
-        {%- if block.settings.description != blank -%}
-          <p class="process-steps__description">{{ block.settings.description }}</p>
-        {%- endif -%}
-      </div>
-    {%- endfor -%}
+      {%- endfor -%}
+    </div>
   </div>
 </section>
 
@@ -156,6 +179,12 @@
       "id": "heading",
       "label": "Heading",
       "default": "From Photo to Masterpiece"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "A seamless journey from your cherished photograph to a hand-painted work of art, delivered to your door."
     }
   ],
   "blocks": [
