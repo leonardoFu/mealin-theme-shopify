@@ -1,0 +1,205 @@
+<style>
+  .process-steps {
+    background-color: var(--maelin-cream-3);
+    padding: var(--maelin-section-padding) 0;
+  }
+
+  .process-steps__header {
+    text-align: center;
+    max-width: var(--page-width);
+    margin: 0 auto 6rem;
+    padding: 0 5rem;
+  }
+
+  .process-steps__heading {
+    margin-top: 1.6rem;
+  }
+
+  .process-steps__grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 5rem;
+    position: relative;
+  }
+
+  .process-steps__step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    max-width: 26rem;
+    padding: 0 2rem;
+  }
+
+  .process-steps__icon-wrapper {
+    width: 6rem;
+    height: 6rem;
+    border: 1.5px solid var(--maelin-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--maelin-gold);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    background-color: var(--maelin-cream-3);
+  }
+
+  .process-steps__line {
+    position: absolute;
+    top: 3rem;
+    left: 25%;
+    right: 25%;
+    height: 1px;
+    background-color: rgba(26, 26, 26, 0.15);
+    z-index: 0;
+  }
+
+  .process-steps__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: 0.03rem;
+    color: var(--maelin-dark);
+    margin-bottom: 1rem;
+  }
+
+  .process-steps__description {
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: rgba(26, 26, 26, 0.6);
+  }
+
+  @media screen and (max-width: 989px) {
+    .process-steps__grid {
+      flex-wrap: wrap;
+      gap: 4rem;
+      padding: 0 3rem;
+    }
+
+    .process-steps__step {
+      flex: 0 0 45%;
+    }
+
+    .process-steps__line {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .process-steps__step {
+      flex: 0 0 100%;
+    }
+
+    .process-steps__header {
+      padding: 0 3rem;
+    }
+  }
+</style>
+
+<section class="process-steps">
+  <div class="process-steps__header">
+    {%- if section.settings.section_label != blank -%}
+      <p class="maelin-section-label">{{ section.settings.section_label }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="maelin-heading maelin-heading--large process-steps__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+  </div>
+
+  <div class="process-steps__grid">
+    <div class="process-steps__line"></div>
+    {%- for block in section.blocks -%}
+      <div class="process-steps__step" {{ block.shopify_attributes }}>
+        <div class="process-steps__icon-wrapper">
+          {%- case block.settings.icon -%}
+            {%- when 'upload' -%}{% render 'icon-upload' %}
+            {%- when 'palette' -%}{% render 'icon-palette' %}
+            {%- when 'brush' -%}{% render 'icon-brush' %}
+            {%- when 'gift' -%}{% render 'icon-gift' %}
+          {%- endcase -%}
+        </div>
+        {%- if block.settings.title != blank -%}
+          <h3 class="process-steps__title">{{ block.settings.title }}</h3>
+        {%- endif -%}
+        {%- if block.settings.description != blank -%}
+          <p class="process-steps__description">{{ block.settings.description }}</p>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Process Steps",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section label",
+      "default": "HOW IT WORKS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "From Photo to Masterpiece"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "upload", "label": "Upload / Photo" },
+            { "value": "palette", "label": "Palette / Style" },
+            { "value": "brush", "label": "Brush / Create" },
+            { "value": "gift", "label": "Gift / Receive" }
+          ],
+          "default": "upload"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Upload Your Photo"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Share your favorite photograph. Our team will help select the perfect reference for your portrait."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Process Steps",
+      "blocks": [
+        { "type": "step", "settings": { "icon": "upload", "title": "Upload Your Photo", "description": "Share your favorite photograph. Our team will help select the perfect reference for your portrait." } },
+        { "type": "step", "settings": { "icon": "palette", "title": "Choose Your Style", "description": "Select from classic realism, impressionistic, or modern styles. Decide on size, framing, and special details." } },
+        { "type": "step", "settings": { "icon": "brush", "title": "Artist Creates", "description": "Your portrait is assigned to a specialist artist who paints your vision with oils on premium stretched canvas." } },
+        { "type": "step", "settings": { "icon": "gift", "title": "Receive & Cherish", "description": "Review progress updates, approve the final piece, and receive your portrait beautifully packaged." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
