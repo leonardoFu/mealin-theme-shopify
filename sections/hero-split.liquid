@@ -1,0 +1,208 @@
+<style>
+  .hero-split {
+    background-color: var(--maelin-cream-2);
+    padding: var(--maelin-section-padding) 0;
+  }
+
+  .hero-split__grid {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 6rem;
+    align-items: center;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+
+  .hero-split__heading {
+    font-size: 5.4rem;
+    font-family: var(--font-heading-family);
+    font-weight: 400;
+    letter-spacing: -0.05rem;
+    line-height: 1.1;
+    margin: 1.6rem 0 2.4rem;
+    color: var(--maelin-dark);
+  }
+
+  .hero-split__body {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: rgba(26, 26, 26, 0.7);
+    margin-bottom: 3.2rem;
+  }
+
+  .hero-split__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .hero-split__image-wrapper {
+    position: relative;
+  }
+
+  .hero-split__frame {
+    border: 4px solid var(--maelin-gold);
+    overflow: hidden;
+  }
+
+  .hero-split__frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-split__signature {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--maelin-gold);
+    text-align: right;
+    margin-top: 0.8rem;
+  }
+
+  @media screen and (max-width: 989px) {
+    .hero-split__grid {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      padding: 0 3rem;
+    }
+
+    .hero-split__heading {
+      font-size: 3.8rem;
+    }
+  }
+</style>
+
+<section class="hero-split">
+  <div class="hero-split__grid">
+    <div class="hero-split__content">
+      {%- if section.settings.section_label != blank -%}
+        <p class="maelin-section-label">{{ section.settings.section_label }}</p>
+      {%- endif -%}
+
+      <h1 class="hero-split__heading">
+        {%- assign words = section.settings.heading | split: ' ' -%}
+        {%- for word in words -%}
+          {%- if word == section.settings.accent_word -%}
+            <em class="maelin-accent-italic">{{ word }}</em>
+          {%- else -%}
+            {{ word }}
+          {%- endif -%}
+          {%- unless forloop.last %} {% endunless -%}
+        {%- endfor -%}
+      </h1>
+
+      {%- if section.settings.body_text != blank -%}
+        <p class="hero-split__body">{{ section.settings.body_text }}</p>
+      {%- endif -%}
+
+      <div class="hero-split__buttons">
+        {%- if section.settings.button_label_1 != blank -%}
+          <a href="{{ section.settings.button_link_1 }}" class="maelin-btn maelin-btn--primary">
+            &larr; {{ section.settings.button_label_1 }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.button_label_2 != blank -%}
+          <a href="{{ section.settings.button_link_2 }}" class="maelin-btn maelin-btn--secondary">
+            {{ section.settings.button_label_2 }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="hero-split__image-wrapper">
+      <div class="hero-split__frame">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 900 | image_tag:
+            loading: 'eager',
+            fetchpriority: 'high',
+            widths: '375, 550, 750, 900',
+            sizes: '(min-width: 990px) 50vw, 100vw'
+          }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+      {%- if section.settings.signature != blank -%}
+        <p class="hero-split__signature">{{ section.settings.signature }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Split",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section label",
+      "default": "CUSTOM PET OIL PORTRAITS"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Where Every Pet Becomes a Timeless Masterpiece"
+    },
+    {
+      "type": "text",
+      "id": "accent_word",
+      "label": "Italic accent word",
+      "info": "One word from the heading to display in italic",
+      "default": "Timeless"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "Each portrait is hand-painted with museum-grade oils on premium canvas, capturing the soul and spirit of your beloved companion."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "signature",
+      "label": "Signature text",
+      "default": "Maelin"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Primary button label",
+      "default": "Begin Your Portrait"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Secondary button label",
+      "default": "View Gallery"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Secondary button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Split"
+    }
+  ]
+}
+{% endschema %}
