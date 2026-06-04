@@ -1,0 +1,112 @@
+<style>
+  .marquee-ticker {
+    background-color: var(--maelin-cream-1);
+    padding: 2.4rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .marquee-ticker__track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll {{ section.settings.speed }}s linear infinite;
+  }
+
+  .marquee-ticker__track:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-ticker__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .marquee-ticker__item {
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    color: var(--maelin-dark);
+    white-space: nowrap;
+    padding: 0 2rem;
+  }
+
+  .marquee-ticker__separator {
+    color: var(--maelin-gold);
+    font-size: 0.8rem;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<div class="marquee-ticker">
+  <div class="marquee-ticker__track" aria-hidden="true">
+    {%- for i in (1..2) -%}
+      <div class="marquee-ticker__group">
+        {%- for block in section.blocks -%}
+          {%- unless forloop.first -%}
+            <span class="marquee-ticker__separator">&#9670;</span>
+          {%- endunless -%}
+          <span class="marquee-ticker__item" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+        {%- endfor -%}
+        <span class="marquee-ticker__separator">&#9670;</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee Ticker",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Scroll speed (seconds)",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 30,
+      "unit": "s"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Text Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "DOG PORTRAITS"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee Ticker",
+      "blocks": [
+        { "type": "text_item", "settings": { "text": "DOG PORTRAITS" } },
+        { "type": "text_item", "settings": { "text": "CAT PORTRAITS" } },
+        { "type": "text_item", "settings": { "text": "OIL ON CANVAS" } },
+        { "type": "text_item", "settings": { "text": "HAND-PAINTED" } },
+        { "type": "text_item", "settings": { "text": "MUSEUM QUALITY" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
