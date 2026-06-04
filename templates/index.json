@@ -5,23 +5,13 @@
       "type": "hero-split",
       "settings": {}
     },
-    "featured_strip": {
-      "type": "featured-strip",
-      "blocks": {
-        "thumb-1": { "type": "thumbnail" },
-        "thumb-2": { "type": "thumbnail" },
-        "thumb-3": { "type": "thumbnail" }
-      },
-      "block_order": ["thumb-1", "thumb-2", "thumb-3"],
-      "settings": {}
-    },
     "gallery_grid": {
       "type": "gallery-grid",
       "blocks": {
-        "card-1": { "type": "card", "settings": { "title": "Mysterious Gaze", "subtitle": "Oil on Canvas — 24 x 30 cm" } },
-        "card-2": { "type": "card", "settings": { "title": "Noble Spirit", "subtitle": "Oil on Canvas — 30 x 40 cm" } },
-        "card-3": { "type": "card", "settings": { "title": "Cloud of Joy", "subtitle": "Oil on Canvas — 20 x 25 cm" } },
-        "card-4": { "type": "card", "settings": { "title": "Best Friends Forever", "subtitle": "Oil on Canvas — 40 x 50 cm" } }
+        "card-1": { "type": "card", "settings": { "title": "Mysterious Gaze", "subtitle": "British Shorthair — 30 × 40 cm", "price": "$300" } },
+        "card-2": { "type": "card", "settings": { "title": "Noble Spirit", "subtitle": "Arabian Horse — 50 × 60 cm", "price": "$480" } },
+        "card-3": { "type": "card", "settings": { "title": "Cloud of Joy", "subtitle": "Poodle — 30 × 30 cm", "price": "$300" } },
+        "card-4": { "type": "card", "settings": { "title": "Best Friends Forever", "subtitle": "Dog & Cat — 50 × 40 cm", "price": "$420" } }
       },
       "block_order": ["card-1", "card-2", "card-3", "card-4"],
       "settings": {}
@@ -29,29 +19,37 @@
     "marquee_ticker": {
       "type": "marquee-ticker",
       "blocks": {
-        "item-1": { "type": "text_item", "settings": { "text": "DOG PORTRAITS" } },
-        "item-2": { "type": "text_item", "settings": { "text": "CAT PORTRAITS" } },
-        "item-3": { "type": "text_item", "settings": { "text": "OIL ON CANVAS" } },
-        "item-4": { "type": "text_item", "settings": { "text": "HAND-PAINTED" } },
-        "item-5": { "type": "text_item", "settings": { "text": "MUSEUM QUALITY" } }
+        "item-1": { "type": "text_item", "settings": { "text": "Dog Portraits" } },
+        "item-2": { "type": "text_item", "settings": { "text": "Cat Portraits" } },
+        "item-3": { "type": "text_item", "settings": { "text": "Oil on Canvas" } },
+        "item-4": { "type": "text_item", "settings": { "text": "Hand-Painted" } },
+        "item-5": { "type": "text_item", "settings": { "text": "Museum Quality" } },
+        "item-6": { "type": "text_item", "settings": { "text": "Horse Portraits" } },
+        "item-7": { "type": "text_item", "settings": { "text": "Heirloom Art" } }
       },
-      "block_order": ["item-1", "item-2", "item-3", "item-4", "item-5"],
-      "settings": { "speed": 30 }
+      "block_order": ["item-1", "item-2", "item-3", "item-4", "item-5", "item-6", "item-7"],
+      "settings": { "speed": 35 }
     },
     "bento_gallery": {
       "type": "bento-gallery",
       "blocks": {
-        "bento-1": { "type": "card", "settings": { "title": "Golden Elegance", "subtitle": "Oil on Canvas — 40 x 50 cm" } },
-        "bento-2": { "type": "card", "settings": { "title": "Mysterious Gaze", "subtitle": "Oil on Canvas — 24 x 30 cm" } },
-        "bento-3": { "type": "card", "settings": { "title": "Noble Spirit", "subtitle": "Oil on Canvas — 30 x 40 cm" } },
-        "bento-4": { "type": "card", "settings": { "title": "Cloud of Joy", "subtitle": "Oil on Canvas — 20 x 25 cm" } },
-        "bento-5": { "type": "card", "settings": { "title": "Best Friends Forever", "subtitle": "Oil on Canvas — 40 x 50 cm" } }
+        "bento-1": { "type": "card", "settings": { "title": "Golden Elegance", "subtitle": "Oil on Canvas — 40 × 50 cm", "price": "$380" } },
+        "bento-2": { "type": "card", "settings": { "title": "Mysterious Gaze", "subtitle": "Oil on Canvas — 30 × 40 cm", "price": "$300" } },
+        "bento-3": { "type": "card", "settings": { "title": "Noble Spirit", "subtitle": "Oil on Canvas — 50 × 60 cm", "price": "$480" } },
+        "bento-4": { "type": "card", "settings": { "title": "Cloud of Joy", "subtitle": "Oil on Canvas — 30 × 30 cm", "price": "$300" } },
+        "bento-5": { "type": "card", "settings": { "title": "Best Friends Forever", "subtitle": "Oil on Canvas — 50 × 40 cm", "price": "$420" } }
       },
       "block_order": ["bento-1", "bento-2", "bento-3", "bento-4", "bento-5"],
       "settings": {}
     },
     "story_section": {
       "type": "story-section",
+      "blocks": {
+        "stat-1": { "type": "stat", "settings": { "value": "500+", "label": "Portraits Delivered" } },
+        "stat-2": { "type": "stat", "settings": { "value": "12+", "label": "Master Artists" } },
+        "stat-3": { "type": "stat", "settings": { "value": "98%", "label": "Client Satisfaction" } }
+      },
+      "block_order": ["stat-1", "stat-2", "stat-3"],
       "settings": {
         "image_position": "left"
       }
@@ -82,7 +80,6 @@
   },
   "order": [
     "hero_split",
-    "featured_strip",
     "gallery_grid",
     "marquee_ticker",
     "bento_gallery",
