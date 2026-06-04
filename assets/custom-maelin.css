@@ -167,3 +167,46 @@
 .section-header .header-wrapper--border-bottom::after {
   display: none;
 }
+
+/* Footer — Dark theme override */
+.footer {
+  margin-top: 0;
+}
+
+.footer .footer__content-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 6rem;
+}
+
+.footer h2,
+.footer .footer-block__heading {
+  font-family: var(--font-heading-family);
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer .footer-block__details-content a,
+.footer .list-menu__item--link {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease;
+  font-size: 1.3rem;
+}
+
+.footer .footer-block__details-content a:hover,
+.footer .list-menu__item--link:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer .footer__content-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 3rem;
+  margin-top: 4rem;
+}
+
+.footer .copyright {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 1.2rem;
+}
