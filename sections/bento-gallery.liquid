@@ -14,75 +14,91 @@
   .bento-gallery__body {
     text-align: center;
     max-width: 60rem;
-    margin: 0 auto 5rem;
+    margin: 0 auto 7.2rem;
     padding: 0 5rem;
   }
 
   .bento-gallery__body p {
     font-family: var(--font-heading-family);
     font-style: italic;
-    font-size: 1.5rem;
-    color: rgba(26, 26, 26, 0.7);
-    line-height: 1.7;
+    font-size: 1.8rem;
+    color: var(--maelin-ink-medium);
+    line-height: 1.9;
+    font-weight: 300;
   }
 
   .bento-gallery__price {
     font-family: var(--font-body-family);
     font-size: 1.1rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.3rem;
     text-transform: uppercase;
-    color: var(--maelin-dark);
-    margin-top: 1.6rem;
+    color: var(--maelin-ink-faded);
+    margin-top: 2.8rem;
+    font-weight: 300;
   }
 
   .bento-gallery__price .gold {
     color: var(--maelin-gold);
-    text-decoration: underline;
+    font-weight: 400;
   }
 
   .bento-gallery__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.6rem;
     max-width: var(--page-width);
     margin: 0 auto;
-    padding: 0 5rem;
+    padding: 0 6rem;
   }
 
   .bento-gallery__card {
     position: relative;
-    border-radius: 0.8rem;
     overflow: hidden;
     background-color: var(--maelin-cream-2);
+    border: 1px solid var(--maelin-border);
     cursor: pointer;
+    aspect-ratio: 4 / 5;
+  }
+
+  .bento-gallery__card-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bento-gallery__card:hover .bento-gallery__card-inner {
+    transform: scale(1.02);
   }
 
   .bento-gallery__card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  .bento-gallery__card:hover img {
-    transform: scale(1.03);
+    display: block;
   }
 
   .bento-gallery__card--large {
     grid-row: 1 / 3;
+    aspect-ratio: auto;
   }
 
   .bento-gallery__overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(26, 26, 26, 0.6);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.8rem 2.4rem;
+    background: linear-gradient(transparent, rgba(26, 26, 26, 0.65));
+    opacity: 0;
+    transition: opacity 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
   }
 
   .bento-gallery__card:hover .bento-gallery__overlay {
@@ -91,7 +107,6 @@
 
   .bento-gallery__overlay-title {
     font-family: var(--font-heading-family);
-    font-style: italic;
     font-size: 1.7rem;
     font-weight: 400;
     color: #fff;
@@ -100,11 +115,21 @@
 
   .bento-gallery__overlay-subtitle {
     font-family: var(--font-body-family);
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
   }
 
-  @media screen and (max-width: 989px) {
+  .bento-gallery__overlay-price {
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    color: var(--maelin-gold-light);
+    margin-top: 0.8rem;
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 1100px) {
     .bento-gallery__grid {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
@@ -114,12 +139,15 @@
     .bento-gallery__card--large {
       grid-row: auto;
       grid-column: 1 / -1;
+      aspect-ratio: 4 / 5;
     }
   }
 
   @media screen and (max-width: 749px) {
     .bento-gallery__grid {
       grid-template-columns: 1fr;
+      gap: 1.2rem;
+      padding: 0 2.4rem;
     }
 
     .bento-gallery__header,
@@ -153,21 +181,26 @@
   <div class="bento-gallery__grid">
     {%- for block in section.blocks -%}
       <div class="bento-gallery__card{% if forloop.first %} bento-gallery__card--large{% endif %}" {{ block.shopify_attributes }}>
-        {%- if block.settings.image != blank -%}
-          {{ block.settings.image | image_url: width: 800 | image_tag:
-            loading: 'lazy',
-            widths: '400, 600, 800',
-            sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw'
-          }}
-        {%- else -%}
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-        {%- endif -%}
+        <div class="bento-gallery__card-inner">
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 800 | image_tag:
+              loading: 'lazy',
+              widths: '400, 600, 800',
+              sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw'
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
         <div class="bento-gallery__overlay">
           {%- if block.settings.title != blank -%}
             <h3 class="bento-gallery__overlay-title">{{ block.settings.title }}</h3>
           {%- endif -%}
           {%- if block.settings.subtitle != blank -%}
             <p class="bento-gallery__overlay-subtitle">{{ block.settings.subtitle }}</p>
+          {%- endif -%}
+          {%- if block.settings.price != blank -%}
+            <p class="bento-gallery__overlay-price">{{ block.settings.price }}</p>
           {%- endif -%}
         </div>
       </div>
@@ -228,6 +261,12 @@
           "id": "subtitle",
           "label": "Subtitle",
           "default": "Oil on Canvas — 24 x 30 cm"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$300"
         }
       ]
     }
