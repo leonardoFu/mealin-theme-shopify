@@ -199,16 +199,14 @@
         <p class="maelin-section-label">{{ section.settings.section_label }}</p>
       {%- endif -%}
 
+      {%- capture accent_html -%}<em class="maelin-accent-italic">{{ section.settings.accent_word }}</em>{%- endcapture -%}
       <h1 class="hero-split__heading">
-        {%- assign words = section.settings.heading | split: ' ' -%}
-        {%- for word in words -%}
-          {%- if word == section.settings.accent_word -%}
-            <em class="maelin-accent-italic">{{ word }}</em>
-          {%- else -%}
-            {{ word }}
-          {%- endif -%}
-          {%- unless forloop.last %} {% endunless -%}
-        {%- endfor -%}
+        {%- assign heading_html = section.settings.heading | newline_to_br -%}
+        {%- if section.settings.accent_word != blank -%}
+          {{ heading_html | replace: section.settings.accent_word, accent_html }}
+        {%- else -%}
+          {{ heading_html }}
+        {%- endif -%}
       </h1>
 
       {%- if section.settings.body_text != blank -%}
@@ -271,7 +269,7 @@
       "type": "textarea",
       "id": "heading",
       "label": "Heading",
-      "default": "Where Every Pet Becomes a Timeless Masterpiece"
+      "default": "Where Every Pet Becomes\na Timeless Masterpiece"
     },
     {
       "type": "text",
