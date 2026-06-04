@@ -105,3 +105,65 @@
 [class*="color-scheme-4"] .announcement-bar__message {
   color: rgba(255, 255, 255, 0.9);
 }
+
+/* Header — Transparent to blur sticky nav */
+.section-header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+.section-header .header-wrapper {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
+  border-bottom: none;
+}
+
+.section-header .header-wrapper:not(.scrolled-past-header) {
+  background-color: transparent;
+}
+
+.scrolled-past-header .header-wrapper,
+.section-header .header-wrapper.scrolled-past-header {
+  background-color: rgba(253, 252, 250, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.section-header .header {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+
+.section-header .header__heading-logo-wrapper {
+  max-width: 4rem;
+}
+
+.section-header .header__inline-menu .list-menu__item--link {
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--maelin-dark);
+}
+
+@media screen and (min-width: 990px) {
+  .section-header .header--middle-left .header__inline-menu {
+    margin: 0 auto;
+  }
+}
+
+.section-header .header__icon--cart,
+.section-header .header__icons {
+  display: flex;
+  align-items: center;
+}
+
+.shopify-section-header-sticky .header-wrapper--border-bottom {
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.section-header .header-wrapper--border-bottom::after {
+  display: none;
+}
