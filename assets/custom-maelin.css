@@ -22,7 +22,7 @@
 }
 
 .maelin-section-label {
-  font-family: var(--font-heading-family);
+  font-family: var(--serif-elegant);
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.5rem;
@@ -33,7 +33,7 @@
 }
 
 .maelin-heading {
-  font-family: var(--font-heading-family);
+  font-family: var(--serif);
   font-weight: 400;
   letter-spacing: -0.03rem;
   line-height: 1.15;
@@ -55,7 +55,7 @@
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  font-family: var(--font-body-family);
+  font-family: var(--sans);
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.35rem;
@@ -138,7 +138,7 @@
 }
 
 .announcement-bar__message {
-  font-family: var(--font-body-family);
+  font-family: var(--sans);
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
@@ -183,7 +183,7 @@
 }
 
 .section-header .header__inline-menu .list-menu__item--link {
-  font-family: var(--font-body-family);
+  font-family: var(--sans);
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
@@ -224,7 +224,7 @@
 
 .footer h2,
 .footer .footer-block__heading {
-  font-family: var(--font-heading-family);
+  font-family: var(--serif);
   font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: 0.15rem;
