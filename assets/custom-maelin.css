@@ -8,16 +8,24 @@
   --maelin-dark: #1A1A1A;
   --maelin-section-padding: 130px;
   --maelin-section-padding-mobile: 70px;
+  --maelin-gold-soft: #D4B96A;
+  --maelin-gold-dark: #8B6914;
+  --maelin-gold-muted: rgba(184,134,11,0.15);
+  --maelin-ink-medium: #6A6A6A;
+  --maelin-ink-faded: #9A9A9A;
+  --maelin-bone: #E8E2D8;
+  --maelin-border: #E5DFD5;
 }
 
 .maelin-section-label {
-  font-family: var(--font-body-family);
-  font-size: 1.1rem;
+  font-family: var(--font-heading-family);
+  font-size: 1.2rem;
   font-weight: 400;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.5rem;
   text-transform: uppercase;
-  color: var(--maelin-gold);
-  margin-bottom: 1.6rem;
+  color: var(--maelin-gold-dark);
+  margin-bottom: 1.8rem;
+  font-style: normal;
 }
 
 .maelin-heading {
