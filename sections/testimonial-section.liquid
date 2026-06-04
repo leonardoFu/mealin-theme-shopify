@@ -1,0 +1,188 @@
+<style>
+  .testimonial-section {
+    background-color: var(--maelin-dark);
+    padding: var(--maelin-section-padding) 0;
+    text-align: center;
+  }
+
+  .testimonial-section__inner {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 0 5rem;
+    position: relative;
+  }
+
+  .testimonial-section__quote-icon {
+    color: var(--maelin-gold);
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 3rem;
+  }
+
+  .testimonial-section__slides {
+    position: relative;
+  }
+
+  .testimonial-section__slide {
+    display: none;
+  }
+
+  .testimonial-section__radio {
+    display: none;
+  }
+
+  {%- for block in section.blocks -%}
+    .testimonial-section__radio:nth-of-type({{ forloop.index }}):checked ~ .testimonial-section__slides .testimonial-section__slide:nth-child({{ forloop.index }}) {
+      display: block;
+    }
+  {%- endfor -%}
+
+  .testimonial-section__radio:first-of-type:checked ~ .testimonial-section__slides .testimonial-section__slide:first-child {
+    display: block;
+  }
+
+  .testimonial-section__quote {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    font-size: 2rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 3rem;
+  }
+
+  .testimonial-section__author {
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--maelin-gold);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .testimonial-section__author-title {
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .testimonial-section__dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .testimonial-section__dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .testimonial-section__dot:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  {%- for block in section.blocks -%}
+    .testimonial-section__radio:nth-of-type({{ forloop.index }}):checked ~ .testimonial-section__dots .testimonial-section__dot:nth-child({{ forloop.index }}) {
+      background-color: var(--maelin-gold);
+    }
+  {%- endfor -%}
+
+  @media screen and (max-width: 749px) {
+    .testimonial-section__inner {
+      padding: 0 3rem;
+    }
+
+    .testimonial-section__quote {
+      font-size: 1.7rem;
+    }
+  }
+</style>
+
+<section class="testimonial-section">
+  <div class="testimonial-section__inner">
+    <div class="testimonial-section__quote-icon">&ldquo;</div>
+
+    {%- for block in section.blocks -%}
+      <input
+        type="radio"
+        class="testimonial-section__radio"
+        name="testimonial-{{ section.id }}"
+        id="testimonial-{{ section.id }}-{{ forloop.index }}"
+        {% if forloop.first %}checked{% endif %}
+      >
+    {%- endfor -%}
+
+    <div class="testimonial-section__slides">
+      {%- for block in section.blocks -%}
+        <div class="testimonial-section__slide" {{ block.shopify_attributes }}>
+          {%- if block.settings.quote != blank -%}
+            <blockquote class="testimonial-section__quote">{{ block.settings.quote }}</blockquote>
+          {%- endif -%}
+          {%- if block.settings.author != blank -%}
+            <p class="testimonial-section__author">{{ block.settings.author }}</p>
+          {%- endif -%}
+          {%- if block.settings.author_title != blank -%}
+            <p class="testimonial-section__author-title">{{ block.settings.author_title }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.blocks.size > 1 -%}
+      <div class="testimonial-section__dots">
+        {%- for block in section.blocks -%}
+          <label class="testimonial-section__dot" for="testimonial-{{ section.id }}-{{ forloop.index }}"></label>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonial",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 5,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "When I unwrapped the portrait, I cried. They captured Max's spirit perfectly — the way he always tilted his head, that gentle wisdom in his eyes. It's not just a painting, it's a piece of my heart."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author name",
+          "default": "Sarah Mitchell"
+        },
+        {
+          "type": "text",
+          "id": "author_title",
+          "label": "Author title",
+          "default": "Golden Retriever Owner, London"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial",
+      "blocks": [
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}
