@@ -35,12 +35,17 @@
 .maelin-heading {
   font-family: var(--serif);
   font-weight: 400;
+  font-style: normal;
   letter-spacing: -0.03rem;
-  line-height: 1.15;
+  line-height: 1.2;
+  margin-bottom: 2.2rem;
+  color: var(--maelin-dark);
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .maelin-heading--large {
-  font-size: 4.56rem;
+  font-size: clamp(3rem, 3.8vw, 4.6rem);
 }
 
 .maelin-heading--xlarge {
