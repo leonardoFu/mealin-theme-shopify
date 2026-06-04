@@ -1,210 +1,94 @@
 {
+  "layout": "theme",
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero_split": {
+      "type": "hero-split",
+      "settings": {}
+    },
+    "featured_strip": {
+      "type": "featured-strip",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
+        "thumb-1": { "type": "thumbnail" },
+        "thumb-2": { "type": "thumbnail" },
+        "thumb-3": { "type": "thumbnail" }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
+      "block_order": ["thumb-1", "thumb-2", "thumb-3"],
+      "settings": {}
     },
-    "rich_text": {
-      "type": "rich-text",
+    "gallery_grid": {
+      "type": "gallery-grid",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
+        "card-1": { "type": "card", "settings": { "title": "Mysterious Gaze", "subtitle": "Oil on Canvas — 24 x 30 cm" } },
+        "card-2": { "type": "card", "settings": { "title": "Noble Spirit", "subtitle": "Oil on Canvas — 30 x 40 cm" } },
+        "card-3": { "type": "card", "settings": { "title": "Cloud of Joy", "subtitle": "Oil on Canvas — 20 x 25 cm" } },
+        "card-4": { "type": "card", "settings": { "title": "Best Friends Forever", "subtitle": "Oil on Canvas — 40 x 50 cm" } }
       },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
+      "block_order": ["card-1", "card-2", "card-3", "card-4"],
+      "settings": {}
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
+    "marquee_ticker": {
+      "type": "marquee-ticker",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
+        "item-1": { "type": "text_item", "settings": { "text": "DOG PORTRAITS" } },
+        "item-2": { "type": "text_item", "settings": { "text": "CAT PORTRAITS" } },
+        "item-3": { "type": "text_item", "settings": { "text": "OIL ON CANVAS" } },
+        "item-4": { "type": "text_item", "settings": { "text": "HAND-PAINTED" } },
+        "item-5": { "type": "text_item", "settings": { "text": "MUSEUM QUALITY" } }
       },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
+      "block_order": ["item-1", "item-2", "item-3", "item-4", "item-5"],
+      "settings": { "speed": 30 }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "bento_gallery": {
+      "type": "bento-gallery",
       "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
+        "bento-1": { "type": "card", "settings": { "title": "Golden Elegance", "subtitle": "Oil on Canvas — 40 x 50 cm" } },
+        "bento-2": { "type": "card", "settings": { "title": "Mysterious Gaze", "subtitle": "Oil on Canvas — 24 x 30 cm" } },
+        "bento-3": { "type": "card", "settings": { "title": "Noble Spirit", "subtitle": "Oil on Canvas — 30 x 40 cm" } },
+        "bento-4": { "type": "card", "settings": { "title": "Cloud of Joy", "subtitle": "Oil on Canvas — 20 x 25 cm" } },
+        "bento-5": { "type": "card", "settings": { "title": "Best Friends Forever", "subtitle": "Oil on Canvas — 40 x 50 cm" } }
       },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
+      "block_order": ["bento-1", "bento-2", "bento-3", "bento-4", "bento-5"],
+      "settings": {}
+    },
+    "story_section": {
+      "type": "story-section",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image_position": "left"
       }
+    },
+    "process_steps": {
+      "type": "process-steps",
+      "blocks": {
+        "step-1": { "type": "step", "settings": { "icon": "upload", "title": "Upload Your Photo", "description": "Share your favorite photograph. Our team will help select the perfect reference for your portrait." } },
+        "step-2": { "type": "step", "settings": { "icon": "palette", "title": "Choose Your Style", "description": "Select from classic realism, impressionistic, or modern styles. Decide on size, framing, and special details." } },
+        "step-3": { "type": "step", "settings": { "icon": "brush", "title": "Artist Creates", "description": "Your portrait is assigned to a specialist artist who paints your vision with oils on premium stretched canvas." } },
+        "step-4": { "type": "step", "settings": { "icon": "gift", "title": "Receive & Cherish", "description": "Review progress updates, approve the final piece, and receive your portrait beautifully packaged." } }
+      },
+      "block_order": ["step-1", "step-2", "step-3", "step-4"],
+      "settings": {}
+    },
+    "testimonial": {
+      "type": "testimonial-section",
+      "blocks": {
+        "quote-1": { "type": "testimonial", "settings": { "quote": "When I unwrapped the portrait, I cried. They captured Max's spirit perfectly — the way he always tilted his head, that gentle wisdom in his eyes. It's not just a painting, it's a piece of my heart.", "author": "Sarah Mitchell", "author_title": "Golden Retriever Owner, London" } }
+      },
+      "block_order": ["quote-1"],
+      "settings": {}
+    },
+    "cta_banner": {
+      "type": "cta-banner",
+      "settings": {}
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "hero_split",
+    "featured_strip",
+    "gallery_grid",
+    "marquee_ticker",
+    "bento_gallery",
+    "story_section",
+    "process_steps",
+    "testimonial",
+    "cta_banner"
   ]
 }
