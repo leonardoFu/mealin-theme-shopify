@@ -61,8 +61,9 @@ Accent color (gold): `#B8860B` — used for section labels, decorative elements,
 - Nav links: centered horizontally — Home, Gallery, Process, About, Contact
 - Link style: uppercase, letter-spacing 2px, font-size 11px, sans-serif
 - CTA button: "Commission a Portrait" — dark bg, square, positioned right
-- Sticky behavior: shrinks padding on scroll, adds semi-transparent background
-- Mobile: hamburger menu drawer
+- Sticky behavior: extend Dawn's existing `<sticky-header>` web component rather than replacing it. Override its CSS for the transparent→blur transition. Disable Dawn's default `sticky-header` shadow behavior via CSS. Do NOT add a separate scroll listener — work within Dawn's existing `sticky-header.js` element.
+- Mobile: hamburger menu drawer (reuse Dawn's `<menu-drawer>` component)
+- Responsive breakpoint: 990px (Dawn's default `--media-lg`). Below 990px: hamburger menu, hide desktop nav links
 
 ### 3. Hero Split (new section: `hero-split.liquid`)
 
@@ -87,7 +88,7 @@ Accent color (gold): `#B8860B` — used for section labels, decorative elements,
 - Circles ~60-80px diameter with subtle shadows
 - Background: matches surrounding cream
 
-**Schema settings:** 3 image pickers
+**Schema settings:** block-based repeater (type: "thumbnail", min 1, max 6), each block has an image picker. This allows flexible count via theme editor.
 
 ### 5. Gallery Grid (new section: `gallery-grid.liquid`)
 
@@ -145,13 +146,13 @@ Accent color (gold): `#B8860B` — used for section labels, decorative elements,
 - Connected horizontal line with 4 step markers
 - Each step:
   - Circular icon with gold border (outlined circle, ~60px)
-  - Simple line icon inside (upload, palette, brush, gift)
+  - Icons delivered as inline SVG snippets stored in `snippets/icon-*.liquid` (e.g., `icon-upload.liquid`, `icon-palette.liquid`, `icon-brush.liquid`, `icon-gift.liquid`). Each block selects an icon via a `select` setting with predefined options.
   - Step title (serif, 17px, weight 500)
   - Step description (sans-serif, 13-14px, muted color)
 - Steps connected by a thin horizontal line
 - Background: darker cream (`#F3EFE8`)
 
-**Schema settings:** section label, heading, 4 blocks (each with icon, title, description)
+**Schema settings:** section label, heading, 4 blocks (each with icon select dropdown, title, description)
 
 ### 10. Testimonial Section (new section: `testimonial-section.liquid`)
 
@@ -160,10 +161,10 @@ Accent color (gold): `#B8860B` — used for section labels, decorative elements,
 - Quote text: serif italic, ~20px, white with slight transparency
 - Author name: uppercase, letter-spacing 2px, gold color, below quote
 - Author title: small, muted white
-- Optional: multiple testimonials with pagination dots
+- Multiple testimonials supported via repeater blocks. Navigation: CSS-only approach using radio buttons + labels for dots. No JS carousel library needed. If only 1 testimonial, dots are hidden.
 - Generous padding (130px+)
 
-**Schema settings:** repeater blocks for testimonials (quote, author name, author title)
+**Schema settings:** repeater blocks for testimonials (quote, author name, author title). Max 5 blocks.
 
 ### 11. CTA Banner (new section: `cta-banner.liquid`)
 
@@ -173,7 +174,7 @@ Accent color (gold): `#B8860B` — used for section labels, decorative elements,
 - Two buttons: primary + secondary, centered
 - Generous vertical padding
 
-**Schema settings:** section label, heading, button 1 text/link, button 2 text/link
+**Schema settings:** section label, heading, body text (optional richtext), button 1 text/link, button 2 text/link
 
 ### 12. Footer (override existing: `footer.liquid`)
 
@@ -225,11 +226,17 @@ Ordered section list:
 ### `config/settings_data.json` changes
 
 - Color schemes: update scheme-1 through scheme-4 as defined above
-- Heading font: `bodoni_moda_n4` (Bodoni Moda Regular)
+- Heading font: verify exact Shopify font handle for Bodoni Moda by checking Shopify's font library API or testing in theme editor. Expected handle format: `bodoni_moda_n4` or similar. If Bodoni Moda is unavailable, fallback to `cormorant_garamond_n4`.
 - Body font: `assistant_n4` (keep current) or system sans-serif
 - Heading scale: adjusted for larger display sizes
 - Section spacing: 0 (custom sections handle their own padding)
 - Button border-radius: 0 (if configurable, otherwise CSS override)
+
+## Responsive Breakpoints
+
+Use Dawn's existing breakpoints:
+- **990px** (`--media-lg`): Desktop → tablet. Gallery grid 4→2 columns, bento grid collapses to single column, hero split stacks vertically, nav switches to hamburger.
+- **750px** (`--media-md`): Tablet → mobile. Gallery grid 2→1 column, section padding reduces to 60-80px, heading sizes scale down ~30%.
 
 ## Out of Scope
 
