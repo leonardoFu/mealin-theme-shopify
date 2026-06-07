@@ -3,32 +3,35 @@
   --maelin-gold: #B8860B;
   --maelin-gold-light: #E2B84A;
   --maelin-cream-1: #FDFCFA;
-  --maelin-cream-2: #F9F7F4;
+  --maelin-cream-2: #F9F6F0;
   --maelin-cream-3: #F3EFE8;
   --maelin-dark: #1A1A1A;
-  --maelin-section-padding: 130px;
-  --maelin-section-padding-mobile: 70px;
+  --maelin-section-padding: 120px;
+  --maelin-section-padding-mobile: 64px;
   --maelin-gold-soft: #D4B96A;
   --maelin-gold-dark: #8B6914;
+  --maelin-gold-accent: #B8975A;
   --maelin-gold-muted: rgba(184,134,11,0.15);
-  --maelin-ink-medium: #6A6A6A;
-  --maelin-ink-faded: #9A9A9A;
+  --maelin-ink-medium: #5A554A;
+  --maelin-ink-faded: #7A7568;
   --maelin-bone: #E8E2D8;
   --maelin-border: #E5DFD5;
   --serif: 'Playfair Display', 'Georgia', serif;
   --serif-elegant: 'Cormorant Garamond', 'Georgia', serif;
   --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --script: 'Great Vibes', cursive;
+  --line-height-golden: 1.618;
+  --type-scale: 1.333;
 }
 
 .maelin-section-label {
-  font-family: var(--serif-elegant);
-  font-size: 1.4rem;
+  font-family: var(--sans);
+  font-size: 1.2rem;
   font-weight: 400;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--maelin-dark);
-  margin-bottom: 1.8rem;
+  color: var(--maelin-ink-medium);
+  margin-bottom: 2.4rem;
   font-style: normal;
 }
 
@@ -64,21 +67,21 @@
   align-items: center;
   gap: 1rem;
   font-family: var(--sans);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 0;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
 }
 
 .maelin-btn--primary {
   background: var(--maelin-dark);
   color: var(--maelin-cream-1);
   border: 1px solid var(--maelin-dark);
-  padding: 1.8rem 4.8rem;
+  padding: 1.6rem 4.8rem;
   position: relative;
   overflow: hidden;
 }
@@ -90,8 +93,8 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--maelin-gold);
-  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--maelin-gold-accent);
+  transition: left 0.3s ease;
   z-index: 0;
 }
 
@@ -100,7 +103,7 @@
 }
 
 .maelin-btn--primary:hover {
-  border-color: var(--maelin-gold);
+  border-color: var(--maelin-gold-accent);
 }
 
 .maelin-btn--primary span,
@@ -113,7 +116,7 @@
   background: transparent;
   color: var(--maelin-dark);
   border: 1px solid var(--maelin-bone);
-  padding: 1.8rem 4.8rem;
+  padding: 1.6rem 4.8rem;
 }
 
 .maelin-btn--secondary:hover {
