@@ -23,11 +23,11 @@
 
 .maelin-section-label {
   font-family: var(--serif-elegant);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.4rem;
   text-transform: uppercase;
-  color: var(--maelin-gold-dark);
+  color: var(--maelin-dark);
   margin-bottom: 1.8rem;
   font-style: normal;
 }
@@ -54,7 +54,9 @@
 
 .maelin-accent-italic {
   font-style: italic;
-  color: var(--maelin-gold);
+  font-family: var(--serif-elegant);
+  font-weight: 500;
+  color: var(--maelin-gold-dark);
 }
 
 .maelin-btn {
@@ -62,9 +64,9 @@
   align-items: center;
   gap: 1rem;
   font-family: var(--sans);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  letter-spacing: 0.35rem;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 0;
@@ -145,8 +147,8 @@
 
 .announcement-bar__message {
   font-family: var(--sans);
-  font-size: 1.1rem;
-  letter-spacing: 0.2rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -180,8 +182,8 @@
 }
 
 .section-header .header {
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .section-header .header__heading-logo-wrapper {
@@ -190,7 +192,7 @@
 
 .section-header .header__inline-menu .list-menu__item--link {
   font-family: var(--sans);
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-weight: 400;
