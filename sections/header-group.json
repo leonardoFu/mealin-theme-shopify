@@ -37,6 +37,9 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        ".section-header .header-wrapper:not(.scrolled-past-header) {background-color: rgb(var(--color-background))}"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
