@@ -207,6 +207,10 @@
   letter-spacing: 1.1px;
 }
 
+.header__menu-item.list-menu__item--active span {
+  text-underline-offset: 0.5rem;
+}
+
 @media screen and (min-width: 990px) {
   .section-header .header--middle-left .header__inline-menu {
     margin: 0 auto;
