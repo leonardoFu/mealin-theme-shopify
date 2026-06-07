@@ -9,7 +9,8 @@
  */
 {
   "current": {
-    "logo_width": 90,
+    "logo": "shopify://shop_images/Maelin_logo_shopify_tight.png",
+    "logo_width": 300,
     "type_header_font": "bodoni_moda_n4",
     "heading_scale": 120,
     "type_body_font": "assistant_n4",
@@ -136,11 +137,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "15132424025755801183": {
-        "type": "shopify://apps/upload-lift/blocks/app-embed/3c98bdcb-7587-4ade-bfe4-7d8af00d05ca",
-        "disabled": false,
-        "settings": {}
-      },
       "316487575649303945": {
         "type": "shopify://apps/easify-options/blocks/app-embed-block/d2288b18-c1ba-42f5-b3b3-26c75c8820bf",
         "disabled": false,
@@ -154,57 +150,57 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FDFCFA",
+          "background": "#fdfcfa",
           "background_gradient": "",
-          "text": "#1A1A1A",
-          "button": "#1A1A1A",
-          "button_label": "#FDFCFA",
-          "secondary_button_label": "#1A1A1A",
-          "shadow": "#1A1A1A"
+          "text": "#1a1a1a",
+          "button": "#1a1a1a",
+          "button_label": "#fdfcfa",
+          "secondary_button_label": "#1a1a1a",
+          "shadow": "#1a1a1a"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#F9F7F4",
+          "background": "#f9f7f4",
           "background_gradient": "",
-          "text": "#1A1A1A",
-          "button": "#1A1A1A",
-          "button_label": "#F9F7F4",
-          "secondary_button_label": "#1A1A1A",
-          "shadow": "#1A1A1A"
+          "text": "#1a1a1a",
+          "button": "#1a1a1a",
+          "button_label": "#f9f7f4",
+          "secondary_button_label": "#1a1a1a",
+          "shadow": "#1a1a1a"
         }
       },
       "scheme-3": {
         "settings": {
-          "background": "#F3EFE8",
+          "background": "#f3efe8",
           "background_gradient": "",
-          "text": "#1A1A1A",
-          "button": "#1A1A1A",
-          "button_label": "#F3EFE8",
-          "secondary_button_label": "#1A1A1A",
-          "shadow": "#1A1A1A"
+          "text": "#1a1a1a",
+          "button": "#1a1a1a",
+          "button_label": "#f3efe8",
+          "secondary_button_label": "#1a1a1a",
+          "shadow": "#1a1a1a"
         }
       },
       "scheme-4": {
         "settings": {
-          "background": "#1A1A1A",
+          "background": "#1a1a1a",
           "background_gradient": "",
-          "text": "#FDFCFA",
-          "button": "#FDFCFA",
-          "button_label": "#1A1A1A",
-          "secondary_button_label": "#FDFCFA",
-          "shadow": "#1A1A1A"
+          "text": "#fdfcfa",
+          "button": "#fdfcfa",
+          "button_label": "#1a1a1a",
+          "secondary_button_label": "#fdfcfa",
+          "shadow": "#1a1a1a"
         }
       },
       "scheme-5": {
         "settings": {
-          "background": "#F3EFE8",
+          "background": "#f3efe8",
           "background_gradient": "",
-          "text": "#1A1A1A",
-          "button": "#B8860B",
-          "button_label": "#FDFCFA",
-          "secondary_button_label": "#B8860B",
-          "shadow": "#1A1A1A"
+          "text": "#1a1a1a",
+          "button": "#b8860b",
+          "button_label": "#fdfcfa",
+          "secondary_button_label": "#b8860b",
+          "shadow": "#1a1a1a"
         }
       }
     }
