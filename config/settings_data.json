@@ -11,6 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/Maelin_logo_shopify_tight.png",
     "logo_width": 300,
+    "favicon": "shopify://shop_images/favicon-128x128-white.png",
     "type_header_font": "bodoni_moda_n4",
     "heading_scale": 120,
     "type_body_font": "assistant_n4",
