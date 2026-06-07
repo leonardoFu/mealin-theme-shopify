@@ -1,81 +1,313 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "layout": "theme",
   "sections": {
     "hero_split": {
       "type": "hero-split",
-      "settings": {}
+      "settings": {
+        "section_label": "CUSTOM PET OIL PORTRAITS",
+        "heading": "Where Every Pet Becomes\na Timeless Masterpiece",
+        "accent_word": "Timeless",
+        "body_text": "Each portrait is hand-painted with museum-grade oils on premium canvas, capturing the soul and spirit of your beloved companion.",
+        "painting_name": "Golden Elegance",
+        "painting_meta": "Oil on Canvas — 40 × 50 cm",
+        "button_label_1": "Begin Your Portrait",
+        "button_link_1": "/products/custom-hand-painted-pet-portrait-classic-realism-oil-on-canvas",
+        "button_label_2": "View Gallery",
+        "button_link_2": ""
+      }
     },
     "gallery_grid": {
       "type": "gallery-grid",
       "blocks": {
-        "card-1": { "type": "card", "settings": { "title": "Mysterious Gaze", "subtitle": "British Shorthair — 30 × 40 cm", "price": "$300" } },
-        "card-2": { "type": "card", "settings": { "title": "Noble Spirit", "subtitle": "Arabian Horse — 50 × 60 cm", "price": "$480" } },
-        "card-3": { "type": "card", "settings": { "title": "Cloud of Joy", "subtitle": "Poodle — 30 × 30 cm", "price": "$300" } },
-        "card-4": { "type": "card", "settings": { "title": "Best Friends Forever", "subtitle": "Dog & Cat — 50 × 40 cm", "price": "$420" } }
+        "card-1": {
+          "type": "card",
+          "settings": {
+            "title": "Mysterious Gaze",
+            "subtitle": "British Shorthair — 30 × 40 cm",
+            "price": "$300"
+          }
+        },
+        "card-2": {
+          "type": "card",
+          "settings": {
+            "title": "Noble Spirit",
+            "subtitle": "Arabian Horse — 50 × 60 cm",
+            "price": "$480"
+          }
+        },
+        "card-3": {
+          "type": "card",
+          "settings": {
+            "title": "Cloud of Joy",
+            "subtitle": "Poodle — 30 × 30 cm",
+            "price": "$300"
+          }
+        },
+        "card-4": {
+          "type": "card",
+          "settings": {
+            "title": "Best Friends Forever",
+            "subtitle": "Dog & Cat — 50 × 40 cm",
+            "price": "$420"
+          }
+        }
       },
-      "block_order": ["card-1", "card-2", "card-3", "card-4"],
-      "settings": {}
+      "block_order": [
+        "card-1",
+        "card-2",
+        "card-3",
+        "card-4"
+      ],
+      "settings": {
+        "section_label": "RECENT COMMISSIONS",
+        "heading": "Our Clients' Treasured Portraits",
+        "gallery_link_label": "View Full Gallery",
+        "gallery_link": ""
+      }
     },
     "marquee_ticker": {
       "type": "marquee-ticker",
       "blocks": {
-        "item-1": { "type": "text_item", "settings": { "text": "Dog Portraits" } },
-        "item-2": { "type": "text_item", "settings": { "text": "Cat Portraits" } },
-        "item-3": { "type": "text_item", "settings": { "text": "Oil on Canvas" } },
-        "item-4": { "type": "text_item", "settings": { "text": "Hand-Painted" } },
-        "item-5": { "type": "text_item", "settings": { "text": "Museum Quality" } },
-        "item-6": { "type": "text_item", "settings": { "text": "Horse Portraits" } },
-        "item-7": { "type": "text_item", "settings": { "text": "Heirloom Art" } }
+        "item-1": {
+          "type": "text_item",
+          "settings": {
+            "text": "Dog Portraits"
+          }
+        },
+        "item-2": {
+          "type": "text_item",
+          "settings": {
+            "text": "Cat Portraits"
+          }
+        },
+        "item-3": {
+          "type": "text_item",
+          "settings": {
+            "text": "Oil on Canvas"
+          }
+        },
+        "item-4": {
+          "type": "text_item",
+          "settings": {
+            "text": "Hand-Painted"
+          }
+        },
+        "item-5": {
+          "type": "text_item",
+          "settings": {
+            "text": "Museum Quality"
+          }
+        },
+        "item-6": {
+          "type": "text_item",
+          "settings": {
+            "text": "Horse Portraits"
+          }
+        },
+        "item-7": {
+          "type": "text_item",
+          "settings": {
+            "text": "Heirloom Art"
+          }
+        }
       },
-      "block_order": ["item-1", "item-2", "item-3", "item-4", "item-5", "item-6", "item-7"],
-      "settings": { "speed": 35 }
+      "block_order": [
+        "item-1",
+        "item-2",
+        "item-3",
+        "item-4",
+        "item-5",
+        "item-6",
+        "item-7"
+      ],
+      "settings": {
+        "speed": 35
+      }
     },
     "bento_gallery": {
       "type": "bento-gallery",
       "blocks": {
-        "bento-1": { "type": "card", "settings": { "title": "Golden Elegance", "subtitle": "Oil on Canvas — 40 × 50 cm", "price": "$380" } },
-        "bento-2": { "type": "card", "settings": { "title": "Mysterious Gaze", "subtitle": "Oil on Canvas — 30 × 40 cm", "price": "$300" } },
-        "bento-3": { "type": "card", "settings": { "title": "Noble Spirit", "subtitle": "Oil on Canvas — 50 × 60 cm", "price": "$480" } },
-        "bento-4": { "type": "card", "settings": { "title": "Cloud of Joy", "subtitle": "Oil on Canvas — 30 × 30 cm", "price": "$300" } },
-        "bento-5": { "type": "card", "settings": { "title": "Best Friends Forever", "subtitle": "Oil on Canvas — 50 × 40 cm", "price": "$420" } }
+        "bento-1": {
+          "type": "card",
+          "settings": {
+            "title": "Golden Elegance",
+            "subtitle": "Oil on Canvas — 40 × 50 cm",
+            "price": "$380"
+          }
+        },
+        "bento-2": {
+          "type": "card",
+          "settings": {
+            "title": "Mysterious Gaze",
+            "subtitle": "Oil on Canvas — 30 × 40 cm",
+            "price": "$300"
+          }
+        },
+        "bento-3": {
+          "type": "card",
+          "settings": {
+            "title": "Noble Spirit",
+            "subtitle": "Oil on Canvas — 50 × 60 cm",
+            "price": "$480"
+          }
+        },
+        "bento-4": {
+          "type": "card",
+          "settings": {
+            "title": "Cloud of Joy",
+            "subtitle": "Oil on Canvas — 30 × 30 cm",
+            "price": "$300"
+          }
+        },
+        "bento-5": {
+          "type": "card",
+          "settings": {
+            "title": "Best Friends Forever",
+            "subtitle": "Oil on Canvas — 50 × 40 cm",
+            "price": "$420"
+          }
+        }
       },
-      "block_order": ["bento-1", "bento-2", "bento-3", "bento-4", "bento-5"],
-      "settings": {}
+      "block_order": [
+        "bento-1",
+        "bento-2",
+        "bento-3",
+        "bento-4",
+        "bento-5"
+      ],
+      "settings": {
+        "section_label": "FULL COLLECTION",
+        "heading": "Portraits That Tell a Story",
+        "body_text": "Each piece is a unique collaboration between your vision and our artists' mastery — an heirloom to cherish for generations.",
+        "price_text": "STARTING FROM $300 PER PORTRAIT"
+      }
     },
     "story_section": {
       "type": "story-section",
       "blocks": {
-        "stat-1": { "type": "stat", "settings": { "value": "500+", "label": "Portraits Delivered" } },
-        "stat-2": { "type": "stat", "settings": { "value": "12+", "label": "Master Artists" } },
-        "stat-3": { "type": "stat", "settings": { "value": "98%", "label": "Client Satisfaction" } }
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "500+",
+            "label": "Portraits Delivered"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "12+",
+            "label": "Master Artists"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "98%",
+            "label": "Client Satisfaction"
+          }
+        }
       },
-      "block_order": ["stat-1", "stat-2", "stat-3"],
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ],
       "settings": {
-        "image_position": "left"
+        "section_label": "OUR STORY",
+        "heading": "The Art of Preserving Love",
+        "body_text": "<p>Maelin Studio was born from a simple truth: the bond between a pet and their human is a masterpiece worthy of being painted. Each portrait is hand-crafted with museum-grade oils on premium canvas by artists who understand that every whisker, every gleam in the eye, tells a story.</p><p>We don't just paint pets — we capture the invisible bond, the quiet moments, the personality that makes your companion irreplaceable.</p>",
+        "image_position": "left",
+        "badge_text": "Est.",
+        "badge_highlight": "2026",
+        "button_label": "",
+        "button_link": ""
       }
     },
     "process_steps": {
       "type": "process-steps",
       "blocks": {
-        "step-1": { "type": "step", "settings": { "icon": "upload", "title": "Upload Your Photo", "description": "Share your favorite photograph. Our team will help select the perfect reference for your portrait." } },
-        "step-2": { "type": "step", "settings": { "icon": "palette", "title": "Choose Your Style", "description": "Select from classic realism, impressionistic, or modern styles. Decide on size, framing, and special details." } },
-        "step-3": { "type": "step", "settings": { "icon": "brush", "title": "Artist Creates", "description": "Your portrait is assigned to a specialist artist who paints your vision with oils on premium stretched canvas." } },
-        "step-4": { "type": "step", "settings": { "icon": "gift", "title": "Receive & Cherish", "description": "Review progress updates, approve the final piece, and receive your portrait beautifully packaged." } }
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "upload",
+            "title": "Upload Your Photo",
+            "description": "Share your favorite photograph. Our team will help select the perfect reference for your portrait."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "palette",
+            "title": "Choose Your Style",
+            "description": "Select from classic realism, impressionistic, or modern styles. Decide on size, framing, and special details."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "brush",
+            "title": "Artist Creates",
+            "description": "Your portrait is assigned to a specialist artist who paints your vision with oils on premium stretched canvas."
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "icon": "gift",
+            "title": "Receive & Cherish",
+            "description": "Review progress updates, approve the final piece, and receive your portrait beautifully packaged."
+          }
+        }
       },
-      "block_order": ["step-1", "step-2", "step-3", "step-4"],
-      "settings": {}
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3",
+        "step-4"
+      ],
+      "settings": {
+        "section_label": "HOW IT WORKS",
+        "heading": "From Photo to Masterpiece",
+        "body_text": "A seamless journey from your cherished photograph to a hand-painted work of art, delivered to your door."
+      }
     },
     "testimonial": {
       "type": "testimonial-section",
       "blocks": {
-        "quote-1": { "type": "testimonial", "settings": { "quote": "When I unwrapped the portrait, I cried. They captured Max's spirit perfectly — the way he always tilted his head, that gentle wisdom in his eyes. It's not just a painting, it's a piece of my heart.", "author": "Sarah Mitchell", "author_title": "Golden Retriever Owner, London" } }
+        "quote-1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "When I unwrapped the portrait, I cried. They captured Max's spirit perfectly — the way he always tilted his head, that gentle wisdom in his eyes. It's not just a painting, it's a piece of my heart.",
+            "author": "Sarah Mitchell",
+            "author_title": "Golden Retriever Owner, London"
+          }
+        }
       },
-      "block_order": ["quote-1"],
+      "block_order": [
+        "quote-1"
+      ],
       "settings": {}
     },
     "cta_banner": {
       "type": "cta-banner",
-      "settings": {}
+      "settings": {
+        "section_label": "BEGIN YOUR JOURNEY",
+        "heading": "Ready to Transform Your Pet's Photo into Art?",
+        "body_text": "",
+        "button_label_1": "Commission a Portrait",
+        "button_link_1": "",
+        "button_label_2": "View Gallery",
+        "button_link_2": ""
+      }
     }
   },
   "order": [
