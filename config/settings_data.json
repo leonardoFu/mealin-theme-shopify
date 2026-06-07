@@ -390,5 +390,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".section-header .header__heading-logo-wrapper {max-width: 14rem!important;}"
+    ]
   }
 }

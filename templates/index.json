@@ -13,8 +13,8 @@
     "hero_split": {
       "type": "hero-split",
       "custom_css": [
-        ".hero-split__buttons .maelin-btn--secondary {display: none !important; }",
-        "h2 {font-size: 32px; }"
+        ".hero-split__buttons .maelin-btn--secondary {display: none !important;}",
+        "h2 {font-size: 32px;}"
       ],
       "settings": {
         "section_label": "CUSTOM PET OIL PORTRAITS",
