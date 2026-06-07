@@ -202,6 +202,10 @@
   color: var(--maelin-dark);
 }
 
+.header__menu-item span {
+  font-size: 1.8rem;
+}
+
 @media screen and (min-width: 990px) {
   .section-header .header--middle-left .header__inline-menu {
     margin: 0 auto;
