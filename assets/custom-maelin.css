@@ -190,12 +190,12 @@
 }
 
 .section-header .header__heading-logo-wrapper {
-  max-width: 4rem;
+  max-width: 16rem !important;
 }
 
 .section-header .header__inline-menu .list-menu__item--link {
   font-family: var(--sans);
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-weight: 400;
