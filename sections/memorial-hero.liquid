@@ -1,0 +1,165 @@
+{%- style -%}
+  .memorial-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    overflow: hidden;
+    color: {{ section.settings.text_color }};
+  }
+
+  .memorial-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .memorial-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .memorial-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+    z-index: 1;
+  }
+
+  .memorial-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 48rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .memorial-hero__heading {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+    letter-spacing: 0.01em;
+  }
+
+  .memorial-hero__subheading {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 2.5rem;
+    opacity: 0.9;
+  }
+
+  .memorial-btn {
+    display: inline-block;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    border: 1px solid currentColor;
+    color: inherit;
+    background: transparent;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .memorial-btn:hover {
+    background: {{ section.settings.text_color }};
+    color: #1a1a1a;
+  }
+{%- endstyle -%}
+
+<section class="memorial-hero" data-section-id="{{ section.id }}">
+  {%- if section.settings.background_image != blank -%}
+    <div class="memorial-hero__bg">
+      {{
+        section.settings.background_image
+        | image_url: width: 2400
+        | image_tag:
+          widths: '600, 900, 1200, 1800, 2400',
+          sizes: '100vw',
+          loading: 'eager'
+      }}
+    </div>
+  {%- endif -%}
+  <div class="memorial-hero__overlay"></div>
+  <div class="memorial-hero__content">
+    {%- if section.settings.heading != blank -%}
+      <h1 class="memorial-hero__heading">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="memorial-hero__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_link }}" class="memorial-btn">
+        {{ section.settings.button_label }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Memorial Hero",
+  "tag": "section",
+  "class": "memorial-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "They are not just pets. They are family."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "A timeless, hand-painted oil portrait that keeps them close — forever."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Honor their memory"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/products/classic-realism-pet-portrait"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 35,
+      "unit": "%"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Memorial Hero"
+    }
+  ]
+}
+{% endschema %}

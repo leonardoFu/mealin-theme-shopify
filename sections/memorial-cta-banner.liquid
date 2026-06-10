@@ -1,0 +1,73 @@
+{%- style -%}
+  .memorial-cta-banner {
+    padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+    text-align: center;
+    background: {{ section.settings.background_color }};
+  }
+
+  .memorial-cta-banner .memorial-btn {
+    display: inline-block;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    border: 1px solid {{ section.settings.button_color }};
+    color: {{ section.settings.button_color }};
+    background: transparent;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .memorial-cta-banner .memorial-btn:hover {
+    background: {{ section.settings.button_color }};
+    color: {{ section.settings.background_color }};
+  }
+{%- endstyle -%}
+
+<section class="memorial-cta-banner" data-section-id="{{ section.id }}">
+  {%- if section.settings.button_label != blank -%}
+    <a href="{{ section.settings.button_link }}" class="memorial-btn">
+      {{ section.settings.button_label }}
+    </a>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Memorial CTA Banner",
+  "tag": "section",
+  "class": "memorial-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Start their portrait"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/products/classic-realism-pet-portrait"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf9f7"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Memorial CTA Banner"
+    }
+  ]
+}
+{% endschema %}

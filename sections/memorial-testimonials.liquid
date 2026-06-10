@@ -1,0 +1,175 @@
+{%- style -%}
+  .memorial-testimonials {
+    padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  .memorial-testimonials__label {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #999;
+    text-align: center;
+    margin: 0 0 1rem;
+  }
+
+  .memorial-testimonials__heading {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 400;
+    text-align: center;
+    color: #1a1a1a;
+    margin: 0 0 3rem;
+  }
+
+  .memorial-testimonials__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 750px) {
+    .memorial-testimonials__grid {
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+      gap: 2.5rem;
+    }
+  }
+
+  .memorial-testimonial {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 2px;
+  }
+
+  .memorial-testimonial__photo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.25rem;
+    display: block;
+  }
+
+  .memorial-testimonial__quote {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.75;
+    color: #3a3a3a;
+    margin: 0 0 1.25rem;
+  }
+
+  .memorial-testimonial__name {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<section class="memorial-testimonials" data-section-id="{{ section.id }}">
+  {%- if section.settings.label != blank -%}
+    <p class="memorial-testimonials__label">{{ section.settings.label }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="memorial-testimonials__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="memorial-testimonials__grid">
+      {%- for block in section.blocks -%}
+        <div class="memorial-testimonial" {{ block.shopify_attributes }}>
+          {%- if block.settings.photo != blank -%}
+            {{
+              block.settings.photo
+              | image_url: width: 200
+              | image_tag:
+                widths: '100, 200',
+                sizes: '5rem',
+                loading: 'lazy',
+                class: 'memorial-testimonial__photo'
+            }}
+          {%- endif -%}
+          {%- if block.settings.quote != blank -%}
+            <p class="memorial-testimonial__quote">"{{ block.settings.quote }}"</p>
+          {%- endif -%}
+          {%- if block.settings.buyer_name != blank -%}
+            <p class="memorial-testimonial__name">
+              {{ block.settings.buyer_name }}
+              {%- if block.settings.pet_name != blank -%}
+                &nbsp;·&nbsp;{{ block.settings.pet_name }}
+              {%- endif -%}
+            </p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Memorial Testimonials",
+  "tag": "section",
+  "class": "memorial-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "Their Stories"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Families who keep them close"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo (optional)"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "I cried when I opened the box. It's like he's still here, watching over us from the living room wall."
+        },
+        {
+          "type": "text",
+          "id": "buyer_name",
+          "label": "Buyer name",
+          "default": "Sarah M."
+        },
+        {
+          "type": "text",
+          "id": "pet_name",
+          "label": "Pet name",
+          "default": "in memory of Max"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Memorial Testimonials",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

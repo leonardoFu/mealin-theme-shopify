@@ -1,0 +1,102 @@
+{%- style -%}
+  .memorial-closing {
+    padding: clamp(5rem, 10vw, 8rem) 1.5rem;
+    text-align: center;
+    background: {{ section.settings.background_color }};
+  }
+
+  .memorial-closing__heading {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 400;
+    color: #1a1a1a;
+    margin: 0 0 1rem;
+  }
+
+  .memorial-closing__subheading {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: #666;
+    margin: 0 0 2.5rem;
+  }
+
+  .memorial-closing .memorial-btn {
+    display: inline-block;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    background: transparent;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .memorial-closing .memorial-btn:hover {
+    background: #1a1a1a;
+    color: #fff;
+  }
+{%- endstyle -%}
+
+<section class="memorial-closing" data-section-id="{{ section.id }}">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="memorial-closing__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.subheading != blank -%}
+    <p class="memorial-closing__subheading">{{ section.settings.subheading }}</p>
+  {%- endif -%}
+  {%- if section.settings.button_label != blank -%}
+    <a href="{{ section.settings.button_link }}" class="memorial-btn">
+      {{ section.settings.button_label }}
+    </a>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Memorial Closing CTA",
+  "tag": "section",
+  "class": "memorial-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Give them the place they deserve"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "On your wall, in your heart — forever."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Begin their portrait"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/products/classic-realism-pet-portrait"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf9f7"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Memorial Closing CTA"
+    }
+  ]
+}
+{% endschema %}

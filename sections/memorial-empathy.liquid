@@ -1,0 +1,62 @@
+{%- style -%}
+  .memorial-empathy {
+    padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .memorial-empathy__label {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0 0 2rem;
+  }
+
+  .memorial-empathy__text {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    line-height: 1.9;
+    color: #3a3a3a;
+    margin: 0;
+    font-weight: 300;
+  }
+{%- endstyle -%}
+
+<section class="memorial-empathy" data-section-id="{{ section.id }}">
+  {%- if section.settings.label != blank -%}
+    <p class="memorial-empathy__label">{{ section.settings.label }}</p>
+  {%- endif -%}
+  {%- if section.settings.body_text != blank -%}
+    <p class="memorial-empathy__text">{{ section.settings.body_text }}</p>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Memorial Empathy",
+  "tag": "section",
+  "class": "memorial-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "We Understand"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "Losing a companion leaves a silence that words can't fill. We've been there. That's why every portrait we paint isn't just a likeness — it's a vessel for the love, the quirks, the warmth that made them irreplaceable. Our artists pour that feeling onto canvas so you can feel them close, every single day."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Memorial Empathy"
+    }
+  ]
+}
+{% endschema %}

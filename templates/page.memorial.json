@@ -1,0 +1,165 @@
+{
+  "sections": {
+    "hero": {
+      "type": "memorial-hero",
+      "settings": {
+        "heading": "They are not just pets. They are family.",
+        "subheading": "A timeless, hand-painted oil portrait that keeps them close — forever.",
+        "button_label": "Honor their memory",
+        "button_link": "/products/classic-realism-pet-portrait",
+        "text_color": "#ffffff",
+        "overlay_opacity": 35
+      }
+    },
+    "empathy": {
+      "type": "memorial-empathy",
+      "settings": {
+        "label": "We Understand",
+        "body_text": "Losing a companion leaves a silence that words can't fill. We've been there. That's why every portrait we paint isn't just a likeness — it's a vessel for the love, the quirks, the warmth that made them irreplaceable. Our artists pour that feeling onto canvas so you can feel them close, every single day."
+      }
+    },
+    "eyes": {
+      "type": "memorial-eyes",
+      "settings": {
+        "label": "The Eyes",
+        "heading": "We paint the soul you see in their eyes"
+      },
+      "blocks": {
+        "card_1": {
+          "type": "comparison",
+          "settings": {
+            "pet_name": "Buddy",
+            "caption": "Every wrinkle, every spark of mischief — captured in oil."
+          }
+        },
+        "card_2": {
+          "type": "comparison",
+          "settings": {
+            "pet_name": "Luna",
+            "caption": "The tilt of her head, the softness in her gaze — preserved forever."
+          }
+        },
+        "card_3": {
+          "type": "comparison",
+          "settings": {
+            "pet_name": "Charlie",
+            "caption": "That knowing look he always gave you — now it lives on your wall."
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3"]
+    },
+    "cta_mid_1": {
+      "type": "memorial-cta-banner",
+      "settings": {
+        "button_label": "Start their portrait",
+        "button_link": "/products/classic-realism-pet-portrait",
+        "button_color": "#1a1a1a",
+        "background_color": "#faf9f7"
+      }
+    },
+    "process": {
+      "type": "memorial-process",
+      "settings": {
+        "label": "Painted by Hand",
+        "heading": "Real paint. Real brushstrokes. Real artists.",
+        "body_text": "<p>Every portrait is painted by a trained fine-art portraitist using archival-grade oil pigments on linen canvas. No AI generation, no digital printing, no shortcuts.</p><p>The same techniques that have preserved masterworks for centuries will keep your companion's likeness vivid for generations to come.</p>"
+      }
+    },
+    "testimonials": {
+      "type": "memorial-testimonials",
+      "settings": {
+        "label": "Their Stories",
+        "heading": "Families who keep them close"
+      },
+      "blocks": {
+        "review_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "I cried when I opened the box. It's like he's still here, watching over us from the living room wall.",
+            "buyer_name": "Sarah M.",
+            "pet_name": "in memory of Max"
+          }
+        },
+        "review_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The detail in her eyes is unreal. My daughter said it feels like Bella is looking right at her. Worth every penny.",
+            "buyer_name": "James & Lily R.",
+            "pet_name": "in memory of Bella"
+          }
+        },
+        "review_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "We lost our boy suddenly. This portrait gave us a way to grieve and celebrate him at the same time. It hangs where he used to sleep.",
+            "buyer_name": "Priya K.",
+            "pet_name": "in memory of Koda"
+          }
+        }
+      },
+      "block_order": ["review_1", "review_2", "review_3"]
+    },
+    "cta_mid_2": {
+      "type": "memorial-cta-banner",
+      "settings": {
+        "button_label": "Honor their memory",
+        "button_link": "/products/classic-realism-pet-portrait",
+        "button_color": "#1a1a1a",
+        "background_color": "#faf9f7"
+      }
+    },
+    "promise": {
+      "type": "memorial-promise",
+      "settings": {
+        "label": "Our Promise",
+        "heading": "Crafted with care, delivered with confidence"
+      },
+      "blocks": {
+        "promise_1": {
+          "type": "promise",
+          "settings": {
+            "title": "Revise until perfect",
+            "description": "We refine every detail until you see your companion exactly as you remember them."
+          }
+        },
+        "promise_2": {
+          "type": "promise",
+          "settings": {
+            "title": "Certificate of authenticity",
+            "description": "Every portrait ships with a signed certificate verifying it as a genuine hand-painted original."
+          }
+        },
+        "promise_3": {
+          "type": "promise",
+          "settings": {
+            "title": "Progress updates",
+            "description": "Watch your portrait come to life with photos at each stage — from sketch to final brushstroke."
+          }
+        }
+      },
+      "block_order": ["promise_1", "promise_2", "promise_3"]
+    },
+    "closing": {
+      "type": "memorial-closing",
+      "settings": {
+        "heading": "Give them the place they deserve",
+        "subheading": "On your wall, in your heart — forever.",
+        "button_label": "Begin their portrait",
+        "button_link": "/products/classic-realism-pet-portrait",
+        "background_color": "#faf9f7"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "empathy",
+    "eyes",
+    "cta_mid_1",
+    "process",
+    "testimonials",
+    "cta_mid_2",
+    "promise",
+    "closing"
+  ]
+}
