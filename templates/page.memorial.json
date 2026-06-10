@@ -6,7 +6,7 @@
         "heading": "They are not just pets. They are family.",
         "subheading": "A timeless, hand-painted oil portrait that keeps them close — forever.",
         "button_label": "Honor their memory",
-        "button_link": "/products/classic-realism-pet-portrait",
+        "button_link": "",
         "text_color": "#ffffff",
         "overlay_opacity": 35
       }
@@ -53,7 +53,7 @@
       "type": "memorial-cta-banner",
       "settings": {
         "button_label": "Start their portrait",
-        "button_link": "/products/classic-realism-pet-portrait",
+        "button_link": "",
         "button_color": "#1a1a1a",
         "background_color": "#faf9f7"
       }
@@ -104,7 +104,7 @@
       "type": "memorial-cta-banner",
       "settings": {
         "button_label": "Honor their memory",
-        "button_link": "/products/classic-realism-pet-portrait",
+        "button_link": "",
         "button_color": "#1a1a1a",
         "background_color": "#faf9f7"
       }
@@ -146,7 +146,7 @@
         "heading": "Give them the place they deserve",
         "subheading": "On your wall, in your heart — forever.",
         "button_label": "Begin their portrait",
-        "button_link": "/products/classic-realism-pet-portrait",
+        "button_link": "",
         "background_color": "#faf9f7"
       }
     }
