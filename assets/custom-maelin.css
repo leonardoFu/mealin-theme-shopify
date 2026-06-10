@@ -169,23 +169,18 @@
 }
 
 .section-header .header-wrapper {
-  transition: background-color 0.3s ease;
   border-bottom: none;
+  background-color: transparent;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  will-change: backdrop-filter;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 
-.section-header .header-wrapper:not(.scrolled-past-header) {
-  background-color: transparent;
-}
-
-.scrolled-past-header .header-wrapper,
-.section-header .header-wrapper.scrolled-past-header {
+.section-header.scrolled-past-header .header-wrapper {
   background-color: rgba(253, 252, 250, 0.92);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 .section-header .header {
