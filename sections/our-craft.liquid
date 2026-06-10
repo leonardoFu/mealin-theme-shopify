@@ -1,0 +1,824 @@
+{%- style -%}
+  .craft-section {
+    --craft-max-width: 120rem;
+    --craft-gutter: 1.6rem;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-section {
+      --craft-gutter: 4rem;
+    }
+  }
+
+  .craft-wrap {
+    max-width: var(--craft-max-width);
+    margin: 0 auto;
+    padding-left: var(--craft-gutter);
+    padding-right: var(--craft-gutter);
+  }
+
+  .craft-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+    line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  }
+
+  .craft-body {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+  }
+
+  /* 01 · Hero */
+  .craft-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .craft-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .craft-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .craft-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .craft-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem var(--craft-gutter);
+    color: #fff;
+    max-width: 72rem;
+  }
+
+  .craft-hero__headline {
+    font-size: calc(var(--font-heading-scale) * 3.2rem);
+    margin: 0 0 1.2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-hero__headline {
+      font-size: calc(var(--font-heading-scale) * 5rem);
+    }
+  }
+
+  .craft-hero__subline {
+    font-size: 1.6rem;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-hero__subline {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* 02 · Real-paint anchor */
+  .craft-anchor {
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .craft-anchor__heading {
+    font-size: calc(var(--font-heading-scale) * 2.8rem);
+    margin: 0 0 0.8rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-anchor__heading {
+      font-size: calc(var(--font-heading-scale) * 3.6rem);
+    }
+  }
+
+  .craft-anchor__intro {
+    font-size: 1.6rem;
+    margin: 0 0 4rem;
+    color: rgba(var(--color-foreground), 0.7);
+  }
+
+  .craft-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    max-width: 96rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .craft-card {
+    text-align: center;
+    padding: 2rem 1.6rem;
+  }
+
+  .craft-card__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+    margin: 0 auto 1.6rem;
+  }
+
+  .craft-card__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .craft-card__title {
+    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    margin: 0 0 0.6rem;
+  }
+
+  .craft-card__text {
+    font-size: 1.4rem;
+    margin: 0;
+    color: rgba(var(--color-foreground), 0.7);
+  }
+
+  /* 03 · Process proof */
+  .craft-process {
+    padding: 6rem 0;
+    text-align: center;
+    background-color: rgba(var(--color-foreground), 0.03);
+  }
+
+  .craft-process__heading {
+    font-size: calc(var(--font-heading-scale) * 2.8rem);
+    margin: 0 0 1.2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-process__heading {
+      font-size: calc(var(--font-heading-scale) * 3.6rem);
+    }
+  }
+
+  .craft-process__caption-area {
+    font-size: 1.4rem;
+    color: rgba(var(--color-foreground), 0.6);
+    margin: 0 0 3.2rem;
+    font-style: italic;
+  }
+
+  .craft-process__video {
+    max-width: 72rem;
+    margin: 0 auto 3.2rem;
+  }
+
+  .craft-process__video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+  }
+
+  .craft-stages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 96rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-stages {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .craft-stage {
+    text-align: center;
+  }
+
+  .craft-stage__media {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    background-color: rgba(var(--color-foreground), 0.06);
+  }
+
+  .craft-stage__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .craft-stage__label {
+    font-size: calc(var(--font-heading-scale) * 1.6rem);
+    margin: 0 0 0.4rem;
+  }
+
+  .craft-stage__caption {
+    font-size: 1.3rem;
+    margin: 0;
+    color: rgba(var(--color-foreground), 0.6);
+  }
+
+  .craft-stage__arrow {
+    display: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-stage__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(var(--color-foreground), 0.3);
+      font-size: 2.4rem;
+      padding-top: 6rem;
+    }
+  }
+
+  /* 04 · Handmade + team */
+  .craft-handmade {
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .craft-handmade__lead {
+    font-size: calc(var(--font-heading-scale) * 2rem);
+    max-width: 72rem;
+    margin: 0 auto 4rem;
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-handmade__lead {
+      font-size: calc(var(--font-heading-scale) * 2.4rem);
+    }
+  }
+
+  /* 05 · Materials */
+  .craft-materials {
+    padding: 6rem 0;
+    text-align: center;
+    background-color: rgba(var(--color-foreground), 0.03);
+  }
+
+  .craft-materials__heading {
+    font-size: calc(var(--font-heading-scale) * 2.8rem);
+    margin: 0 0 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-materials__heading {
+      font-size: calc(var(--font-heading-scale) * 3.6rem);
+    }
+  }
+
+  .craft-materials__body {
+    font-size: 1.6rem;
+    max-width: 64rem;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .craft-materials__body p {
+    margin: 0;
+  }
+
+  /* 06 · CTA */
+  .craft-cta {
+    padding: 8rem 0;
+    text-align: center;
+  }
+
+  .craft-cta__headline {
+    font-size: calc(var(--font-heading-scale) * 2.4rem);
+    margin: 0 0 2.4rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-cta__headline {
+      font-size: calc(var(--font-heading-scale) * 3.2rem);
+    }
+  }
+
+  .craft-cta__subline {
+    font-size: 1.4rem;
+    margin: 2rem 0 0;
+    color: rgba(var(--color-foreground), 0.6);
+  }
+{%- endstyle -%}
+
+<div class="craft-section" id="OurCraft-{{ section.id }}">
+
+  {%- comment -%} 01 · HERO {%- endcomment -%}
+  <div class="craft-hero">
+    <div class="craft-hero__media">
+      {%- if section.settings.hero_image != blank -%}
+        {{
+          section.settings.hero_image
+          | image_url: width: 3840
+          | image_tag:
+            width: section.settings.hero_image.width,
+            height: section.settings.hero_image.height,
+            sizes: '100vw',
+            widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+            loading: 'eager',
+            fetchpriority: 'high'
+        }}
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+    <div class="craft-hero__overlay"></div>
+    <div class="craft-hero__content">
+      <h1 class="craft-heading craft-hero__headline">{{ section.settings.hero_headline }}</h1>
+      {%- if section.settings.hero_subline != blank -%}
+        <p class="craft-body craft-hero__subline">{{ section.settings.hero_subline }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- comment -%} 02 · THE REAL-PAINT ANCHOR {%- endcomment -%}
+  <div class="craft-anchor">
+    <div class="craft-wrap">
+      <h2 class="craft-heading craft-anchor__heading">{{ section.settings.anchor_heading }}</h2>
+      {%- if section.settings.anchor_intro != blank -%}
+        <p class="craft-body craft-anchor__intro">{{ section.settings.anchor_intro }}</p>
+      {%- endif -%}
+      <div class="craft-cards">
+        {%- for i in (1..3) -%}
+          {%- liquid
+            case i
+              when 1
+                assign card_icon  = section.settings.anchor_card1_icon
+                assign card_title = section.settings.anchor_card1_title
+                assign card_text  = section.settings.anchor_card1_text
+              when 2
+                assign card_icon  = section.settings.anchor_card2_icon
+                assign card_title = section.settings.anchor_card2_title
+                assign card_text  = section.settings.anchor_card2_text
+              when 3
+                assign card_icon  = section.settings.anchor_card3_icon
+                assign card_title = section.settings.anchor_card3_title
+                assign card_text  = section.settings.anchor_card3_text
+            endcase
+          -%}
+          <div class="craft-card">
+            {%- if card_icon != blank -%}
+              <div class="craft-card__icon">
+                {{ card_icon | image_url: width: 96 | image_tag: width: card_icon.width, height: card_icon.height, loading: 'lazy' }}
+              </div>
+            {%- endif -%}
+            <h3 class="craft-heading craft-card__title">{{ card_title }}</h3>
+            <p class="craft-body craft-card__text">{{ card_text }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} 03 · PROCESS PROOF {%- endcomment -%}
+  <div class="craft-process">
+    <div class="craft-wrap">
+      <h2 class="craft-heading craft-process__heading">{{ section.settings.process_heading }}</h2>
+      {%- if section.settings.process_caption != blank -%}
+        <p class="craft-body craft-process__caption-area">{{ section.settings.process_caption }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.process_video_url != blank -%}
+        <div class="craft-process__video">
+          <iframe
+            src="{{ section.settings.process_video_url }}"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            loading="lazy"
+            title="Process video"
+          ></iframe>
+        </div>
+      {%- endif -%}
+
+      <div class="craft-stages">
+        {%- for i in (1..4) -%}
+          {%- liquid
+            case i
+              when 1
+                assign stage_image   = section.settings.stage1_image
+                assign stage_label   = section.settings.stage1_label
+                assign stage_caption = section.settings.stage1_caption
+              when 2
+                assign stage_image   = section.settings.stage2_image
+                assign stage_label   = section.settings.stage2_label
+                assign stage_caption = section.settings.stage2_caption
+              when 3
+                assign stage_image   = section.settings.stage3_image
+                assign stage_label   = section.settings.stage3_label
+                assign stage_caption = section.settings.stage3_caption
+              when 4
+                assign stage_image   = section.settings.stage4_image
+                assign stage_label   = section.settings.stage4_label
+                assign stage_caption = section.settings.stage4_caption
+            endcase
+          -%}
+          <div class="craft-stage">
+            <div class="craft-stage__media">
+              {%- if stage_image != blank -%}
+                {{
+                  stage_image
+                  | image_url: width: 800
+                  | image_tag:
+                    width: stage_image.width,
+                    height: stage_image.height,
+                    sizes: '(min-width: 750px) 25vw, 50vw',
+                    widths: '200, 400, 600, 800',
+                    loading: 'lazy'
+                }}
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            </div>
+            <h3 class="craft-heading craft-stage__label">{{ stage_label }}</h3>
+            {%- if stage_caption != blank -%}
+              <p class="craft-body craft-stage__caption">{{ stage_caption }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} 04 · FULLY HANDMADE + PROFESSIONAL TEAM {%- endcomment -%}
+  <div class="craft-handmade">
+    <div class="craft-wrap">
+      <p class="craft-heading craft-handmade__lead">{{ section.settings.handmade_lead }}</p>
+      <div class="craft-cards">
+        {%- for i in (1..3) -%}
+          {%- liquid
+            case i
+              when 1
+                assign hm_icon  = section.settings.handmade_card1_icon
+                assign hm_title = section.settings.handmade_card1_title
+                assign hm_text  = section.settings.handmade_card1_text
+              when 2
+                assign hm_icon  = section.settings.handmade_card2_icon
+                assign hm_title = section.settings.handmade_card2_title
+                assign hm_text  = section.settings.handmade_card2_text
+              when 3
+                assign hm_icon  = section.settings.handmade_card3_icon
+                assign hm_title = section.settings.handmade_card3_title
+                assign hm_text  = section.settings.handmade_card3_text
+            endcase
+          -%}
+          <div class="craft-card">
+            {%- if hm_icon != blank -%}
+              <div class="craft-card__icon">
+                {{ hm_icon | image_url: width: 96 | image_tag: width: hm_icon.width, height: hm_icon.height, loading: 'lazy' }}
+              </div>
+            {%- endif -%}
+            <h3 class="craft-heading craft-card__title">{{ hm_title }}</h3>
+            <p class="craft-body craft-card__text">{{ hm_text }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} 05 · MATERIALS & PERMANENCE {%- endcomment -%}
+  <div class="craft-materials">
+    <div class="craft-wrap">
+      <h2 class="craft-heading craft-materials__heading">{{ section.settings.materials_heading }}</h2>
+      <div class="craft-body craft-materials__body">
+        {{ section.settings.materials_body }}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} 06 · CLOSING CTA {%- endcomment -%}
+  <div class="craft-cta">
+    <div class="craft-wrap">
+      <h2 class="craft-heading craft-cta__headline">{{ section.settings.cta_headline }}</h2>
+      <a href="{{ section.settings.cta_url | default: '#' }}" class="button">
+        {{ section.settings.cta_button_label }}
+      </a>
+      {%- if section.settings.cta_subline != blank -%}
+        <p class="craft-body craft-cta__subline">{{ section.settings.cta_subline }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Our Craft",
+  "tag": "section",
+  "class": "craft-section-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image",
+      "info": "Close-up of oil brushwork texture. Recommended: 2000 × 1000 px or larger."
+    },
+    {
+      "type": "text",
+      "id": "hero_headline",
+      "label": "Headline",
+      "default": "Real paint. Real hands. Made to outlive us all."
+    },
+    {
+      "type": "text",
+      "id": "hero_subline",
+      "label": "Subline",
+      "default": "Hand-painted pet portraits in oil on canvas"
+    },
+    {
+      "type": "header",
+      "content": "The real-paint anchor"
+    },
+    {
+      "type": "text",
+      "id": "anchor_heading",
+      "label": "Heading",
+      "default": "Why oil paint matters"
+    },
+    {
+      "type": "text",
+      "id": "anchor_intro",
+      "label": "Intro line",
+      "default": "The things that make an oil portrait feel alive can never come from a printer or a screen."
+    },
+    {
+      "type": "image_picker",
+      "id": "anchor_card1_icon",
+      "label": "Card 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "anchor_card1_title",
+      "label": "Card 1 title",
+      "default": "Layered glazing"
+    },
+    {
+      "type": "text",
+      "id": "anchor_card1_text",
+      "label": "Card 1 text",
+      "default": "Depth that printing can't fake"
+    },
+    {
+      "type": "image_picker",
+      "id": "anchor_card2_icon",
+      "label": "Card 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "anchor_card2_title",
+      "label": "Card 2 title",
+      "default": "Obsessed with the eyes"
+    },
+    {
+      "type": "text",
+      "id": "anchor_card2_text",
+      "label": "Card 2 text",
+      "default": "We revise until the likeness is right"
+    },
+    {
+      "type": "image_picker",
+      "id": "anchor_card3_icon",
+      "label": "Card 3 icon"
+    },
+    {
+      "type": "text",
+      "id": "anchor_card3_title",
+      "label": "Card 3 title",
+      "default": "Brushwork you can feel"
+    },
+    {
+      "type": "text",
+      "id": "anchor_card3_text",
+      "label": "Card 3 text",
+      "default": "Visible texture under raking light"
+    },
+    {
+      "type": "header",
+      "content": "Process proof"
+    },
+    {
+      "type": "text",
+      "id": "process_heading",
+      "label": "Heading",
+      "default": "From sketch to finished portrait"
+    },
+    {
+      "type": "text",
+      "id": "process_caption",
+      "label": "Caption line",
+      "default": "The artist's hand, the half-finished easel, the palette."
+    },
+    {
+      "type": "url",
+      "id": "process_video_url",
+      "label": "Video embed URL (optional)",
+      "info": "Paste a YouTube or Vimeo embed URL. Leave blank to hide."
+    },
+    {
+      "type": "image_picker",
+      "id": "stage1_image",
+      "label": "Stage 1 image"
+    },
+    {
+      "type": "text",
+      "id": "stage1_label",
+      "label": "Stage 1 label",
+      "default": "Sketch"
+    },
+    {
+      "type": "text",
+      "id": "stage1_caption",
+      "label": "Stage 1 caption",
+      "default": "Proportions and composition mapped out"
+    },
+    {
+      "type": "image_picker",
+      "id": "stage2_image",
+      "label": "Stage 2 image"
+    },
+    {
+      "type": "text",
+      "id": "stage2_label",
+      "label": "Stage 2 label",
+      "default": "Block-in"
+    },
+    {
+      "type": "text",
+      "id": "stage2_caption",
+      "label": "Stage 2 caption",
+      "default": "Broad color shapes establish the palette"
+    },
+    {
+      "type": "image_picker",
+      "id": "stage3_image",
+      "label": "Stage 3 image"
+    },
+    {
+      "type": "text",
+      "id": "stage3_label",
+      "label": "Stage 3 label",
+      "default": "Glazing"
+    },
+    {
+      "type": "text",
+      "id": "stage3_caption",
+      "label": "Stage 3 caption",
+      "default": "Transparent layers build luminous depth"
+    },
+    {
+      "type": "image_picker",
+      "id": "stage4_image",
+      "label": "Stage 4 image"
+    },
+    {
+      "type": "text",
+      "id": "stage4_label",
+      "label": "Stage 4 label",
+      "default": "Finished"
+    },
+    {
+      "type": "text",
+      "id": "stage4_caption",
+      "label": "Stage 4 caption",
+      "default": "Final details bring the portrait to life"
+    },
+    {
+      "type": "header",
+      "content": "Fully handmade + professional team"
+    },
+    {
+      "type": "text",
+      "id": "handmade_lead",
+      "label": "Lead line",
+      "default": "Hand-painted from blank canvas to final brushstroke — by artists who have done this for years."
+    },
+    {
+      "type": "image_picker",
+      "id": "handmade_card1_icon",
+      "label": "Card 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "handmade_card1_title",
+      "label": "Card 1 title",
+      "default": "100% hand-painted"
+    },
+    {
+      "type": "text",
+      "id": "handmade_card1_text",
+      "label": "Card 1 text",
+      "default": "Blank canvas to final stroke — no print, no AI"
+    },
+    {
+      "type": "image_picker",
+      "id": "handmade_card2_icon",
+      "label": "Card 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "handmade_card2_title",
+      "label": "Card 2 title",
+      "default": "Experienced professional artists"
+    },
+    {
+      "type": "text",
+      "id": "handmade_card2_text",
+      "label": "Card 2 text",
+      "default": "Classically trained, years of portrait work"
+    },
+    {
+      "type": "image_picker",
+      "id": "handmade_card3_icon",
+      "label": "Card 3 icon"
+    },
+    {
+      "type": "text",
+      "id": "handmade_card3_title",
+      "label": "Card 3 title",
+      "default": "Checked piece by piece"
+    },
+    {
+      "type": "text",
+      "id": "handmade_card3_text",
+      "label": "Card 3 text",
+      "default": "Likeness verified, refined until right"
+    },
+    {
+      "type": "header",
+      "content": "Materials & permanence"
+    },
+    {
+      "type": "text",
+      "id": "materials_heading",
+      "label": "Heading",
+      "default": "Built to last"
+    },
+    {
+      "type": "richtext",
+      "id": "materials_body",
+      "label": "Body text",
+      "default": "<p>Every portrait is painted with real oil pigments on artist-grade, gallery-wrapped canvas — the same materials found in museum collections. The result is a piece with rich color depth and physical texture that stays vivid for decades, not a print that fades on a shelf. This is an heirloom, made to outlast the moment it captures.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Closing CTA"
+    },
+    {
+      "type": "text",
+      "id": "cta_headline",
+      "label": "Headline",
+      "default": "Ready to see your pet in oil?"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_label",
+      "label": "Button label",
+      "default": "Start your portrait"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "cta_subline",
+      "label": "Subline (optional)",
+      "default": "No commitment — just pick a size and upload a photo."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Craft"
+    }
+  ]
+}
+{% endschema %}
