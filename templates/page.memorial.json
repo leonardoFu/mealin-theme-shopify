@@ -64,7 +64,7 @@
         "button_label": "Start their portrait",
         "button_link": "",
         "button_color": "#1a1a1a",
-        "background_color": "#faf9f7"
+        "background_color": "#f9f6f0"
       }
     },
     "process": {
@@ -115,7 +115,7 @@
         "button_label": "Honor their memory",
         "button_link": "",
         "button_color": "#1a1a1a",
-        "background_color": "#faf9f7"
+        "background_color": "#f9f6f0"
       }
     },
     "promise": {
@@ -156,7 +156,7 @@
         "subheading": "On your wall, in your heart — forever.",
         "button_label": "Begin their portrait",
         "button_link": "",
-        "background_color": "#faf9f7"
+        "background_color": "#f9f6f0"
       }
     }
   },
