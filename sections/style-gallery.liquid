@@ -1,0 +1,490 @@
+{%- comment -%}
+  Style Gallery — "Choose the tradition"
+  Two gallery wings (Classical / Modern), each style hung as a framed
+  painting with an engraved museum placard. Extends the Maelin tokens.
+{%- endcomment -%}
+
+{%- style -%}
+  #StyleGallery-{{ section.id }} {
+    background-color: var(--maelin-cream-1);
+    padding: var(--maelin-section-padding) 0;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 749px) {
+    #StyleGallery-{{ section.id }} {
+      padding: var(--maelin-section-padding-mobile) 0;
+    }
+  }
+
+  #StyleGallery-{{ section.id }} .style-gallery__wrap {
+    max-width: 132rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+  }
+
+  #StyleGallery-{{ section.id }} .style-gallery__head {
+    text-align: center;
+    max-width: 64rem;
+    margin: 0 auto 6rem;
+  }
+
+  #StyleGallery-{{ section.id }} .style-gallery__label {
+    font-family: var(--sans);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--maelin-gold-dark);
+    margin: 0 0 1.8rem;
+  }
+
+  #StyleGallery-{{ section.id }} .style-gallery__heading {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.8rem, 4vw, 4.4rem);
+    line-height: 1.15;
+    color: var(--maelin-dark);
+    margin: 0 0 1.6rem;
+  }
+
+  #StyleGallery-{{ section.id }} .style-gallery__heading em {
+    font-style: italic;
+    font-family: var(--serif-elegant);
+    color: var(--maelin-gold-dark);
+  }
+
+  #StyleGallery-{{ section.id }} .style-gallery__intro {
+    font-family: var(--serif-elegant);
+    font-size: clamp(1.7rem, 2.2vw, 2rem);
+    line-height: 1.6;
+    color: var(--maelin-ink-medium);
+    margin: 0;
+  }
+
+  #StyleGallery-{{ section.id }} .style-gallery__wings {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5.6rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    #StyleGallery-{{ section.id }} .style-gallery__wings {
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0;
+      column-gap: 5.6rem;
+    }
+  }
+
+  #StyleGallery-{{ section.id }} .style-gallery__divider {
+    display: none;
+  }
+
+  @media screen and (min-width: 990px) {
+    #StyleGallery-{{ section.id }} .style-gallery__divider {
+      display: block;
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--maelin-border) 12%,
+        var(--maelin-border) 88%,
+        transparent
+      );
+    }
+  }
+
+  #StyleGallery-{{ section.id }} .style-wing__name {
+    font-family: var(--sans);
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--maelin-dark);
+    text-align: center;
+    margin: 0 0 0.8rem;
+  }
+
+  #StyleGallery-{{ section.id }} .style-wing__tagline {
+    font-family: var(--serif-elegant);
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--maelin-ink-faded);
+    text-align: center;
+    margin: 0 0 4rem;
+  }
+
+  #StyleGallery-{{ section.id }} .style-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem 2.4rem;
+  }
+
+  @media screen and (max-width: 479px) {
+    #StyleGallery-{{ section.id }} .style-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #StyleGallery-{{ section.id }} .style-card {
+    text-align: center;
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__frame {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: var(--maelin-cream-3);
+    box-shadow:
+      inset 0 0 0 1px var(--maelin-border),
+      0 1.4rem 3rem rgba(26, 22, 16, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__frame .placeholder-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+  }
+
+  @media (hover: hover) {
+    #StyleGallery-{{ section.id }} .style-card:hover .style-card__frame {
+      transform: translateY(-0.6rem);
+      box-shadow:
+        inset 0 0 0 1px var(--maelin-gold-accent),
+        0 2.2rem 4rem rgba(26, 22, 16, 0.16);
+    }
+
+    #StyleGallery-{{ section.id }} .style-card:hover .style-card__frame img {
+      transform: scale(1.04);
+    }
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0 1.4rem;
+    color: var(--maelin-gold);
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__rule::before,
+  #StyleGallery-{{ section.id }} .style-card__rule::after {
+    content: "";
+    height: 1px;
+    width: 3.2rem;
+    background: var(--maelin-gold-accent);
+    opacity: 0.7;
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__lozenge {
+    font-size: 0.9rem;
+    line-height: 1;
+    transform: translateY(-0.05rem);
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.2rem;
+    letter-spacing: 0.02em;
+    color: var(--maelin-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__meta {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--maelin-gold-dark);
+    margin: 0 0 1.2rem;
+  }
+
+  #StyleGallery-{{ section.id }} .style-card__desc {
+    font-family: var(--serif-elegant);
+    font-size: 1.55rem;
+    line-height: 1.5;
+    color: var(--maelin-ink-medium);
+    margin: 0 auto;
+    max-width: 26rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #StyleGallery-{{ section.id }} .style-card__frame,
+    #StyleGallery-{{ section.id }} .style-card__frame img {
+      transition: none;
+    }
+  }
+{%- endstyle -%}
+
+<section id="StyleGallery-{{ section.id }}" aria-labelledby="StyleGallery-heading-{{ section.id }}">
+  <div class="style-gallery__wrap">
+    <div class="style-gallery__head">
+      {%- if section.settings.label != blank -%}
+        <p class="style-gallery__label">{{ section.settings.label }}</p>
+      {%- endif -%}
+      <h2 id="StyleGallery-heading-{{ section.id }}" class="style-gallery__heading">
+        {{ section.settings.heading }}
+      </h2>
+      {%- if section.settings.intro != blank -%}
+        <p class="style-gallery__intro">{{ section.settings.intro }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="style-gallery__wings">
+      {%- for wing in (1..2) -%}
+        {%- liquid
+          if wing == 1
+            assign wing_name = section.settings.wing1_name
+            assign wing_tag = section.settings.wing1_tagline
+            assign a_img = section.settings.wing1_style1_image
+            assign a_name = section.settings.wing1_style1_name
+            assign a_meta = section.settings.wing1_style1_meta
+            assign a_desc = section.settings.wing1_style1_desc
+            assign b_img = section.settings.wing1_style2_image
+            assign b_name = section.settings.wing1_style2_name
+            assign b_meta = section.settings.wing1_style2_meta
+            assign b_desc = section.settings.wing1_style2_desc
+          else
+            assign wing_name = section.settings.wing2_name
+            assign wing_tag = section.settings.wing2_tagline
+            assign a_img = section.settings.wing2_style1_image
+            assign a_name = section.settings.wing2_style1_name
+            assign a_meta = section.settings.wing2_style1_meta
+            assign a_desc = section.settings.wing2_style1_desc
+            assign b_img = section.settings.wing2_style2_image
+            assign b_name = section.settings.wing2_style2_name
+            assign b_meta = section.settings.wing2_style2_meta
+            assign b_desc = section.settings.wing2_style2_desc
+          endif
+        -%}
+        <div class="style-wing">
+          {%- if wing_name != blank -%}
+            <h3 class="style-wing__name">{{ wing_name }}</h3>
+          {%- endif -%}
+          {%- if wing_tag != blank -%}
+            <p class="style-wing__tagline">{{ wing_tag }}</p>
+          {%- endif -%}
+          <div class="style-cards">
+            {%- for card in (1..2) -%}
+              {%- liquid
+                if card == 1
+                  assign c_img = a_img
+                  assign c_name = a_name
+                  assign c_meta = a_meta
+                  assign c_desc = a_desc
+                else
+                  assign c_img = b_img
+                  assign c_name = b_name
+                  assign c_meta = b_meta
+                  assign c_desc = b_desc
+                endif
+              -%}
+              <div class="style-card">
+                <div class="style-card__frame">
+                  {%- if c_img != blank -%}
+                    {{
+                      c_img
+                      | image_url: width: 800
+                      | image_tag:
+                        width: c_img.width,
+                        height: c_img.height,
+                        sizes: '(min-width: 990px) 22vw, (min-width: 480px) 40vw, 100vw',
+                        widths: '200, 320, 440, 600, 800',
+                        loading: 'lazy',
+                        alt: c_name
+                    }}
+                  {%- else -%}
+                    {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+                <div class="style-card__rule" aria-hidden="true">
+                  <span class="style-card__lozenge">&#9670;</span>
+                </div>
+                <h4 class="style-card__name">{{ c_name }}</h4>
+                {%- if c_meta != blank -%}
+                  <p class="style-card__meta">{{ c_meta }}</p>
+                {%- endif -%}
+                {%- if c_desc != blank -%}
+                  <p class="style-card__desc">{{ c_desc }}</p>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+        {%- if wing == 1 -%}
+          <div class="style-gallery__divider" aria-hidden="true"></div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Style Gallery",
+  "tag": "section",
+  "class": "style-gallery-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Eyebrow label",
+      "default": "THE STYLES"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Wrap a word in <em></em> for the gold italic accent.",
+      "default": "Choose the <em>tradition</em> that suits them"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro",
+      "default": "From Renaissance stillness to modern colour — your portrait is painted in the school that best captures their spirit."
+    },
+    {
+      "type": "header",
+      "content": "Wing 1 — Classical"
+    },
+    {
+      "type": "text",
+      "id": "wing1_name",
+      "label": "Wing name",
+      "default": "Classical"
+    },
+    {
+      "type": "text",
+      "id": "wing1_tagline",
+      "label": "Wing tagline",
+      "default": "Timeless realism, painted the old way"
+    },
+    {
+      "type": "image_picker",
+      "id": "wing1_style1_image",
+      "label": "Style 1 image"
+    },
+    {
+      "type": "text",
+      "id": "wing1_style1_name",
+      "label": "Style 1 name",
+      "default": "Renaissance"
+    },
+    {
+      "type": "text",
+      "id": "wing1_style1_meta",
+      "label": "Style 1 era / medium",
+      "default": "Classical · 14th–17th c."
+    },
+    {
+      "type": "text",
+      "id": "wing1_style1_desc",
+      "label": "Style 1 descriptor",
+      "default": "Soft sfumato and luminous, lifelike depth."
+    },
+    {
+      "type": "image_picker",
+      "id": "wing1_style2_image",
+      "label": "Style 2 image"
+    },
+    {
+      "type": "text",
+      "id": "wing1_style2_name",
+      "label": "Style 2 name",
+      "default": "Baroque"
+    },
+    {
+      "type": "text",
+      "id": "wing1_style2_meta",
+      "label": "Style 2 era / medium",
+      "default": "Classical · 17th–18th c."
+    },
+    {
+      "type": "text",
+      "id": "wing1_style2_desc",
+      "label": "Style 2 descriptor",
+      "default": "Dramatic light, rich shadow, theatrical warmth."
+    },
+    {
+      "type": "header",
+      "content": "Wing 2 — Modern"
+    },
+    {
+      "type": "text",
+      "id": "wing2_name",
+      "label": "Wing name",
+      "default": "Modern"
+    },
+    {
+      "type": "text",
+      "id": "wing2_tagline",
+      "label": "Wing tagline",
+      "default": "Colour and feeling, set loose"
+    },
+    {
+      "type": "image_picker",
+      "id": "wing2_style1_image",
+      "label": "Style 1 image"
+    },
+    {
+      "type": "text",
+      "id": "wing2_style1_name",
+      "label": "Style 1 name",
+      "default": "Expressionism"
+    },
+    {
+      "type": "text",
+      "id": "wing2_style1_meta",
+      "label": "Style 1 era / medium",
+      "default": "Modern · Early 20th c."
+    },
+    {
+      "type": "text",
+      "id": "wing2_style1_desc",
+      "label": "Style 1 descriptor",
+      "default": "Bold colour and gesture — emotion over precision."
+    },
+    {
+      "type": "image_picker",
+      "id": "wing2_style2_image",
+      "label": "Style 2 image"
+    },
+    {
+      "type": "text",
+      "id": "wing2_style2_name",
+      "label": "Style 2 name",
+      "default": "Post-Impressionism"
+    },
+    {
+      "type": "text",
+      "id": "wing2_style2_meta",
+      "label": "Style 2 era / medium",
+      "default": "Modern · Late 19th c."
+    },
+    {
+      "type": "text",
+      "id": "wing2_style2_desc",
+      "label": "Style 2 descriptor",
+      "default": "Visible brushwork and vivid, expressive colour."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Style Gallery"
+    }
+  ]
+}
+{% endschema %}

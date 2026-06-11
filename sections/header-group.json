@@ -38,7 +38,7 @@
     "header": {
       "type": "header",
       "custom_css": [
-        ".section-header .header-wrapper:not(.scrolled-past-header) {background-color: rgb(var(--color-background))}"
+        ".section-header .header-wrapper:not(.scrolled-past-header) {background-color: #fdfcfa}"
       ],
       "settings": {
         "logo_position": "middle-left",

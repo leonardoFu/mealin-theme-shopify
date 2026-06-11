@@ -195,6 +195,30 @@
         "price_text": "STARTING FROM $300 PER PORTRAIT"
       }
     },
+    "style_gallery": {
+      "type": "style-gallery",
+      "settings": {
+        "label": "THE STYLES",
+        "heading": "Choose the <em>tradition</em> that suits them",
+        "intro": "From Renaissance stillness to modern colour — your portrait is painted in the school that best captures their spirit.",
+        "wing1_name": "Classical",
+        "wing1_tagline": "Timeless realism, painted the old way",
+        "wing1_style1_name": "Renaissance",
+        "wing1_style1_meta": "Classical · 14th–17th c.",
+        "wing1_style1_desc": "Soft sfumato and luminous, lifelike depth.",
+        "wing1_style2_name": "Baroque",
+        "wing1_style2_meta": "Classical · 17th–18th c.",
+        "wing1_style2_desc": "Dramatic light, rich shadow, theatrical warmth.",
+        "wing2_name": "Modern",
+        "wing2_tagline": "Colour and feeling, set loose",
+        "wing2_style1_name": "Expressionism",
+        "wing2_style1_meta": "Modern · Early 20th c.",
+        "wing2_style1_desc": "Bold colour and gesture — emotion over precision.",
+        "wing2_style2_name": "Post-Impressionism",
+        "wing2_style2_meta": "Modern · Late 19th c.",
+        "wing2_style2_desc": "Visible brushwork and vivid, expressive colour."
+      }
+    },
     "story_section": {
       "type": "story-section",
       "blocks": {
@@ -244,31 +268,31 @@
           "settings": {
             "icon": "upload",
             "title": "Upload Your Photo",
-            "description": "Share your favorite photograph. Our team will help select the perfect reference for your portrait."
+            "description": "Send us your favourite photograph. We'll help you choose the reference that best captures their character."
           }
         },
         "step-2": {
           "type": "step",
           "settings": {
             "icon": "palette",
-            "title": "Choose Your Style",
-            "description": "Select from classic realism, impressionistic, or modern styles. Decide on size, framing, and special details."
+            "title": "Share Your Preferences",
+            "description": "A short questionnaire walks you through style, size, framing and the small details that make them unmistakably them."
           }
         },
         "step-3": {
           "type": "step",
           "settings": {
             "icon": "brush",
-            "title": "Artist Creates",
-            "description": "Your portrait is assigned to a specialist artist who paints your vision with oils on premium stretched canvas."
+            "title": "Approve the Draft",
+            "description": "Your artist shares a progress draft for your sign-off — with up to three free revisions until the likeness is right."
           }
         },
         "step-4": {
           "type": "step",
           "settings": {
             "icon": "gift",
-            "title": "Receive & Cherish",
-            "description": "Review progress updates, approve the final piece, and receive your portrait beautifully packaged."
+            "title": "Receive Your Portrait",
+            "description": "Once you're delighted, we varnish, hand-frame and ship your heirloom — beautifully packaged to your door."
           }
         }
       },
@@ -281,7 +305,7 @@
       "settings": {
         "section_label": "HOW IT WORKS",
         "heading": "From Photo to Masterpiece",
-        "body_text": "A seamless journey from your cherished photograph to a hand-painted work of art, delivered to your door."
+        "body_text": "A guided journey from your cherished photograph to a hand-painted heirloom — with three free revisions, so the final piece is exactly right."
       }
     },
     "testimonial": {
@@ -319,6 +343,7 @@
     "gallery_grid",
     "marquee_ticker",
     "bento_gallery",
+    "style_gallery",
     "story_section",
     "process_steps",
     "testimonial",
