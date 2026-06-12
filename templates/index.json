@@ -21,6 +21,7 @@
         "heading": "Where Every Pet Becomes\na Timeless Masterpiece",
         "accent_word": "Timeless",
         "body_text": "Each portrait is hand-painted with museum-grade oils on premium canvas, capturing the soul and spirit of your beloved companion.",
+        "image": "shopify://shop_images/Home_Hero.png",
         "painting_name": "Golden Elegance",
         "painting_meta": "Oil on Canvas — 40 × 50 cm",
         "button_label_1": "Begin Your Portrait",
@@ -32,6 +33,14 @@
     "gallery_grid": {
       "type": "gallery-grid",
       "blocks": {
+        "card_hbPyq9": {
+          "type": "card",
+          "settings": {
+            "title": "Portrait Title",
+            "subtitle": "Oil on Canvas — 24 x 30 cm",
+            "price": "$300"
+          }
+        },
         "card-1": {
           "type": "card",
           "settings": {
@@ -66,11 +75,13 @@
         }
       },
       "block_order": [
+        "card_hbPyq9",
         "card-1",
         "card-2",
         "card-3",
         "card-4"
       ],
+      "disabled": true,
       "settings": {
         "section_label": "RECENT COMMISSIONS",
         "heading": "Our Clients' Treasured Portraits",
@@ -143,6 +154,7 @@
         "bento-1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Cat_s_Eye.png",
             "title": "Golden Elegance",
             "subtitle": "Oil on Canvas — 40 × 50 cm",
             "price": "$380"
@@ -151,6 +163,7 @@
         "bento-2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Charles.png",
             "title": "Mysterious Gaze",
             "subtitle": "Oil on Canvas — 30 × 40 cm",
             "price": "$300"
