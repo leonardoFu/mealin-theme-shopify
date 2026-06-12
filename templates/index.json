@@ -15,8 +15,8 @@
       "custom_css": [
         ".hero-split__buttons .maelin-btn--secondary {display: none !important;}",
         "h2 {font-size: 32px;}",
-        ".hero-split__frame {overflow: visible; }",
-        ".hero-split__frame img{transform: scale(1.5);}"
+        ".hero-split__frame {overflow: visible; box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.5);}",
+        ".hero-split__frame img {transform: scale(1.5);}"
       ],
       "settings": {
         "section_label": "CUSTOM PET OIL PORTRAITS",
