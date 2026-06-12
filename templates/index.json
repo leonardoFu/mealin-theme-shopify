@@ -14,13 +14,16 @@
       "type": "hero-split",
       "custom_css": [
         ".hero-split__buttons .maelin-btn--secondary {display: none !important;}",
-        "h2 {font-size: 32px;}"
+        "h2 {font-size: 32px;}",
+        ".hero-split__frame {overflow: visible; }",
+        ".hero-split__frame img{transform: scale(1.5);}"
       ],
       "settings": {
         "section_label": "CUSTOM PET OIL PORTRAITS",
         "heading": "Where Every Pet Becomes\na Timeless Masterpiece",
         "accent_word": "Timeless",
         "body_text": "Each portrait is hand-painted with museum-grade oils on premium canvas, capturing the soul and spirit of your beloved companion.",
+        "image": "shopify://shop_images/Home_Hero_V2.png",
         "button_label_1": "Begin Your Portrait",
         "button_link_1": "/products/custom-hand-painted-pet-portrait-classic-realism-oil-on-canvas",
         "button_label_2": "View Gallery",
