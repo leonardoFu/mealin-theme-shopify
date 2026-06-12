@@ -72,6 +72,7 @@
         "card-3",
         "card-4"
       ],
+      "disabled": true,
       "settings": {
         "section_label": "RECENT COMMISSIONS",
         "heading": "Our Clients' Treasured Portraits",
