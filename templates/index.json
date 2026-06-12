@@ -225,22 +225,22 @@
         "stat-1": {
           "type": "stat",
           "settings": {
-            "value": "500+",
-            "label": "Portraits Delivered"
+            "value": "No AI",
+            "label": "Every Stroke by Human Hands"
           }
         },
         "stat-2": {
           "type": "stat",
           "settings": {
-            "value": "12+",
-            "label": "Master Artists"
+            "value": "100%",
+            "label": "Real Oil on Canvas"
           }
         },
         "stat-3": {
           "type": "stat",
           "settings": {
-            "value": "98%",
-            "label": "Client Satisfaction"
+            "value": "40+",
+            "label": "Hours Of Brushwork on Every Canvas"
           }
         }
       },
@@ -251,8 +251,8 @@
       ],
       "settings": {
         "section_label": "OUR STORY",
-        "heading": "The Art of Preserving Love",
-        "body_text": "<p>Maelin Studio was born from a simple truth: the bond between a pet and their human is a masterpiece worthy of being painted. Each portrait is hand-crafted with museum-grade oils on premium canvas by artists who understand that every whisker, every gleam in the eye, tells a story.</p><p>We don't just paint pets — we capture the invisible bond, the quiet moments, the personality that makes your companion irreplaceable.</p>",
+        "heading": "The Maelin Studio",
+        "body_text": "<p>Maelin is a small atelier of young portrait artists, trained in the European classical tradition — the centuries-old craft of layered glazing once practiced by the Flemish masters — yet painting with contemporary eyes: restrained, honest, alive.</p><p>Above all, they are pet people. A Maelin portrait never captures just \"a dog\" — it captures the ear that lifts when your key turns in the door, the light in their eyes when they hear your name.</p><p>Each canvas is then framed and gift-boxed in the United States. What arrives isn't a print — it's a family heirloom.</p>",
         "image_position": "left",
         "badge_text": "Est.",
         "badge_highlight": "2026",
