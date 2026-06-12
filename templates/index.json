@@ -144,6 +144,7 @@
         "bento-1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Cat_s_Eye.png",
             "title": "Golden Elegance",
             "subtitle": "Oil on Canvas — 40 × 50 cm",
             "price": "$380"
@@ -152,6 +153,7 @@
         "bento-2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Labrador.png",
             "title": "Mysterious Gaze",
             "subtitle": "Oil on Canvas — 30 × 40 cm",
             "price": "$300"
@@ -160,6 +162,7 @@
         "bento-3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Tabby_cat.png",
             "title": "Noble Spirit",
             "subtitle": "Oil on Canvas — 50 × 60 cm",
             "price": "$480"
@@ -168,6 +171,7 @@
         "bento-4": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Cats_Mother_Son.png",
             "title": "Cloud of Joy",
             "subtitle": "Oil on Canvas — 30 × 30 cm",
             "price": "$300"
@@ -176,6 +180,7 @@
         "bento-5": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/Border_Collie.png",
             "title": "Best Friends Forever",
             "subtitle": "Oil on Canvas — 50 × 40 cm",
             "price": "$420"
