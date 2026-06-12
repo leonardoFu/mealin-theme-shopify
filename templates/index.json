@@ -199,7 +199,7 @@
       "type": "style-gallery",
       "settings": {
         "label": "THE STYLES",
-        "heading": "Choose the <em>tradition</em> that suits them",
+        "heading": "Choose the tradition that suits them",
         "intro": "From Renaissance stillness to modern colour — your portrait is painted in the school that best captures their spirit.",
         "wing1_name": "Classical",
         "wing1_tagline": "Timeless realism, painted the old way",
@@ -253,6 +253,7 @@
         "section_label": "OUR STORY",
         "heading": "The Maelin Studio",
         "body_text": "<p>Maelin is a small atelier of young portrait artists, trained in the European classical tradition — the centuries-old craft of layered glazing once practiced by the Flemish masters — yet painting with contemporary eyes: restrained, honest, alive.</p><p>Above all, they are pet people. A Maelin portrait never captures just \"a dog\" — it captures the ear that lifts when your key turns in the door, the light in their eyes when they hear your name.</p><p>Each canvas is then framed and gift-boxed in the United States. What arrives isn't a print — it's a family heirloom.</p>",
+        "image": "shopify://shop_images/Story_Of_Maelin_5a6961bb-bf39-4bc3-b96d-c289ace679c3.png",
         "image_position": "left",
         "badge_text": "Est.",
         "badge_highlight": "2026",
