@@ -148,7 +148,7 @@
             "image": "shopify://shop_images/Cat_s_Eye.png",
             "title": "Golden Elegance",
             "subtitle": "Oil on Canvas — 40 × 50 cm",
-            "price": "$380"
+            "price": ""
           }
         },
         "bento-2": {
@@ -157,7 +157,7 @@
             "image": "shopify://shop_images/Labrador.png",
             "title": "Mysterious Gaze",
             "subtitle": "Oil on Canvas — 30 × 40 cm",
-            "price": "$300"
+            "price": ""
           }
         },
         "bento-3": {
@@ -166,7 +166,7 @@
             "image": "shopify://shop_images/British_Shorthair_Blue.png",
             "title": "Noble Spirit",
             "subtitle": "Oil on Canvas — 50 × 60 cm",
-            "price": "$480"
+            "price": ""
           }
         },
         "bento-4": {
@@ -175,7 +175,7 @@
             "image": "shopify://shop_images/Cats_Mother_Son.png",
             "title": "Cloud of Joy",
             "subtitle": "Oil on Canvas — 30 × 30 cm",
-            "price": "$300"
+            "price": ""
           }
         },
         "bento-5": {
@@ -184,7 +184,7 @@
             "image": "shopify://shop_images/Border_Collie.png",
             "title": "Best Friends Forever",
             "subtitle": "Oil on Canvas — 50 × 40 cm",
-            "price": "$420"
+            "price": ""
           }
         }
       },
@@ -206,7 +206,7 @@
       "type": "style-gallery",
       "settings": {
         "label": "THE STYLES",
-        "heading": "Choose the <em>tradition</em> that suits them",
+        "heading": "Choose the tradition that suits them",
         "intro": "From Renaissance stillness to modern colour — your portrait is painted in the school that best captures their spirit.",
         "wing1_name": "Classical",
         "wing1_tagline": "Timeless realism, painted the old way",
