@@ -233,21 +233,21 @@
           "type": "stat",
           "settings": {
             "value": "100%",
-            "label": "Hand-Painted by professional artists"
+            "label": "HAND-PAINTED BY PROFESSIONAL ARTISTS"
           }
         },
         "stat-2": {
           "type": "stat",
           "settings": {
-            "value": "12+",
-            "label": "Young and brilliant Artists"
+            "value": "100%",
+            "label": "SATISFACTION PREVIEW BEFORE SHIPPING"
           }
         },
         "stat-3": {
           "type": "stat",
           "settings": {
-            "value": "98%",
-            "label": "Client Satisfaction"
+            "value": "0",
+            "label": "RISK SHOPPING FREE REVISIONS& WARRANTY"
           }
         }
       },
