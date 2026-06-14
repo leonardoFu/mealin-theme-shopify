@@ -1,0 +1,156 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .hiw-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+    line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  }
+
+  #shopify-section-{{ section.id }} .hiw-body {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+  }
+
+  .hiw-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    overflow: hidden;
+    text-align: center;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+  }
+
+  .hiw-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hiw-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hiw-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+    z-index: 1;
+  }
+
+  .hiw-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 1.6rem;
+    color: #fff;
+    max-width: 72rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hiw-hero__content {
+      padding: 4rem;
+    }
+  }
+
+  .hiw-hero__headline {
+    font-size: calc(var(--font-heading-scale) * 3.2rem);
+    margin: 0 0 1.2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hiw-hero__headline {
+      font-size: calc(var(--font-heading-scale) * 5rem);
+    }
+  }
+
+  .hiw-hero__subline {
+    font-size: 1.6rem;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hiw-hero__subline {
+      font-size: 1.8rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="hiw-hero">
+  <div class="hiw-hero__media">
+    {%- if section.settings.hero_image != blank -%}
+      {{
+        section.settings.hero_image
+        | image_url: width: 3840
+        | image_tag:
+          width: section.settings.hero_image.width,
+          height: section.settings.hero_image.height,
+          sizes: '100vw',
+          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+          loading: 'eager',
+          fetchpriority: 'high'
+      }}
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+  <div class="hiw-hero__overlay"></div>
+  <div class="hiw-hero__content">
+    {%- if section.settings.hero_headline != blank -%}
+      <h1 class="hiw-heading hiw-hero__headline">{{ section.settings.hero_headline }}</h1>
+    {%- endif -%}
+    {%- if section.settings.hero_subline != blank -%}
+      <p class="hiw-body hiw-hero__subline">{{ section.settings.hero_subline }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "HIW · Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image",
+      "info": "Recommended: 2000 × 1000 px or larger."
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Image overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "text",
+      "id": "hero_headline",
+      "label": "Headline",
+      "default": "Your photo, painted by hand — step by step."
+    },
+    {
+      "type": "text",
+      "id": "hero_subline",
+      "label": "Subline",
+      "default": "How every Maelin portrait is made, from the photo you upload to the heirloom at your door."
+    }
+  ],
+  "presets": [
+    {
+      "name": "HIW · Hero"
+    }
+  ]
+}
+{% endschema %}

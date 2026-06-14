@@ -9,68 +9,123 @@
  */
 {
   "sections": {
-    "how_it_works": {
-      "type": "how-it-works",
+    "hero": {
+      "type": "hiw-hero",
       "settings": {
         "hero_image": "shopify://shop_images/Our_Craft_Hero.png",
+        "overlay_opacity": 30,
         "hero_headline": "Your photo, painted by hand — step by step.",
-        "hero_subline": "How every Maelin portrait is made, from the photo you upload to the heirloom at your door.",
-        "journey_heading": "Your journey",
-        "journey_intro": "Four simple steps stand between your favourite photo and a finished oil painting — and we guide you through every one, with up to three free revisions so the likeness is exactly right.",
-        "journey1_icon": "upload",
-        "journey1_title": "Upload your photo",
-        "journey1_text": "Send us your favourite photograph. We'll help you choose the shot that best captures their character — the eyes, the expression, the tilt of the head.",
-        "journey2_icon": "palette",
-        "journey2_title": "Share your preferences",
-        "journey2_text": "A short questionnaire walks you through size, style, framing and the small details that make them unmistakably them.",
-        "journey3_icon": "brush",
-        "journey3_title": "Approve the draft",
-        "journey3_text": "Your artist sends a progress photo for your sign-off. Want a small change? You get up to three free revisions until it feels right.",
-        "journey4_icon": "gift",
-        "journey4_title": "Receive your portrait",
-        "journey4_text": "We varnish, hand-frame and ship your finished piece — carefully packaged to arrive safely, ready to hang or to gift.",
-        "process_heading": "Behind the easel",
-        "process_caption": "While you wait, here's what happens in the studio. Every portrait moves through the same patient eight-stage sequence — never rushed, never shortcut.",
-        "process_video_url": "",
-        "step1_label": "Style direction",
-        "step1_caption": "We translate your photo and preferences into a clear painterly brief for the artist.",
-        "step2_label": "Stretching the canvas",
-        "step2_caption": "Artist-grade linen is hand-stretched and primed over a solid wooden frame.",
-        "step3_label": "Sketch & drawing",
-        "step3_caption": "Proportions and likeness are carefully mapped and locked into the underdrawing.",
-        "step4_label": "Blocking the tones",
-        "step4_caption": "Broad masses of colour establish the light, shadow and overall palette.",
-        "step5_label": "Building the detail",
-        "step5_caption": "Layer by layer, the eyes, fur and personality are brought to life.",
-        "step6_label": "Natural drying",
-        "step6_caption": "The oils are left to cure slowly in open air — the patience the work demands.",
-        "step7_label": "Varnish finish",
-        "step7_caption": "A final varnish unifies the surface and protects the colour for decades.",
-        "step8_label": "Hand-framing",
-        "step8_caption": "The cured canvas is hand-mounted into your chosen frame, ready to hang.",
-        "team_lead": "Painted by European hands",
-        "team_body": "Your portrait is created by one of a small circle of classically trained painters working from studios across Europe — each with years of fine-art portrait work behind them. No factories, no filters, no print shops: just a brush, real oil paint and a steady, practised hand.",
-        "origin1_name": "Germany",
-        "origin1_text": "Atelier-trained painters with a precise, old-master approach to light and likeness.",
-        "origin2_name": "Sweden",
-        "origin2_text": "A Nordic eye for quiet colour and the soft, living warmth of a gaze.",
-        "team_mastery": "Fluent in both <strong>classical</strong> and <strong>modern</strong> schools — matched to the style you choose.",
-        "arrival_heading": "Arrives like the heirloom it is",
-        "arrival_intro": "From the moment it reaches your door, every detail is considered — protected, presented and ready to gift.",
-        "item1_title": "Gold-foil gift card",
-        "item1_text": "A hand-finished card, foil-stamped in gold, for your personal message.",
-        "item2_title": "Linen wrap",
-        "item2_text": "The canvas is swathed in soft linen cloth to cushion every corner.",
-        "item3_title": "Keepsake gift box",
-        "item3_text": "A rigid, museum-style box built to protect the piece — and worth keeping.",
-        "cta_headline": "Ready to start your portrait?",
-        "cta_button_label": "Start your portrait",
-        "cta_url": "",
-        "cta_subline": "No commitment — just pick a size and upload a photo."
+        "hero_subline": "How every Maelin portrait is made, from the photo you upload to the heirloom at your door."
+      }
+    },
+    "journey": {
+      "type": "hiw-journey",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "upload",
+            "title": "Upload your photo",
+            "text": "Send us your favourite photograph. We'll help you choose the shot that best captures their character — the eyes, the expression, the tilt of the head."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "palette",
+            "title": "Share your preferences",
+            "text": "A short questionnaire walks you through size, style, framing and the small details that make them unmistakably them."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "brush",
+            "title": "Approve the draft",
+            "text": "Your artist sends a progress photo for your sign-off. Want a small change? You get up to three free revisions until it feels right."
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "icon": "gift",
+            "title": "Receive your portrait",
+            "text": "We varnish, hand-frame and ship your finished piece — carefully packaged to arrive safely, ready to hang or to gift."
+          }
+        }
+      },
+      "block_order": ["step-1", "step-2", "step-3", "step-4"],
+      "settings": {
+        "background_tint": false,
+        "heading": "Your journey",
+        "intro": "Four simple steps stand between your favourite photo and a finished oil painting — and we guide you through every one, with up to three free revisions so the likeness is exactly right."
+      }
+    },
+    "process": {
+      "type": "hiw-process",
+      "blocks": {
+        "stage-1": { "type": "stage", "settings": { "label": "Style direction", "caption": "We translate your photo and preferences into a clear painterly brief for the artist." } },
+        "stage-2": { "type": "stage", "settings": { "label": "Stretching the canvas", "caption": "Artist-grade linen is hand-stretched and primed over a solid wooden frame." } },
+        "stage-3": { "type": "stage", "settings": { "label": "Sketch & drawing", "caption": "Proportions and likeness are carefully mapped and locked into the underdrawing." } },
+        "stage-4": { "type": "stage", "settings": { "label": "Blocking the tones", "caption": "Broad masses of colour establish the light, shadow and overall palette." } },
+        "stage-5": { "type": "stage", "settings": { "label": "Building the detail", "caption": "Layer by layer, the eyes, fur and personality are brought to life." } },
+        "stage-6": { "type": "stage", "settings": { "label": "Natural drying", "caption": "The oils are left to cure slowly in open air — the patience the work demands." } },
+        "stage-7": { "type": "stage", "settings": { "label": "Varnish finish", "caption": "A final varnish unifies the surface and protects the colour for decades." } },
+        "stage-8": { "type": "stage", "settings": { "label": "Hand-framing", "caption": "The cured canvas is hand-mounted into your chosen frame, ready to hang." } }
+      },
+      "block_order": ["stage-1", "stage-2", "stage-3", "stage-4", "stage-5", "stage-6", "stage-7", "stage-8"],
+      "settings": {
+        "background_tint": true,
+        "heading": "Behind the easel",
+        "caption": "While you wait, here's what happens in the studio. Every portrait moves through the same patient eight-stage sequence — never rushed, never shortcut.",
+        "video_url": ""
+      }
+    },
+    "team": {
+      "type": "hiw-team",
+      "blocks": {
+        "origin-1": { "type": "origin", "settings": { "name": "Germany", "text": "Atelier-trained painters with a precise, old-master approach to light and likeness." } },
+        "origin-2": { "type": "origin", "settings": { "name": "Sweden", "text": "A Nordic eye for quiet colour and the soft, living warmth of a gaze." } }
+      },
+      "block_order": ["origin-1", "origin-2"],
+      "settings": {
+        "background_tint": false,
+        "lead": "Painted by European hands",
+        "body": "Your portrait is created by one of a small circle of classically trained painters working from studios across Europe — each with years of fine-art portrait work behind them. No factories, no filters, no print shops: just a brush, real oil paint and a steady, practised hand.",
+        "mastery": "Fluent in both <strong>classical</strong> and <strong>modern</strong> schools — matched to the style you choose."
+      }
+    },
+    "arrival": {
+      "type": "hiw-arrival",
+      "blocks": {
+        "item-1": { "type": "item", "settings": { "title": "Gold-foil gift card", "text": "A hand-finished card, foil-stamped in gold, for your personal message." } },
+        "item-2": { "type": "item", "settings": { "title": "Linen wrap", "text": "The canvas is swathed in soft linen cloth to cushion every corner." } },
+        "item-3": { "type": "item", "settings": { "title": "Keepsake gift box", "text": "A rigid, museum-style box built to protect the piece — and worth keeping." } }
+      },
+      "block_order": ["item-1", "item-2", "item-3"],
+      "settings": {
+        "background_tint": true,
+        "heading": "Arrives like the heirloom it is",
+        "intro": "From the moment it reaches your door, every detail is considered — protected, presented and ready to gift."
+      }
+    },
+    "cta": {
+      "type": "hiw-cta",
+      "settings": {
+        "background_tint": false,
+        "headline": "Ready to start your portrait?",
+        "button_label": "Start your portrait",
+        "button_url": "",
+        "subline": "No commitment — just pick a size and upload a photo."
       }
     }
   },
   "order": [
-    "how_it_works"
+    "hero",
+    "journey",
+    "process",
+    "team",
+    "arrival",
+    "cta"
   ]
 }

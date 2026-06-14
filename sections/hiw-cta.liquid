@@ -1,0 +1,120 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .hiw-module {
+    padding: 8rem 0;
+    text-align: center;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+  }
+
+  {%- if section.settings.background_tint -%}
+    #shopify-section-{{ section.id }} .hiw-module {
+      background-color: rgba(var(--color-foreground), 0.03);
+    }
+  {%- endif -%}
+
+  #shopify-section-{{ section.id }} .hiw-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+    line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  }
+
+  #shopify-section-{{ section.id }} .hiw-body {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+  }
+
+  .hiw-wrap {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hiw-wrap {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  .hiw-cta__headline {
+    font-size: calc(var(--font-heading-scale) * 2.4rem);
+    margin: 0 0 2.4rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hiw-cta__headline {
+      font-size: calc(var(--font-heading-scale) * 3.2rem);
+    }
+  }
+
+  .hiw-cta__subline {
+    font-size: 1.4rem;
+    margin: 2rem 0 0;
+    color: rgba(var(--color-foreground), 0.6);
+  }
+{%- endstyle -%}
+
+<div class="hiw-module">
+  <div class="hiw-wrap">
+    {%- if section.settings.headline != blank -%}
+      <h2 class="hiw-heading hiw-cta__headline">{{ section.settings.headline }}</h2>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_url | default: '#' }}" class="button">
+        {{ section.settings.button_label }}
+      </a>
+    {%- endif -%}
+    {%- if section.settings.subline != blank -%}
+      <p class="hiw-body hiw-cta__subline">{{ section.settings.subline }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "HIW · Closing CTA",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "background_tint",
+      "label": "Tinted background",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Ready to start your portrait?"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Start your portrait"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "subline",
+      "label": "Subline (optional)",
+      "default": "No commitment — just pick a size and upload a photo."
+    }
+  ],
+  "presets": [
+    {
+      "name": "HIW · Closing CTA"
+    }
+  ]
+}
+{% endschema %}
