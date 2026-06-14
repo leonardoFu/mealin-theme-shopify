@@ -11,6 +11,7 @@
   "sections": {
     "hero": {
       "type": "craft-hero",
+      "disabled": true,
       "settings": {
         "hero_image": "shopify://shop_images/Our_Craft_Hero.png",
         "overlay_opacity": 30,
@@ -21,11 +22,33 @@
     "why": {
       "type": "craft-why",
       "blocks": {
-        "card-1": { "type": "card", "settings": { "title": "Layered glazing", "text": "Depth that printing can't fake" } },
-        "card-2": { "type": "card", "settings": { "title": "Obsessed with the eyes", "text": "We revise until the likeness is right" } },
-        "card-3": { "type": "card", "settings": { "title": "Brushwork you can feel", "text": "Visible texture under raking light" } }
+        "card-1": {
+          "type": "card",
+          "settings": {
+            "title": "Layered glazing",
+            "text": "Depth that printing can't fake"
+          }
+        },
+        "card-2": {
+          "type": "card",
+          "settings": {
+            "title": "Obsessed with the eyes",
+            "text": "We revise until the likeness is right"
+          }
+        },
+        "card-3": {
+          "type": "card",
+          "settings": {
+            "title": "Brushwork you can feel",
+            "text": "Visible texture under raking light"
+          }
+        }
       },
-      "block_order": ["card-1", "card-2", "card-3"],
+      "block_order": [
+        "card-1",
+        "card-2",
+        "card-3"
+      ],
       "settings": {
         "background_tint": false,
         "heading": "Why oil paint matters",

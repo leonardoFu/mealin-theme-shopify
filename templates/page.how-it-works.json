@@ -11,6 +11,7 @@
   "sections": {
     "hero": {
       "type": "hiw-hero",
+      "disabled": true,
       "settings": {
         "hero_image": "shopify://shop_images/Our_Craft_Hero.png",
         "overlay_opacity": 30,
@@ -54,7 +55,12 @@
           }
         }
       },
-      "block_order": ["step-1", "step-2", "step-3", "step-4"],
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3",
+        "step-4"
+      ],
       "settings": {
         "background_tint": false,
         "heading": "Your journey",
@@ -64,16 +70,73 @@
     "process": {
       "type": "hiw-process",
       "blocks": {
-        "stage-1": { "type": "stage", "settings": { "label": "Style direction", "caption": "We translate your photo and preferences into a clear painterly brief for the artist." } },
-        "stage-2": { "type": "stage", "settings": { "label": "Stretching the canvas", "caption": "Artist-grade linen is hand-stretched and primed over a solid wooden frame." } },
-        "stage-3": { "type": "stage", "settings": { "label": "Sketch & drawing", "caption": "Proportions and likeness are carefully mapped and locked into the underdrawing." } },
-        "stage-4": { "type": "stage", "settings": { "label": "Blocking the tones", "caption": "Broad masses of colour establish the light, shadow and overall palette." } },
-        "stage-5": { "type": "stage", "settings": { "label": "Building the detail", "caption": "Layer by layer, the eyes, fur and personality are brought to life." } },
-        "stage-6": { "type": "stage", "settings": { "label": "Natural drying", "caption": "The oils are left to cure slowly in open air — the patience the work demands." } },
-        "stage-7": { "type": "stage", "settings": { "label": "Varnish finish", "caption": "A final varnish unifies the surface and protects the colour for decades." } },
-        "stage-8": { "type": "stage", "settings": { "label": "Hand-framing", "caption": "The cured canvas is hand-mounted into your chosen frame, ready to hang." } }
+        "stage-1": {
+          "type": "stage",
+          "settings": {
+            "label": "Style direction",
+            "caption": "We translate your photo and preferences into a clear painterly brief for the artist."
+          }
+        },
+        "stage-2": {
+          "type": "stage",
+          "settings": {
+            "label": "Stretching the canvas",
+            "caption": "Artist-grade linen is hand-stretched and primed over a solid wooden frame."
+          }
+        },
+        "stage-3": {
+          "type": "stage",
+          "settings": {
+            "label": "Sketch & drawing",
+            "caption": "Proportions and likeness are carefully mapped and locked into the underdrawing."
+          }
+        },
+        "stage-4": {
+          "type": "stage",
+          "settings": {
+            "label": "Blocking the tones",
+            "caption": "Broad masses of colour establish the light, shadow and overall palette."
+          }
+        },
+        "stage-5": {
+          "type": "stage",
+          "settings": {
+            "label": "Building the detail",
+            "caption": "Layer by layer, the eyes, fur and personality are brought to life."
+          }
+        },
+        "stage-6": {
+          "type": "stage",
+          "settings": {
+            "label": "Natural drying",
+            "caption": "The oils are left to cure slowly in open air — the patience the work demands."
+          }
+        },
+        "stage-7": {
+          "type": "stage",
+          "settings": {
+            "label": "Varnish finish",
+            "caption": "A final varnish unifies the surface and protects the colour for decades."
+          }
+        },
+        "stage-8": {
+          "type": "stage",
+          "settings": {
+            "label": "Hand-framing",
+            "caption": "The cured canvas is hand-mounted into your chosen frame, ready to hang."
+          }
+        }
       },
-      "block_order": ["stage-1", "stage-2", "stage-3", "stage-4", "stage-5", "stage-6", "stage-7", "stage-8"],
+      "block_order": [
+        "stage-1",
+        "stage-2",
+        "stage-3",
+        "stage-4",
+        "stage-5",
+        "stage-6",
+        "stage-7",
+        "stage-8"
+      ],
       "settings": {
         "background_tint": true,
         "heading": "Behind the easel",
@@ -84,10 +147,25 @@
     "team": {
       "type": "hiw-team",
       "blocks": {
-        "origin-1": { "type": "origin", "settings": { "name": "Germany", "text": "Atelier-trained painters with a precise, old-master approach to light and likeness." } },
-        "origin-2": { "type": "origin", "settings": { "name": "Sweden", "text": "A Nordic eye for quiet colour and the soft, living warmth of a gaze." } }
+        "origin-1": {
+          "type": "origin",
+          "settings": {
+            "name": "Germany",
+            "text": "Atelier-trained painters with a precise, old-master approach to light and likeness."
+          }
+        },
+        "origin-2": {
+          "type": "origin",
+          "settings": {
+            "name": "Sweden",
+            "text": "A Nordic eye for quiet colour and the soft, living warmth of a gaze."
+          }
+        }
       },
-      "block_order": ["origin-1", "origin-2"],
+      "block_order": [
+        "origin-1",
+        "origin-2"
+      ],
       "settings": {
         "background_tint": false,
         "lead": "Painted by European hands",
@@ -98,11 +176,33 @@
     "arrival": {
       "type": "hiw-arrival",
       "blocks": {
-        "item-1": { "type": "item", "settings": { "title": "Gold-foil gift card", "text": "A hand-finished card, foil-stamped in gold, for your personal message." } },
-        "item-2": { "type": "item", "settings": { "title": "Linen wrap", "text": "The canvas is swathed in soft linen cloth to cushion every corner." } },
-        "item-3": { "type": "item", "settings": { "title": "Keepsake gift box", "text": "A rigid, museum-style box built to protect the piece — and worth keeping." } }
+        "item-1": {
+          "type": "item",
+          "settings": {
+            "title": "Gold-foil gift card",
+            "text": "A hand-finished card, foil-stamped in gold, for your personal message."
+          }
+        },
+        "item-2": {
+          "type": "item",
+          "settings": {
+            "title": "Linen wrap",
+            "text": "The canvas is swathed in soft linen cloth to cushion every corner."
+          }
+        },
+        "item-3": {
+          "type": "item",
+          "settings": {
+            "title": "Keepsake gift box",
+            "text": "A rigid, museum-style box built to protect the piece — and worth keeping."
+          }
+        }
       },
-      "block_order": ["item-1", "item-2", "item-3"],
+      "block_order": [
+        "item-1",
+        "item-2",
+        "item-3"
+      ],
       "settings": {
         "background_tint": true,
         "heading": "Arrives like the heirloom it is",
