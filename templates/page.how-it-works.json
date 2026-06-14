@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "how_it_works": {
+      "type": "how-it-works",
+      "settings": {
+        "hero_image": "shopify://shop_images/Our_Craft_Hero.png",
+        "hero_headline": "From your photo to a painting made to outlive us all.",
+        "hero_subline": "Every commission, step by step",
+        "journey_heading": "Your journey",
+        "journey_intro": "A guided path from your cherished photograph to a hand-painted heirloom — with up to three free revisions, so the final piece is exactly right.",
+        "journey1_icon": "upload",
+        "journey1_title": "Upload Your Photo",
+        "journey1_text": "Send us your favourite photograph. We'll help you choose the reference that best captures their character.",
+        "journey2_icon": "palette",
+        "journey2_title": "Share Your Preferences",
+        "journey2_text": "A short questionnaire walks you through style, size, framing and the small details that make them unmistakably them.",
+        "journey3_icon": "brush",
+        "journey3_title": "Approve the Draft",
+        "journey3_text": "Your artist shares a progress draft for your sign-off — with up to three free revisions until the likeness is right.",
+        "journey4_icon": "gift",
+        "journey4_title": "Receive Your Portrait",
+        "journey4_text": "Once you're delighted, we varnish, hand-frame and ship your heirloom — beautifully packaged to your door.",
+        "process_heading": "Behind the easel",
+        "process_caption": "Every portrait passes through the same patient sequence — never rushed, never shortcut.",
+        "process_video_url": "",
+        "step1_label": "Style direction",
+        "step1_caption": "We translate your photo and preferences into a painterly brief.",
+        "step2_label": "Stretching the canvas",
+        "step2_caption": "Artist-grade linen is hand-stretched and primed over a wooden frame.",
+        "step3_label": "Sketch & drawing",
+        "step3_caption": "Proportions and likeness are mapped and locked into the underdrawing.",
+        "step4_label": "Blocking the tones",
+        "step4_caption": "Broad masses of colour establish light, shadow and the overall palette.",
+        "step5_label": "Building the detail",
+        "step5_caption": "Layer by layer, the eyes, fur and character are brought to life.",
+        "step6_label": "Natural drying",
+        "step6_caption": "The oils are left to cure slowly in open air — patience the work demands.",
+        "step7_label": "Varnish finish",
+        "step7_caption": "A final varnish unifies the surface and protects the colour for decades.",
+        "step8_label": "Hand-framing",
+        "step8_caption": "The cured canvas is hand-mounted into your chosen frame, ready to hang.",
+        "team_lead": "Painted by European hands",
+        "team_body": "Our portraits come from a small circle of classically trained painters working out of studios across Europe — each with years of fine-art portrait work behind them.",
+        "origin1_name": "Germany",
+        "origin1_text": "Atelier-trained painters with a precise, old-master approach to light and likeness.",
+        "origin2_name": "Sweden",
+        "origin2_text": "A Nordic eye for quiet colour and the soft, living warmth of a gaze.",
+        "team_mastery": "Fluent in both <strong>classical</strong> and <strong>modern</strong> schools — matched to the style you choose.",
+        "arrival_heading": "Arrives like the heirloom it is",
+        "arrival_intro": "From the moment it reaches your door, every detail is considered — protected, presented and ready to gift.",
+        "item1_title": "Gold-foil gift card",
+        "item1_text": "A hand-finished card, foil-stamped in gold, for your personal message.",
+        "item2_title": "Linen wrap",
+        "item2_text": "The canvas is swathed in soft linen cloth to cushion every corner.",
+        "item3_title": "Keepsake gift box",
+        "item3_text": "A rigid, museum-style box built to protect the piece — and worth keeping.",
+        "cta_headline": "Ready to start your portrait?",
+        "cta_button_label": "Start your portrait",
+        "cta_url": "",
+        "cta_subline": "No commitment — just pick a size and upload a photo."
+      }
+    }
+  },
+  "order": [
+    "how_it_works"
+  ]
+}
