@@ -1,0 +1,195 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .craft-module {
+    padding: 6rem 0;
+    text-align: center;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+  }
+
+  {%- if section.settings.background_tint -%}
+    #shopify-section-{{ section.id }} .craft-module {
+      background-color: rgba(var(--color-foreground), 0.03);
+    }
+  {%- endif -%}
+
+  #shopify-section-{{ section.id }} .craft-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+    line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  }
+
+  #shopify-section-{{ section.id }} .craft-body {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+  }
+
+  .craft-wrap {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-wrap {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  .craft-why__heading {
+    font-size: calc(var(--font-heading-scale) * 2.8rem);
+    margin: 0 0 0.8rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-why__heading {
+      font-size: calc(var(--font-heading-scale) * 3.6rem);
+    }
+  }
+
+  .craft-why__intro {
+    font-size: 1.6rem;
+    margin: 0 auto 4rem;
+    max-width: 60rem;
+    color: rgba(var(--color-foreground), 0.7);
+  }
+
+  .craft-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    max-width: 96rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .craft-cards {
+      grid-template-columns: repeat({{ section.blocks.size | at_most: 4 | at_least: 1 }}, 1fr);
+    }
+  }
+
+  .craft-card {
+    text-align: center;
+    padding: 2rem 1.6rem;
+  }
+
+  .craft-card__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+    margin: 0 auto 1.6rem;
+  }
+
+  .craft-card__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .craft-card__title {
+    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    margin: 0 0 0.6rem;
+  }
+
+  .craft-card__text {
+    font-size: 1.4rem;
+    margin: 0;
+    color: rgba(var(--color-foreground), 0.7);
+  }
+{%- endstyle -%}
+
+<div class="craft-module">
+  <div class="craft-wrap">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="craft-heading craft-why__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.intro != blank -%}
+      <p class="craft-body craft-why__intro">{{ section.settings.intro }}</p>
+    {%- endif -%}
+    <div class="craft-cards">
+      {%- for block in section.blocks -%}
+        <div class="craft-card" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != blank -%}
+            <div class="craft-card__icon">
+              {{ block.settings.icon | image_url: width: 96 | image_tag: width: block.settings.icon.width, height: block.settings.icon.height, loading: 'lazy' }}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <h3 class="craft-heading craft-card__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="craft-body craft-card__text">{{ block.settings.text }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Craft · Why oil paint",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "background_tint",
+      "label": "Tinted background",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why oil paint matters"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro line",
+      "default": "The things that make an oil portrait feel alive can never come from a printer or a screen."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Card title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Card description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Craft · Why oil paint",
+      "blocks": [
+        { "type": "card", "settings": { "title": "Layered glazing", "text": "Depth that printing can't fake" } },
+        { "type": "card", "settings": { "title": "Obsessed with the eyes", "text": "We revise until the likeness is right" } },
+        { "type": "card", "settings": { "title": "Brushwork you can feel", "text": "Visible texture under raking light" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

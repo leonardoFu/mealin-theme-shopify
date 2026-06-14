@@ -9,30 +9,52 @@
  */
 {
   "sections": {
-    "craft": {
-      "type": "our-craft",
+    "hero": {
+      "type": "craft-hero",
       "settings": {
         "hero_image": "shopify://shop_images/Our_Craft_Hero.png",
+        "overlay_opacity": 30,
         "hero_headline": "Real paint. Real hands. Made to outlive us all.",
-        "hero_subline": "Hand-painted pet portraits in oil on canvas",
-        "anchor_heading": "Why oil paint matters",
-        "anchor_intro": "The things that make an oil portrait feel alive can never come from a printer or a screen.",
-        "anchor_card1_title": "Layered glazing",
-        "anchor_card1_text": "Depth that printing can't fake",
-        "anchor_card2_title": "Obsessed with the eyes",
-        "anchor_card2_text": "We revise until the likeness is right",
-        "anchor_card3_title": "Brushwork you can feel",
-        "anchor_card3_text": "Visible texture under raking light",
-        "materials_heading": "Built to last",
-        "materials_body": "<p>Every portrait is painted with real oil pigments on artist-grade, gallery-wrapped canvas — the same materials found in museum collections. The result is a piece with rich color depth and physical texture that stays vivid for decades, not a print that fades on a shelf. This is an heirloom, made to outlast the moment it captures.</p>",
-        "cta_headline": "Ready to see your pet in oil?",
-        "cta_button_label": "Start your portrait",
-        "cta_url": "",
-        "cta_subline": "No commitment — just pick a size and upload a photo."
+        "hero_subline": "Hand-painted pet portraits in oil on canvas"
+      }
+    },
+    "why": {
+      "type": "craft-why",
+      "blocks": {
+        "card-1": { "type": "card", "settings": { "title": "Layered glazing", "text": "Depth that printing can't fake" } },
+        "card-2": { "type": "card", "settings": { "title": "Obsessed with the eyes", "text": "We revise until the likeness is right" } },
+        "card-3": { "type": "card", "settings": { "title": "Brushwork you can feel", "text": "Visible texture under raking light" } }
+      },
+      "block_order": ["card-1", "card-2", "card-3"],
+      "settings": {
+        "background_tint": false,
+        "heading": "Why oil paint matters",
+        "intro": "The things that make an oil portrait feel alive can never come from a printer or a screen."
+      }
+    },
+    "materials": {
+      "type": "craft-materials",
+      "settings": {
+        "background_tint": true,
+        "heading": "Built to last",
+        "body": "<p>Every portrait is painted with real oil pigments on artist-grade, gallery-wrapped canvas — the same materials found in museum collections. The result is a piece with rich color depth and physical texture that stays vivid for decades, not a print that fades on a shelf. This is an heirloom, made to outlast the moment it captures.</p>"
+      }
+    },
+    "cta": {
+      "type": "craft-cta",
+      "settings": {
+        "background_tint": false,
+        "headline": "Ready to see your pet in oil?",
+        "button_label": "Start your portrait",
+        "button_url": "",
+        "subline": "No commitment — just pick a size and upload a photo."
       }
     }
   },
   "order": [
-    "craft"
+    "hero",
+    "why",
+    "materials",
+    "cta"
   ]
 }
