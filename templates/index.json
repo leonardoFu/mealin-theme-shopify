@@ -232,15 +232,15 @@
         "stat-1": {
           "type": "stat",
           "settings": {
-            "value": "500+",
-            "label": "Portraits Delivered"
+            "value": "100%",
+            "label": "Hand-Painted by professional artists"
           }
         },
         "stat-2": {
           "type": "stat",
           "settings": {
             "value": "12+",
-            "label": "Master Artists"
+            "label": "Young and brilliant Artists"
           }
         },
         "stat-3": {
