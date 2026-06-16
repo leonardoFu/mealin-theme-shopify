@@ -250,6 +250,20 @@ a.product__text {
   margin-bottom: 1.5rem;
 }
 
+/* Trim the display title so long product names don't dominate the info column */
+.product__title h1,
+.product__title .h1 {
+  font-size: calc(var(--font-heading-scale) * 2.4rem);
+  line-height: 1.15;
+}
+
+@media screen and (min-width: 990px) {
+  .product__title h1,
+  .product__title .h1 {
+    font-size: calc(var(--font-heading-scale) * 2.6rem);
+  }
+}
+
 .product__title > * {
   margin: 0;
 }

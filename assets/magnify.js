@@ -53,7 +53,9 @@ function magnify(image, zoomRatio) {
 function enableZoomOnHover(zoomRatio) {
   const images = document.querySelectorAll('.image-magnify-hover');
   images.forEach((image) => {
-    image.onclick = (event) => {
+    // Trigger the magnifier on hover (mouseenter) instead of click so the
+    // zoom activates as soon as the pointer is over the image.
+    image.onmouseenter = (event) => {
       magnify(image, zoomRatio);
       moveWithHover(image, event, zoomRatio);
     };
