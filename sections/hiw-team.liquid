@@ -62,58 +62,75 @@
     color: rgba(var(--color-foreground), 0.7);
   }
 
-  .hiw-origins {
+  .hiw-painters {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.4rem;
-    max-width: 72rem;
+    max-width: 80rem;
     margin: 0 auto 4rem;
   }
 
   @media screen and (min-width: 600px) {
-    .hiw-origins {
+    .hiw-painters {
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  .hiw-origin {
-    padding: 3rem 2rem;
+  .hiw-painter {
+    padding: 3.2rem 2.2rem;
     border: 1px solid var(--maelin-border, rgba(0, 0, 0, 0.1));
+    background-color: rgb(var(--color-background));
+    text-align: center;
+    transition: border-color 0.4s, transform 0.4s;
+  }
+
+  .hiw-painter:hover {
+    border-color: var(--maelin-gold);
+    transform: translateY(-3px);
+  }
+
+  .hiw-painter__frame {
+    width: 11rem;
+    height: 11rem;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--maelin-gold);
+    padding: 0.5rem;
     background-color: rgb(var(--color-background));
   }
 
-  .hiw-origin__rule {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 0 0 1.4rem;
-    color: var(--maelin-gold);
+  .hiw-painter__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
-  .hiw-origin__rule::before,
-  .hiw-origin__rule::after {
-    content: "";
-    height: 1px;
-    width: 2.8rem;
-    background: var(--maelin-gold-accent);
-    opacity: 0.7;
+  .hiw-painter__photo.placeholder {
+    fill: rgba(var(--color-foreground), 0.3);
+    background-color: rgba(var(--color-foreground), 0.04);
   }
 
-  .hiw-origin__lozenge {
-    font-size: 0.9rem;
-    line-height: 1;
-  }
-
-  .hiw-origin__name {
+  .hiw-painter__name {
     font-size: calc(var(--font-heading-scale) * 1.9rem);
-    margin: 0 0 0.6rem;
+    margin: 0 0 0.4rem;
   }
 
-  .hiw-origin__text {
+  .hiw-painter__school {
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--maelin-gold-dark);
+    margin: 0 0 1.2rem;
+  }
+
+  .hiw-painter__bio {
     font-size: 1.4rem;
-    margin: 0;
-    line-height: 1.55;
+    margin: 0 auto;
+    max-width: 30rem;
+    text-align: left;
+    line-height: 1.65;
     color: rgba(var(--color-foreground), 0.65);
   }
 
@@ -142,17 +159,33 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class="hiw-origins">
+      <div class="hiw-painters">
         {%- for block in section.blocks -%}
-          <div class="hiw-origin" {{ block.shopify_attributes }}>
-            <div class="hiw-origin__rule" aria-hidden="true">
-              <span class="hiw-origin__lozenge">&#9670;</span>
+          <div class="hiw-painter" {{ block.shopify_attributes }}>
+            <div class="hiw-painter__frame">
+              {%- if block.settings.photo != blank -%}
+                {{
+                  block.settings.photo
+                  | image_url: width: 330
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '110, 220, 330',
+                    sizes: '11rem',
+                    class: 'hiw-painter__photo',
+                    alt: block.settings.name
+                }}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'hiw-painter__photo placeholder' }}
+              {%- endif -%}
             </div>
             {%- if block.settings.name != blank -%}
-              <h3 class="hiw-heading hiw-origin__name">{{ block.settings.name }}</h3>
+              <h3 class="hiw-heading hiw-painter__name">{{ block.settings.name }}</h3>
             {%- endif -%}
-            {%- if block.settings.text != blank -%}
-              <p class="hiw-body hiw-origin__text">{{ block.settings.text }}</p>
+            {%- if block.settings.school != blank -%}
+              <p class="hiw-painter__school">{{ block.settings.school }}</p>
+            {%- endif -%}
+            {%- if block.settings.bio != blank -%}
+              <p class="hiw-body hiw-painter__bio">{{ block.settings.bio }}</p>
             {%- endif -%}
           </div>
         {%- endfor -%}
@@ -182,13 +215,13 @@
       "type": "text",
       "id": "lead",
       "label": "Lead line",
-      "default": "Painted by European hands"
+      "default": "Painted by German hands"
     },
     {
       "type": "textarea",
       "id": "body",
       "label": "Body",
-      "default": "Your portrait is created by one of a small circle of classically trained painters working from studios across Europe — each with years of fine-art portrait work behind them. No factories, no filters, no print shops: just a brush, real oil paint and a steady, practised hand."
+      "default": "Your portrait is created by one of a small circle of classically trained painters working from studios across Germany — each a graduate of a leading German fine-art academy, with years of portrait work behind them. No factories, no filters, no print shops: just a brush, real oil paint and a steady, practised hand."
     },
     {
       "type": "text",
@@ -200,20 +233,32 @@
   ],
   "blocks": [
     {
-      "type": "origin",
-      "name": "Origin / studio",
+      "type": "painter",
+      "name": "Painter",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Portrait photo",
+          "info": "Square images work best (shown in a circular frame)."
+        },
         {
           "type": "text",
           "id": "name",
           "label": "Name",
-          "default": "Germany"
+          "default": "Alex"
+        },
+        {
+          "type": "text",
+          "id": "school",
+          "label": "School / academy",
+          "default": "Academy of Fine Arts Nuremberg"
         },
         {
           "type": "textarea",
-          "id": "text",
-          "label": "Text",
-          "default": "Atelier-trained painters with a precise, old-master approach to light and likeness."
+          "id": "bio",
+          "label": "One-line bio",
+          "default": "Blends classical realism with bold abstract expressionism to turn personal stories into timeless, gallery-quality art."
         }
       ]
     }
@@ -222,8 +267,10 @@
     {
       "name": "HIW · Meet the artists",
       "blocks": [
-        { "type": "origin", "settings": { "name": "Germany", "text": "Atelier-trained painters with a precise, old-master approach to light and likeness." } },
-        { "type": "origin", "settings": { "name": "Sweden", "text": "A Nordic eye for quiet colour and the soft, living warmth of a gaze." } }
+        { "type": "painter", "settings": { "name": "Alex", "school": "Academy of Fine Arts Nuremberg", "bio": "Blends classical realism with bold abstract expressionism to turn personal stories into timeless, gallery-quality art." } },
+        { "type": "painter", "settings": { "name": "Lukas", "school": "State Academy of Fine Arts Stuttgart", "bio": "Combines geometric structure with soft textural layers to turn everyday memories into deeply structured, gallery-quality art." } },
+        { "type": "painter", "settings": { "name": "Leon", "school": "Dresden Academy of Fine Arts", "bio": "Captures organic colour palettes and soft light to turn warm personal narratives into serene, gallery-quality art." } },
+        { "type": "painter", "settings": { "name": "Mia", "school": "Kunstakademie Düsseldorf", "bio": "Infuses rich textural depth with meticulous modern brushwork to turn intimate human moments into powerful, gallery-quality art." } }
       ]
     }
   ]
