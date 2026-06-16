@@ -67,6 +67,59 @@
         "intro": "Four simple steps stand between your favourite photo and a finished oil painting — and we guide you through every one, with up to three free revisions so the likeness is exactly right."
       }
     },
+    "team": {
+      "type": "hiw-team",
+      "blocks": {
+        "painter-1": {
+          "type": "painter",
+          "settings": {
+            "photo": "shopify://shop_images/Alex.jpg",
+            "name": "Alex",
+            "school": "Academy of Fine Arts Nuremberg",
+            "bio": "Blends classical realism with bold abstract expressionism to turn personal stories into timeless, gallery-quality art."
+          }
+        },
+        "painter-2": {
+          "type": "painter",
+          "settings": {
+            "photo": "shopify://shop_images/Lukas.jpg",
+            "name": "Lukas",
+            "school": "State Academy of Fine Arts Stuttgart",
+            "bio": "Combines geometric structure with soft textural layers to turn everyday memories into deeply structured, gallery-quality art."
+          }
+        },
+        "painter-3": {
+          "type": "painter",
+          "settings": {
+            "photo": "shopify://shop_images/Leon.jpg",
+            "name": "Leon",
+            "school": "Dresden Academy of Fine Arts",
+            "bio": "Captures organic colour palettes and soft light to turn warm personal narratives into serene, gallery-quality art."
+          }
+        },
+        "painter-4": {
+          "type": "painter",
+          "settings": {
+            "photo": "shopify://shop_images/Mia.jpg",
+            "name": "Mia",
+            "school": "Kunstakademie Düsseldorf",
+            "bio": "Infuses rich textural depth with meticulous modern brushwork to turn intimate human moments into powerful, gallery-quality art."
+          }
+        }
+      },
+      "block_order": [
+        "painter-1",
+        "painter-2",
+        "painter-3",
+        "painter-4"
+      ],
+      "settings": {
+        "background_tint": true,
+        "lead": "Painted by German hands",
+        "body": "Your portrait is created by one of a small circle of classically trained painters working from studios across Germany — each a graduate of a leading German fine-art academy, with years of portrait work behind them. No factories, no filters, no print shops: just a brush, real oil paint and a steady, practised hand.",
+        "mastery": "Fluent in both classical and modern schools — matched to the style you choose."
+      }
+    },
     "process": {
       "type": "hiw-process",
       "blocks": {
@@ -142,55 +195,6 @@
         "heading": "Behind the easel",
         "caption": "While you wait, here's what happens in the studio. Every portrait moves through the same patient eight-stage sequence — never rushed, never shortcut.",
         "video_url": ""
-      }
-    },
-    "team": {
-      "type": "hiw-team",
-      "blocks": {
-        "painter-1": {
-          "type": "painter",
-          "settings": {
-            "name": "Alex",
-            "school": "Academy of Fine Arts Nuremberg",
-            "bio": "Blends classical realism with bold abstract expressionism to turn personal stories into timeless, gallery-quality art."
-          }
-        },
-        "painter-2": {
-          "type": "painter",
-          "settings": {
-            "name": "Lukas",
-            "school": "State Academy of Fine Arts Stuttgart",
-            "bio": "Combines geometric structure with soft textural layers to turn everyday memories into deeply structured, gallery-quality art."
-          }
-        },
-        "painter-3": {
-          "type": "painter",
-          "settings": {
-            "name": "Leon",
-            "school": "Dresden Academy of Fine Arts",
-            "bio": "Captures organic colour palettes and soft light to turn warm personal narratives into serene, gallery-quality art."
-          }
-        },
-        "painter-4": {
-          "type": "painter",
-          "settings": {
-            "name": "Mia",
-            "school": "Kunstakademie Düsseldorf",
-            "bio": "Infuses rich textural depth with meticulous modern brushwork to turn intimate human moments into powerful, gallery-quality art."
-          }
-        }
-      },
-      "block_order": [
-        "painter-1",
-        "painter-2",
-        "painter-3",
-        "painter-4"
-      ],
-      "settings": {
-        "background_tint": true,
-        "lead": "Painted by German hands",
-        "body": "Your portrait is created by one of a small circle of classically trained painters working from studios across Germany — each a graduate of a leading German fine-art academy, with years of portrait work behind them. No factories, no filters, no print shops: just a brush, real oil paint and a steady, practised hand.",
-        "mastery": "Fluent in both <strong>classical</strong> and <strong>modern</strong> schools — matched to the style you choose."
       }
     },
     "arrival": {
