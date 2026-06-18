@@ -135,9 +135,8 @@
     aspect-ratio: 4 / 5;
     overflow: hidden;
     background-color: var(--maelin-cream-3);
-    box-shadow:
-      inset 0 0 0 1px var(--maelin-border),
-      0 1.4rem 3rem rgba(26, 22, 16, 0.1);
+    border: 1px solid var(--maelin-gold-accent);
+    box-shadow: 0 2rem 4rem rgba(26, 22, 16, 0.2);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
   }
 
@@ -158,9 +157,8 @@
   @media (hover: hover) {
     #StyleGallery-{{ section.id }} .style-card:hover .style-card__frame {
       transform: translateY(-0.6rem);
-      box-shadow:
-        inset 0 0 0 1px var(--maelin-gold-accent),
-        0 2.2rem 4rem rgba(26, 22, 16, 0.16);
+      border-color: var(--maelin-gold-dark);
+      box-shadow: 0 2.8rem 5.6rem rgba(26, 22, 16, 0.28);
     }
 
     #StyleGallery-{{ section.id }} .style-card:hover .style-card__frame img {
