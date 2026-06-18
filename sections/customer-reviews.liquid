@@ -1,0 +1,362 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .rev-module {
+    padding: var(--maelin-section-padding-mobile, 64px) 0;
+    background-color: {{ section.settings.background }};
+    color: var(--maelin-dark, rgb(var(--color-foreground)));
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .rev-module {
+      padding: var(--maelin-section-padding, 120px) 0;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .rev-wrap {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .rev-wrap {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .rev-head {
+    text-align: center;
+    margin-bottom: 4.8rem;
+  }
+
+  #shopify-section-{{ section.id }} .rev-label {
+    margin-bottom: 1.6rem;
+  }
+
+  #shopify-section-{{ section.id }} .rev-title {
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    margin-bottom: 2rem;
+  }
+
+  #shopify-section-{{ section.id }} .rev-title em {
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--maelin-gold-dark, #8b6914);
+  }
+
+  #shopify-section-{{ section.id }} .rev-aggregate {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-family: var(--sans);
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    color: var(--maelin-ink-medium, rgba(var(--color-foreground), 0.72));
+  }
+
+  #shopify-section-{{ section.id }} .rev-aggregate strong {
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--maelin-gold-dark, #8b6914);
+  }
+
+  #shopify-section-{{ section.id }} .rev-stars {
+    display: inline-flex;
+    gap: 0.3rem;
+  }
+
+  #shopify-section-{{ section.id }} .rev-stars svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: var(--maelin-gold, #b8860b);
+  }
+
+  #shopify-section-{{ section.id }} .rev-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .rev-grid--2 { grid-template-columns: repeat(2, 1fr); }
+    #shopify-section-{{ section.id }} .rev-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  #shopify-section-{{ section.id }} .rev-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 3.4rem 3rem 3rem;
+    border: 1px solid var(--maelin-border, rgba(0, 0, 0, 0.1));
+    background-color: var(--maelin-cream-1, rgb(var(--color-background)));
+    transition: border-color 0.4s ease, transform 0.4s ease;
+  }
+
+  #shopify-section-{{ section.id }} .rev-card:hover {
+    border-color: var(--maelin-gold, #b8860b);
+    transform: translateY(-3px);
+  }
+
+  /* Signature: oversized opening quotation mark in the elegant serif */
+  #shopify-section-{{ section.id }} .rev-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 1rem;
+    right: 2.4rem;
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-size: 7rem;
+    line-height: 1;
+    color: var(--maelin-gold, #b8860b);
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__stars {
+    margin-bottom: 2rem;
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__quote {
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: var(--maelin-dark, rgb(var(--color-foreground)));
+    margin: 0 0 2.8rem;
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__foot {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    margin-top: auto;
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__avatar {
+    flex: 0 0 auto;
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--maelin-gold, #b8860b);
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__avatar img,
+  #shopify-section-{{ section.id }} .rev-card__avatar svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__name {
+    font-family: var(--serif, 'Playfair Display', serif);
+    font-size: 1.6rem;
+    color: var(--maelin-dark, rgb(var(--color-foreground)));
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__meta {
+    font-family: var(--sans);
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    color: var(--maelin-ink-faded, rgba(var(--color-foreground), 0.6));
+    margin: 0.2rem 0 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #shopify-section-{{ section.id }} .rev-card { transition: none; }
+  }
+{%- endstyle -%}
+
+{%- capture star_svg -%}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.47 5.27 5.78.66-4.3 3.93 1.16 5.69L10 14.9l-5.11 2.85 1.16-5.69-4.3-3.93 5.78-.66z"/></svg>{%- endcapture -%}
+
+<div class="rev-module">
+  <div class="rev-wrap">
+    <div class="rev-head">
+      {%- if section.settings.label != blank -%}
+        <p class="maelin-section-label rev-label">{{ section.settings.label }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="maelin-heading rev-title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.show_aggregate and section.settings.rating_score != blank -%}
+        <p class="rev-aggregate">
+          <span class="rev-stars">{% for i in (1..5) %}{{ star_svg }}{% endfor %}</span>
+          <span><strong>{{ section.settings.rating_score }}</strong> {{ section.settings.rating_text }}</span>
+        </p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="rev-grid rev-grid--{{ section.settings.columns }}">
+        {%- for block in section.blocks -%}
+          <div class="rev-card" {{ block.shopify_attributes }}>
+            <span class="rev-stars rev-card__stars" role="img" aria-label="{{ block.settings.rating }} out of 5 stars">
+              {%- for i in (1..block.settings.rating) -%}{{ star_svg }}{%- endfor -%}
+            </span>
+            {%- if block.settings.quote != blank -%}
+              <p class="rev-card__quote">{{ block.settings.quote }}</p>
+            {%- endif -%}
+            <div class="rev-card__foot">
+              {%- if block.settings.photo != blank -%}
+                <span class="rev-card__avatar">
+                  {{ block.settings.photo | image_url: width: 138 | image_tag: loading: 'lazy', widths: '46, 92, 138', sizes: '46px', alt: block.settings.name }}
+                </span>
+              {%- endif -%}
+              <div>
+                {%- if block.settings.name != blank -%}
+                  <p class="rev-card__name">{{ block.settings.name }}</p>
+                {%- endif -%}
+                {%- if block.settings.meta != blank -%}
+                  <p class="rev-card__meta">{{ block.settings.meta }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Customer reviews",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Eyebrow label",
+      "default": "Kind words"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "From people who <em>hung it on their wall</em>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_aggregate",
+      "label": "Show aggregate rating",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "rating_score",
+      "label": "Aggregate score",
+      "default": "4.9"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Aggregate caption",
+      "default": "from 2,400+ commissioned portraits"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "#F9F6F0"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star rating",
+          "default": 5
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Review",
+          "default": "<p>I cried when I opened it. They captured Bruno's exact expression — it's the first thing every guest notices now.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo",
+          "info": "Square images work best. Optional."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Hannah M."
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Detail line",
+          "info": "Pet name, location, or product.",
+          "default": "Portrait of Bruno · Berlin"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "<p>I cried when I opened it. They captured Bruno's exact expression — it's the first thing every guest notices now.</p>",
+            "name": "Hannah M.",
+            "meta": "Portrait of Bruno · Berlin"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "<p>The proof came back in days and the artist nailed it on the first try. The brushwork in real life is stunning.</p>",
+            "name": "Daniel R.",
+            "meta": "Portrait of Luna · Munich"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "<p>Ordered it as a memorial for our old girl. It feels like she's still watching over the living room. Worth every cent.</p>",
+            "name": "Sofia L.",
+            "meta": "Portrait of Maple · Vienna"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

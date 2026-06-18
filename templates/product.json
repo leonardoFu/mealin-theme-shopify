@@ -126,105 +126,101 @@
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "faq": {
+      "type": "faq-accordion",
       "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
+        "faq-0": {
+          "type": "faq",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "question": "How long until my portrait arrives?",
+            "answer": "<p>Each piece is painted entirely by hand, so we ask for 2–3 weeks from your approved proof to your door. We'll email progress along the way.</p>"
           }
         },
-        "image-with-text-1": {
-          "type": "text",
+        "faq-1": {
+          "type": "faq",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
+            "question": "What kind of photo works best?",
+            "answer": "<p>A clear, well-lit photo where your pet's eyes are sharp and in focus. Natural daylight beats flash every time. Not sure which to use? Send a few and we'll help you choose.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I choose the painting style?",
+            "answer": "<p>Yes. Classical oil, modern impressionist or bold contemporary — you pick the school when you order, and your artist paints to match it.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq",
+          "settings": {
+            "question": "What if it doesn't look quite right?",
+            "answer": "<p>We share a digital proof before anything ships. Request changes freely — we only print and frame once you love it.</p>"
           }
         }
       },
       "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
+        "faq-0",
+        "faq-1",
+        "faq-2",
+        "faq-3"
       ],
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "label": "Questions & answers",
+        "heading": "Before you <em>commission</em>",
+        "open_first": true,
+        "background": "#FDFCFA"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "reviews": {
+      "type": "customer-reviews",
       "blocks": {
-        "column-0": {
-          "type": "column",
+        "review-0": {
+          "type": "review",
           "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
+            "rating": 5,
+            "quote": "<p>I cried when I opened it. They captured Bruno's exact expression — it's the first thing every guest notices now.</p>",
+            "name": "Hannah M.",
+            "meta": "Portrait of Bruno · Berlin"
           }
         },
-        "column-1": {
-          "type": "column",
+        "review-1": {
+          "type": "review",
           "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
+            "rating": 5,
+            "quote": "<p>The proof came back in days and the artist nailed it on the first try. The brushwork in real life is stunning.</p>",
+            "name": "Daniel R.",
+            "meta": "Portrait of Luna · Munich"
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "<p>Ordered it as a memorial for our old girl. It feels like she's still watching over the living room. Worth every cent.</p>",
+            "name": "Sofia L.",
+            "meta": "Portrait of Maple · Vienna"
           }
         }
       },
       "block_order": [
-        "column-0",
-        "column-1"
+        "review-0",
+        "review-1",
+        "review-2"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
+        "label": "Kind words",
+        "heading": "From people who <em>hung it on their wall</em>",
+        "show_aggregate": true,
+        "rating_score": "4.9",
+        "rating_text": "from 2,400+ commissioned portraits",
+        "columns": "3",
+        "background": "#F9F6F0"
       }
     }
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
-    "related-products"
+    "faq",
+    "reviews"
   ]
 }

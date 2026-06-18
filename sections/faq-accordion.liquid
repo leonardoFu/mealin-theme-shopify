@@ -1,0 +1,335 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .faq-module {
+    padding: var(--maelin-section-padding-mobile, 64px) 0;
+    background-color: {{ section.settings.background }};
+    color: var(--maelin-dark, rgb(var(--color-foreground)));
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .faq-module {
+      padding: var(--maelin-section-padding, 120px) 0;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .faq-wrap {
+    max-width: 84rem;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  #shopify-section-{{ section.id }} .faq-head {
+    text-align: center;
+    margin-bottom: 4.8rem;
+  }
+
+  #shopify-section-{{ section.id }} .faq-label {
+    margin-bottom: 1.6rem;
+  }
+
+  #shopify-section-{{ section.id }} .faq-title {
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    margin-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .faq-title em {
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--maelin-gold-dark, #8b6914);
+  }
+
+  #shopify-section-{{ section.id }} .faq-list {
+    border-top: 1px solid var(--maelin-border, rgba(0, 0, 0, 0.12));
+  }
+
+  #shopify-section-{{ section.id }} .faq-item {
+    border-bottom: 1px solid var(--maelin-border, rgba(0, 0, 0, 0.12));
+  }
+
+  #shopify-section-{{ section.id }} .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 2.6rem 0.4rem;
+    user-select: none;
+  }
+
+  #shopify-section-{{ section.id }} .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .faq-item summary:focus-visible {
+    outline: 2px solid var(--maelin-gold-dark, #8b6914);
+    outline-offset: 4px;
+  }
+
+  #shopify-section-{{ section.id }} .faq-q {
+    flex: 1 1 auto;
+    font-family: var(--serif, 'Playfair Display', serif);
+    font-weight: 400;
+    font-size: clamp(1.8rem, 2.2vw, 2.2rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--maelin-dark, rgb(var(--color-foreground)));
+    transition: color 0.35s ease;
+  }
+
+  #shopify-section-{{ section.id }} .faq-item[open] .faq-q,
+  #shopify-section-{{ section.id }} .faq-item summary:hover .faq-q {
+    color: var(--maelin-gold-dark, #8b6914);
+  }
+
+  /* Signature: a slim gold plus that rotates into a minus */
+  #shopify-section-{{ section.id }} .faq-mark {
+    position: relative;
+    flex: 0 0 auto;
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  #shopify-section-{{ section.id }} .faq-mark::before,
+  #shopify-section-{{ section.id }} .faq-mark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--maelin-gold, #b8860b);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  }
+
+  #shopify-section-{{ section.id }} .faq-mark::before {
+    width: 2.2rem;
+    height: 1px;
+    transform: translate(-50%, -50%);
+  }
+
+  #shopify-section-{{ section.id }} .faq-mark::after {
+    width: 1px;
+    height: 2.2rem;
+    transform: translate(-50%, -50%);
+  }
+
+  #shopify-section-{{ section.id }} .faq-item[open] .faq-mark::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+  }
+
+  #shopify-section-{{ section.id }} .faq-a {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #shopify-section-{{ section.id }} .faq-item[open] .faq-a {
+    height: auto;
+  }
+
+  #shopify-section-{{ section.id }} .faq-a__inner {
+    padding: 0 6rem 3rem 0.4rem;
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    line-height: var(--line-height-golden, 1.618);
+    color: var(--maelin-ink-medium, rgba(var(--color-foreground), 0.72));
+  }
+
+  #shopify-section-{{ section.id }} .faq-a__inner > :first-child {
+    margin-top: 0;
+  }
+
+  #shopify-section-{{ section.id }} .faq-a__inner > :last-child {
+    margin-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .faq-a__inner a {
+    color: var(--maelin-gold-dark, #8b6914);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #shopify-section-{{ section.id }} .faq-a,
+    #shopify-section-{{ section.id }} .faq-mark::before,
+    #shopify-section-{{ section.id }} .faq-mark::after,
+    #shopify-section-{{ section.id }} .faq-q {
+      transition: none;
+    }
+  }
+{%- endstyle -%}
+
+<div class="faq-module">
+  <div class="faq-wrap">
+    <div class="faq-head">
+      {%- if section.settings.label != blank -%}
+        <p class="maelin-section-label faq-label">{{ section.settings.label }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="maelin-heading faq-title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="faq-list">
+        {%- for block in section.blocks -%}
+          <details
+            class="faq-item"
+            {% if section.settings.open_first and forloop.first %}open{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            <summary>
+              <span class="faq-q">{{ block.settings.question }}</span>
+              <span class="faq-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a">
+              <div class="faq-a__inner rte">{{ block.settings.answer }}</div>
+            </div>
+          </details>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('shopify-section-{{ section.id }}');
+    if (!root) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    root.querySelectorAll('.faq-item').forEach(function (item) {
+      var summary = item.querySelector('summary');
+      var panel = item.querySelector('.faq-a');
+      if (!summary || !panel) return;
+
+      summary.addEventListener('click', function (event) {
+        if (reduce) return; // let native <details> toggle instantly
+        event.preventDefault();
+        if (item.dataset.animating) return;
+        item.dataset.animating = '1';
+
+        if (item.open) {
+          panel.style.height = panel.scrollHeight + 'px';
+          requestAnimationFrame(function () {
+            panel.style.height = '0px';
+          });
+          panel.addEventListener('transitionend', function done() {
+            item.open = false;
+            panel.style.height = '';
+            delete item.dataset.animating;
+            panel.removeEventListener('transitionend', done);
+          });
+        } else {
+          item.open = true;
+          panel.style.height = '0px';
+          requestAnimationFrame(function () {
+            panel.style.height = panel.scrollHeight + 'px';
+          });
+          panel.addEventListener('transitionend', function done() {
+            panel.style.height = 'auto';
+            delete item.dataset.animating;
+            panel.removeEventListener('transitionend', done);
+          });
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ accordion",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Eyebrow label",
+      "default": "Questions & answers"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Before you <em>commission</em>"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first question by default",
+      "default": true
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "#FDFCFA"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How long until my portrait arrives?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Each piece is painted entirely by hand, so we ask for 2–3 weeks from your approved proof to your door. We'll email progress along the way.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ accordion",
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "question": "How long until my portrait arrives?",
+            "answer": "<p>Each piece is painted entirely by hand, so we ask for 2–3 weeks from your approved proof to your door. We'll email progress along the way.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What kind of photo works best?",
+            "answer": "<p>A clear, well-lit photo where your pet's eyes are sharp and in focus. Natural daylight beats flash every time. Not sure which to use? Send a few and we'll help you choose.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Can I choose the painting style?",
+            "answer": "<p>Yes. Classical oil, modern impressionist or bold contemporary — you pick the school when you order, and your artist paints to match it.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "What if it doesn't look quite right?",
+            "answer": "<p>We share a digital proof before anything ships. Request changes freely — we only print and frame once you love it.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>We do. Your portrait ships worldwide in protective packaging, fully tracked. Delivery times and any duties vary by destination.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

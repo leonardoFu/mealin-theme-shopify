@@ -193,9 +193,96 @@
                 </p>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                    {{ product.description }}
-                  </div>
+                  {%- style -%}
+                    .product__description--truncate {
+                      --truncate-fade: 6rem;
+                    }
+                    .product__description--truncate .product__description-rte {
+                      overflow: hidden;
+                      transition: max-height 0.45s ease;
+                    }
+                    .product__description--truncate[data-collapsed='true'] .product__description-rte {
+                      position: relative;
+                      -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--truncate-fade)), transparent 100%);
+                      mask-image: linear-gradient(to bottom, #000 calc(100% - var(--truncate-fade)), transparent 100%);
+                    }
+                    .product__description-toggle {
+                      display: none;
+                      margin-top: 1.6rem;
+                      padding: 0 0 0.3rem;
+                      background: none;
+                      border: 0;
+                      border-bottom: 1px solid currentColor;
+                      cursor: pointer;
+                      font-family: var(--sans, var(--font-body-family));
+                      font-size: 1.3rem;
+                      letter-spacing: 0.12em;
+                      text-transform: uppercase;
+                      color: var(--maelin-gold-dark, rgb(var(--color-foreground)));
+                    }
+                    .product__description--truncate.is-truncatable .product__description-toggle {
+                      display: inline-block;
+                    }
+                    @media (prefers-reduced-motion: reduce) {
+                      .product__description--truncate .product__description-rte {
+                        transition: none;
+                      }
+                    }
+                  {%- endstyle -%}
+                  <truncate-text
+                    class="product__description product__description--truncate quick-add-hidden"
+                    {{ block.shopify_attributes }}
+                  >
+                    <div class="product__description-rte rte">
+                      {{ product.description }}
+                    </div>
+                    <button type="button" class="product__description-toggle" aria-expanded="false">
+                      Read more
+                    </button>
+                  </truncate-text>
+                  <script>
+                    if (!customElements.get('truncate-text')) {
+                      customElements.define(
+                        'truncate-text',
+                        class extends HTMLElement {
+                          connectedCallback() {
+                            this.rte = this.querySelector('.product__description-rte');
+                            this.toggle = this.querySelector('.product__description-toggle');
+                            if (!this.rte || !this.toggle) return;
+                            this.labelMore = this.toggle.textContent.trim() || 'Read more';
+                            this.labelLess = this.getAttribute('data-less') || 'Read less';
+                            this.minHeight = 260;
+                            requestAnimationFrame(() => this.init());
+                            this.toggle.addEventListener('click', () => this.expand());
+                          }
+                          init() {
+                            const full = this.rte.scrollHeight;
+                            if (full <= this.minHeight) return;
+                            this.fullHeight = full;
+                            this.collapsedHeight = Math.round(full / 2);
+                            this.classList.add('is-truncatable');
+                            this.collapse();
+                          }
+                          collapse() {
+                            this.rte.style.maxHeight = this.collapsedHeight + 'px';
+                            this.setAttribute('data-collapsed', 'true');
+                            this.toggle.setAttribute('aria-expanded', 'false');
+                            this.toggle.textContent = this.labelMore;
+                          }
+                          expand() {
+                            if (this.getAttribute('data-collapsed') === 'true') {
+                              this.rte.style.maxHeight = this.rte.scrollHeight + 'px';
+                              this.removeAttribute('data-collapsed');
+                              this.toggle.setAttribute('aria-expanded', 'true');
+                              this.toggle.textContent = this.labelLess;
+                            } else {
+                              this.collapse();
+                            }
+                          }
+                        }
+                      );
+                    }
+                  </script>
                 {%- endif -%}
               {%- when 'sku' -%}
                 <p
