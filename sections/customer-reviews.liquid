@@ -87,12 +87,11 @@
   }
 
   #shopify-section-{{ section.id }} .rev-card {
-    position: relative;
     display: flex;
     flex-direction: column;
-    padding: 3.4rem 3rem 3rem;
     border: 1px solid var(--maelin-border, rgba(0, 0, 0, 0.1));
     background-color: var(--maelin-cream-1, rgb(var(--color-background)));
+    overflow: hidden;
     transition: border-color 0.4s ease, transform 0.4s ease;
   }
 
@@ -101,8 +100,35 @@
     transform: translateY(-3px);
   }
 
+  #shopify-section-{{ section.id }} .rev-card__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  #shopify-section-{{ section.id }} .rev-card:hover .rev-card__media img {
+    transform: scale(1.04);
+  }
+
+  #shopify-section-{{ section.id }} .rev-card__body {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 3.4rem 3rem 3rem;
+  }
+
   /* Signature: oversized opening quotation mark in the elegant serif */
-  #shopify-section-{{ section.id }} .rev-card::before {
+  #shopify-section-{{ section.id }} .rev-card__body::before {
     content: '\201C';
     position: absolute;
     top: 1rem;
@@ -170,8 +196,41 @@
     margin: 0.2rem 0 0;
   }
 
+  #shopify-section-{{ section.id }} .rev-cta {
+    text-align: center;
+    margin-top: 4.8rem;
+  }
+
+  #shopify-section-{{ section.id }} .rev-cta__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid currentColor;
+    font-family: var(--sans);
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--maelin-gold-dark, #8b6914);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  #shopify-section-{{ section.id }} .rev-cta__link:hover {
+    opacity: 0.7;
+  }
+
+  #shopify-section-{{ section.id }} .rev-cta__link svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    #shopify-section-{{ section.id }} .rev-card { transition: none; }
+    #shopify-section-{{ section.id }} .rev-card,
+    #shopify-section-{{ section.id }} .rev-card__media img { transition: none; }
   }
 {%- endstyle -%}
 
@@ -198,29 +257,45 @@
       <div class="rev-grid rev-grid--{{ section.settings.columns }}">
         {%- for block in section.blocks -%}
           <div class="rev-card" {{ block.shopify_attributes }}>
-            <span class="rev-stars rev-card__stars" role="img" aria-label="{{ block.settings.rating }} out of 5 stars">
-              {%- for i in (1..block.settings.rating) -%}{{ star_svg }}{%- endfor -%}
-            </span>
-            {%- if block.settings.quote != blank -%}
-              <p class="rev-card__quote">{{ block.settings.quote }}</p>
+            {%- if block.settings.image != blank -%}
+              <div class="rev-card__media">
+                {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '300, 400, 600, 800', sizes: '(min-width: 750px) 33vw, 100vw', alt: block.settings.name }}
+              </div>
             {%- endif -%}
-            <div class="rev-card__foot">
-              {%- if block.settings.photo != blank -%}
-                <span class="rev-card__avatar">
-                  {{ block.settings.photo | image_url: width: 138 | image_tag: loading: 'lazy', widths: '46, 92, 138', sizes: '46px', alt: block.settings.name }}
-                </span>
+            <div class="rev-card__body">
+              <span class="rev-stars rev-card__stars" role="img" aria-label="{{ block.settings.rating }} out of 5 stars">
+                {%- for i in (1..block.settings.rating) -%}{{ star_svg }}{%- endfor -%}
+              </span>
+              {%- if block.settings.quote != blank -%}
+                <p class="rev-card__quote">{{ block.settings.quote }}</p>
               {%- endif -%}
-              <div>
-                {%- if block.settings.name != blank -%}
-                  <p class="rev-card__name">{{ block.settings.name }}</p>
+              <div class="rev-card__foot">
+                {%- if block.settings.photo != blank -%}
+                  <span class="rev-card__avatar">
+                    {{ block.settings.photo | image_url: width: 138 | image_tag: loading: 'lazy', widths: '46, 92, 138', sizes: '46px', alt: block.settings.name }}
+                  </span>
                 {%- endif -%}
-                {%- if block.settings.meta != blank -%}
-                  <p class="rev-card__meta">{{ block.settings.meta }}</p>
-                {%- endif -%}
+                <div>
+                  {%- if block.settings.name != blank -%}
+                    <p class="rev-card__name">{{ block.settings.name }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.meta != blank -%}
+                    <p class="rev-card__meta">{{ block.settings.meta }}</p>
+                  {%- endif -%}
+                </div>
               </div>
             </div>
           </div>
         {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+      <div class="rev-cta">
+        <a href="{{ section.settings.cta_link }}" class="rev-cta__link">
+          {{ section.settings.cta_label }}
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     {%- endif -%}
   </div>
@@ -280,6 +355,22 @@
       "id": "background",
       "label": "Background",
       "default": "#F9F6F0"
+    },
+    {
+      "type": "header",
+      "content": "Link to all reviews"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Link label",
+      "default": "Read all reviews"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Link",
+      "info": "Point to your full reviews page."
     }
   ],
   "blocks": [
@@ -287,6 +378,12 @@
       "type": "review",
       "name": "Review",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Featured photo",
+          "info": "Customer's portrait photo, shown at the top of the card. Landscape (4:3) works best."
+        },
         {
           "type": "range",
           "id": "rating",
@@ -305,8 +402,8 @@
         {
           "type": "image_picker",
           "id": "photo",
-          "label": "Photo",
-          "info": "Square images work best. Optional."
+          "label": "Avatar (optional)",
+          "info": "Small round reviewer avatar shown next to the name."
         },
         {
           "type": "text",
