@@ -220,9 +220,11 @@
         "wing1_style2_desc": "Dramatic light, rich shadow, theatrical warmth.",
         "wing2_name": "Modern",
         "wing2_tagline": "Colour and feeling, set loose",
+        "wing2_style1_image": "shopify://shop_images/04.jpg",
         "wing2_style1_name": "Expressionism",
         "wing2_style1_meta": "Modern · Early 20th c.",
         "wing2_style1_desc": "Bold colour and gesture — emotion over precision.",
+        "wing2_style2_image": "shopify://shop_images/03.jpg",
         "wing2_style2_name": "Post-Impressionism",
         "wing2_style2_meta": "Modern · Late 19th c.",
         "wing2_style2_desc": "Visible brushwork and vivid, expressive colour."
