@@ -57,6 +57,18 @@
     margin: 2rem 0 0;
     color: rgba(var(--color-foreground), 0.6);
   }
+
+  #shopify-section-{{ section.id }} .hiw-cta__faq {
+    font-family: var(--font-body-family);
+    font-size: 1.4rem;
+    margin: 2.4rem 0 0;
+  }
+
+  #shopify-section-{{ section.id }} .hiw-cta__faq a {
+    color: var(--maelin-gold-dark, #8b6914);
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 1px;
+  }
 {%- endstyle -%}
 
 <div class="hiw-module">
@@ -71,6 +83,11 @@
     {%- endif -%}
     {%- if section.settings.subline != blank -%}
       <p class="hiw-body hiw-cta__subline">{{ section.settings.subline }}</p>
+    {%- endif -%}
+    {%- if section.settings.faq_text != blank -%}
+      <p class="hiw-cta__faq">
+        <a href="{{ section.settings.faq_url | default: '/pages/faq' }}">{{ section.settings.faq_text }}</a>
+      </p>
     {%- endif -%}
   </div>
 </div>
@@ -109,6 +126,18 @@
       "id": "subline",
       "label": "Subline (optional)",
       "default": "No commitment — just pick a size and upload a photo."
+    },
+    {
+      "type": "text",
+      "id": "faq_text",
+      "label": "FAQ link text (optional)",
+      "default": "Still have a question? Read our FAQ"
+    },
+    {
+      "type": "url",
+      "id": "faq_url",
+      "label": "FAQ link",
+      "info": "Defaults to /pages/faq when left empty."
     }
   ],
   "presets": [
