@@ -1,4 +1,15 @@
-/* Good photo guide modal — opened by plugin-rendered #good-photo-modal link */
+/* Good photo guide modal — opened by plugin-rendered #good-photo-modal link.
+   Heirloom / gallery styling: cream paper, gold hairlines, framed photo mats. */
+
+:root {
+  --gpm-ink: 26, 26, 26;
+  --gpm-paper: #fdfcfa;
+  --gpm-mat: #f6f2ea;
+  --gpm-gold: #b8860b;
+  --gpm-good: #6f7355; /* muted sage */
+  --gpm-avoid: #a06a57; /* muted clay */
+}
+
 .good-photo-modal {
   position: fixed;
   inset: 0;
@@ -16,113 +27,159 @@
 .good-photo-modal__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(20, 16, 10, 0.55);
   border: none;
   cursor: pointer;
 }
 
 .good-photo-modal__content {
   position: relative;
-  background: rgb(var(--color-background));
-  color: rgb(var(--color-foreground));
-  border-radius: var(--popup-corner-radius, 1rem);
-  box-shadow: var(--popup-shadow, 0 2rem 4rem rgba(0, 0, 0, 0.2));
+  background: var(--gpm-paper);
+  color: rgb(var(--gpm-ink));
+  border: 1px solid rgba(var(--gpm-ink), 0.55);
+  border-radius: 2px;
+  box-shadow: 0 2.4rem 5rem rgba(20, 16, 10, 0.28);
   width: 100%;
-  max-width: 64rem;
+  max-width: 62rem;
   max-height: 90vh;
   overflow-y: auto;
-  padding: 3rem;
+  padding: 4rem 4.2rem;
+}
+
+/* Inner gold hairline — the "mat" inside the frame */
+.good-photo-modal__content::before {
+  content: '';
+  position: absolute;
+  inset: 0.8rem;
+  border: 1px solid rgba(184, 134, 11, 0.45);
+  pointer-events: none;
 }
 
 @media screen and (max-width: 749px) {
   .good-photo-modal__content {
-    padding: 2rem 1.5rem;
+    padding: 3rem 1.8rem;
+  }
+  .good-photo-modal__content::before {
+    inset: 0.6rem;
   }
 }
 
 .good-photo-modal__close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.4rem;
+  right: 1.4rem;
+  z-index: 1;
   background: transparent;
   border: none;
-  color: currentColor;
+  color: rgb(var(--gpm-ink));
   cursor: pointer;
   padding: 0.6rem;
   line-height: 0;
-  border-radius: 50%;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
 }
 
 .good-photo-modal__close:hover {
-  background: rgba(var(--color-foreground), 0.08);
+  opacity: 1;
+}
+
+/* ---- Header ---- */
+.good-photo-modal__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 1.1rem;
+  color: var(--gpm-gold);
+  margin: 0 0 0.9rem;
 }
 
 .good-photo-modal__title {
-  margin: 0 0 0.5rem;
+  margin: 0 0 1.4rem;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 .good-photo-modal__subtitle {
-  margin: 0 0 2.5rem;
-  opacity: 0.75;
-  max-width: 48rem;
+  margin: 0 auto 3rem;
+  font-family: var(--font-heading-family);
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  opacity: 0.78;
+  max-width: 46rem;
 }
 
+.good-photo-modal__header {
+  text-align: center;
+  padding-bottom: 2.4rem;
+  margin-bottom: 2.8rem;
+  border-bottom: 1px solid rgba(var(--gpm-ink), 0.14);
+}
+
+.good-photo-modal__header .good-photo-modal__subtitle {
+  margin-bottom: 0;
+}
+
+/* ---- Two columns ---- */
 .good-photo-modal__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  gap: 3.2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .good-photo-modal__col + .good-photo-modal__col {
+    padding-left: 3.2rem;
+    border-left: 1px solid rgba(var(--gpm-ink), 0.14);
+  }
+  .good-photo-modal__grid {
+    gap: 0;
+  }
 }
 
 @media screen and (max-width: 749px) {
   .good-photo-modal__grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.8rem;
   }
 }
 
 .good-photo-modal__col-heading {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin: 0 0 1.2rem;
+  margin: 0 0 1.6rem;
+  padding-bottom: 1rem;
+  position: relative;
 }
 
-.good-photo-modal__badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  flex-shrink: 0;
-  font-size: 1.4rem;
-  line-height: 1;
+.good-photo-modal__col-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.4rem;
+  height: 1px;
+  background: var(--gpm-gold);
 }
 
-.good-photo-modal__badge--good {
-  background: #e4f3ea;
-  color: #1f7a45;
-}
-
-.good-photo-modal__badge--bad {
-  background: #fbe6e6;
-  color: #b3261e;
-}
-
+/* ---- Framed photo mats ---- */
 .good-photo-modal__samples {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
 }
 
 .good-photo-modal__sample {
   position: relative;
   aspect-ratio: 1 / 1;
-  border-radius: 0.8rem;
-  overflow: hidden;
-  background: rgba(var(--color-foreground), 0.05);
+  background: var(--gpm-mat);
+  border: 1px solid rgba(var(--gpm-ink), 0.45);
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,41 +193,55 @@
 }
 
 .good-photo-modal__sample--placeholder {
-  border: 1px dashed rgba(var(--color-foreground), 0.25);
+  background: var(--gpm-mat);
+}
+
+/* inner gold mat line for empty frames */
+.good-photo-modal__sample--placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0.5rem;
+  border: 1px solid rgba(184, 134, 11, 0.4);
 }
 
 .good-photo-modal__sample-placeholder-icon {
-  width: 40%;
-  height: 40%;
-  opacity: 0.35;
+  width: 32%;
+  height: 32%;
+  color: rgba(var(--gpm-ink), 0.35);
 }
 
+/* ---- Lists ---- */
 .good-photo-modal__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
 .good-photo-modal__list li {
   display: flex;
   align-items: flex-start;
-  gap: 0.7rem;
-  line-height: 1.4;
+  gap: 0.8rem;
+  line-height: 1.5;
+  font-size: 1.4rem;
 }
 
 .good-photo-modal__list-icon {
   flex-shrink: 0;
-  width: 1.6rem;
-  height: 1.6rem;
-  margin-top: 0.2rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.3rem;
 }
 
 .good-photo-modal__list--good .good-photo-modal__list-icon {
-  color: #1f7a45;
+  color: var(--gpm-good);
 }
 
 .good-photo-modal__list--bad .good-photo-modal__list-icon {
-  color: #b3261e;
+  color: var(--gpm-avoid);
+}
+
+.good-photo-modal ::selection {
+  background: rgba(184, 134, 11, 0.22);
 }

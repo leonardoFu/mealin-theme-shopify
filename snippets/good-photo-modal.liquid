@@ -23,18 +23,18 @@
       </svg>
     </button>
 
-    <h2 id="GoodPhotoModalTitle" class="good-photo-modal__title h2">What makes a good photo?</h2>
-    <p class="good-photo-modal__subtitle">
-      Your portrait is hand-painted from the photo you send, so the clearer the reference, the more lifelike the result. Here's what helps our artists capture your pet at their best.
-    </p>
+    <div class="good-photo-modal__header">
+      <span class="good-photo-modal__eyebrow">A keepsake worth getting right</span>
+      <h2 id="GoodPhotoModalTitle" class="good-photo-modal__title h1">What makes a good photo?</h2>
+      <p class="good-photo-modal__subtitle">
+        Every portrait is hand-painted in oil from the photograph you send. The clearer your reference, the more faithfully our artists can capture your companion.
+      </p>
+    </div>
 
     <div class="good-photo-modal__grid">
       {%- comment -%} ---- GOOD column ---- {%- endcomment -%}
       <div class="good-photo-modal__col">
-        <p class="good-photo-modal__col-heading">
-          <span class="good-photo-modal__badge good-photo-modal__badge--good" aria-hidden="true">✓</span>
-          Great reference photos
-        </p>
+        <p class="good-photo-modal__col-heading">A photograph to choose</p>
 
         <div class="good-photo-modal__samples">
           {%- if good_image_1 != blank -%}
@@ -79,10 +79,7 @@
 
       {%- comment -%} ---- BAD column ---- {%- endcomment -%}
       <div class="good-photo-modal__col">
-        <p class="good-photo-modal__col-heading">
-          <span class="good-photo-modal__badge good-photo-modal__badge--bad" aria-hidden="true">✕</span>
-          Photos to avoid
-        </p>
+        <p class="good-photo-modal__col-heading">Best left aside</p>
 
         <div class="good-photo-modal__samples">
           {%- if bad_image_1 != blank -%}
