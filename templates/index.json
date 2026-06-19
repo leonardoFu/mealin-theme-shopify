@@ -22,7 +22,7 @@
         "section_label": "CUSTOM PET OIL PORTRAITS",
         "heading": "Where Every Pet Becomes\na Timeless Masterpiece",
         "accent_word": "Timeless",
-        "body_text": "Each portrait is hand-painted with museum-grade oils on premium canvas, capturing the soul and spirit of your beloved companion.",
+        "body_text": "Each portrait is hand-painted with museum-grade oils on artist-grade linen canvas, capturing the soul and spirit of your beloved companion.",
         "image": "shopify://shop_images/Home_Hero_V2.png",
         "button_label_1": "Begin Your Portrait",
         "button_link_1": "/products/custom-hand-painted-pet-portrait-classic-realism-oil-on-canvas",
@@ -37,7 +37,7 @@
           "type": "card",
           "settings": {
             "title": "Mysterious Gaze",
-            "subtitle": "British Shorthair — 30 × 40 cm",
+            "subtitle": "British Shorthair — 12 × 16 in",
             "price": "$300"
           }
         },
@@ -45,7 +45,7 @@
           "type": "card",
           "settings": {
             "title": "Noble Spirit",
-            "subtitle": "Arabian Horse — 50 × 60 cm",
+            "subtitle": "German Shepherd — 20 × 24 in",
             "price": "$480"
           }
         },
@@ -53,7 +53,7 @@
           "type": "card",
           "settings": {
             "title": "Cloud of Joy",
-            "subtitle": "Poodle — 30 × 30 cm",
+            "subtitle": "Poodle — 12 × 12 in",
             "price": "$300"
           }
         },
@@ -61,7 +61,7 @@
           "type": "card",
           "settings": {
             "title": "Best Friends Forever",
-            "subtitle": "Dog & Cat — 50 × 40 cm",
+            "subtitle": "Dog & Cat — 20 × 16 in",
             "price": "$420"
           }
         }
@@ -116,7 +116,7 @@
         "item-6": {
           "type": "text_item",
           "settings": {
-            "text": "Horse Portraits"
+            "text": "Custom Portraits"
           }
         },
         "item-7": {
@@ -147,7 +147,7 @@
           "settings": {
             "image": "shopify://shop_images/20260614-211936_b3853da7-bdfe-4aec-bef6-3bca1647083b.png",
             "title": "Golden Elegance",
-            "subtitle": "Oil on Canvas — 40 × 50 cm",
+            "subtitle": "Oil on Canvas — 16 × 20 in",
             "price": ""
           }
         },
@@ -156,7 +156,7 @@
           "settings": {
             "image": "shopify://shop_images/Buggy.png",
             "title": "Mysterious Gaze",
-            "subtitle": "Oil on Canvas — 30 × 40 cm",
+            "subtitle": "Oil on Canvas — 12 × 16 in",
             "price": ""
           }
         },
@@ -165,7 +165,7 @@
           "settings": {
             "image": "shopify://shop_images/20260614-220326.png",
             "title": "Noble Spirit",
-            "subtitle": "Oil on Canvas — 50 × 60 cm",
+            "subtitle": "Oil on Canvas — 20 × 24 in",
             "price": ""
           }
         },
@@ -174,7 +174,7 @@
           "settings": {
             "image": "shopify://shop_images/20260614-220339.png",
             "title": "Cloud of Joy",
-            "subtitle": "Oil on Canvas — 30 × 30 cm",
+            "subtitle": "Oil on Canvas — 12 × 12 in",
             "price": ""
           }
         },
@@ -183,7 +183,7 @@
           "settings": {
             "image": "shopify://shop_images/20260614-220604.png",
             "title": "Best Friends Forever",
-            "subtitle": "Oil on Canvas — 50 × 40 cm",
+            "subtitle": "Oil on Canvas — 20 × 16 in",
             "price": ""
           }
         }
@@ -237,21 +237,21 @@
           "type": "stat",
           "settings": {
             "value": "100%",
-            "label": "HAND-PAINTED BY PROFESSIONAL ARTISTS"
+            "label": "HAND-PAINTED BY ACADEMY-TRAINED ARTISTS"
           }
         },
         "stat-2": {
           "type": "stat",
           "settings": {
-            "value": "100%",
-            "label": "SATISFACTION PREVIEW BEFORE SHIPPING"
+            "value": "FREE",
+            "label": "UNLIMITED REVISIONS UNTIL YOUR SKETCH IS RIGHT"
           }
         },
         "stat-3": {
           "type": "stat",
           "settings": {
-            "value": "0",
-            "label": "RISK SHOPPING FREE REVISIONS& WARRANTY"
+            "value": "100%",
+            "label": "MONEY-BACK BEFORE WE PICK UP A BRUSH"
           }
         }
       },
@@ -263,7 +263,7 @@
       "settings": {
         "section_label": "OUR STORY",
         "heading": "The Art of Preserving Love",
-        "body_text": "<p>Maelin Studio was born from a simple truth: the bond between a pet and their human is a masterpiece worthy of being painted. Each portrait is hand-crafted with museum-grade oils on premium canvas by artists who understand that every whisker, every gleam in the eye, tells a story.</p><p>We don't just paint pets — we capture the invisible bond, the quiet moments, the personality that makes your companion irreplaceable.</p>",
+        "body_text": "<p>Maelin Studio was born from a simple truth: the bond between a pet and their human is a masterpiece worthy of being painted. Each portrait is hand-crafted with museum-grade oils on artist-grade linen canvas by artists who understand that every whisker, every gleam in the eye, tells a story.</p><p>We don't just paint pets — we capture the invisible bond, the quiet moments, the personality that makes your companion irreplaceable.</p>",
         "image": "shopify://shop_images/Story_Of_Maelin_5a6961bb-bf39-4bc3-b96d-c289ace679c3.png",
         "image_position": "left",
         "badge_text": "",
@@ -295,8 +295,8 @@
           "type": "step",
           "settings": {
             "icon": "brush",
-            "title": "Approve the Draft",
-            "description": "Your artist shares a progress draft for your sign-off — with up to three free revisions until the likeness is right."
+            "title": "Approve the Sketch",
+            "description": "Your artist sends a hand-drawn sketch for your sign-off — revise it as many times as you like, because no paint goes on until the drawing is right."
           }
         },
         "step-4": {
@@ -317,7 +317,7 @@
       "settings": {
         "section_label": "HOW IT WORKS",
         "heading": "From Photo to Masterpiece",
-        "body_text": "A guided journey from your cherished photograph to a hand-painted heirloom — with three free revisions, so the final piece is exactly right."
+        "body_text": "A guided journey from your cherished photograph to a hand-painted heirloom — with unlimited revisions on your sketch, so the likeness is right before a single brushstroke."
       }
     },
     "testimonial": {
@@ -326,9 +326,9 @@
         "quote-1": {
           "type": "testimonial",
           "settings": {
-            "quote": "When I unwrapped the portrait, I cried. They captured Max's spirit perfectly — the way he always tilted his head, that gentle wisdom in his eyes. It's not just a painting, it's a piece of my heart.",
-            "author": "Sarah Mitchell",
-            "author_title": "Golden Retriever Owner, London"
+            "quote": "It's the first thing every guest notices the moment they walk in. The detail in her eyes is unreal — it honestly looks like Daisy could hop off the canvas. Best thing hanging in our home.",
+            "author": "Megan C.",
+            "author_title": "Golden Retriever owner · Austin, TX"
           }
         }
       },

@@ -42,8 +42,8 @@
           "type": "step",
           "settings": {
             "icon": "brush",
-            "title": "Approve the draft",
-            "text": "Your artist sends a progress photo for your sign-off. Want a small change? You get up to three free revisions until it feels right."
+            "title": "Approve the sketch",
+            "text": "Your artist sends a hand-drawn sketch for your sign-off. Want a change? Revise it as many times as you like — no paint goes on the canvas until the drawing is right."
           }
         },
         "step-4": {
@@ -64,7 +64,7 @@
       "settings": {
         "background_tint": false,
         "heading": "Your journey",
-        "intro": "Four simple steps stand between your favourite photo and a finished oil painting — and we guide you through every one, with up to three free revisions so the likeness is exactly right."
+        "intro": "Four simple steps stand between your favourite photo and a finished oil painting — and we guide you through every one, with unlimited revisions on your sketch so the likeness is right before we pick up a brush."
       }
     },
     "team": {
@@ -116,7 +116,7 @@
       "settings": {
         "background_tint": true,
         "lead": "Painted by skilled hands",
-        "body": "Your portrait is painted by a small circle of young European artists — each a graduate of a leading fine-art academy, and every one a devoted animal lover. They bring fresh, contemporary creativity to a centuries-old European craft, painting your pet entirely by hand: no factories, no filters, no print shops — just real oil paint, a steady hand and genuine affection for the companion on your wall.",
+        "body": "Your portrait is painted by a small circle of young, academy-trained artists — each a graduate of a leading fine-art academy, and every one a devoted animal lover. They bring fresh, contemporary creativity to a centuries-old craft, painting your pet entirely by hand: no factories, no filters, no print shops — just real oil paint, a steady hand and genuine affection for the companion on your wall.",
         "mastery": "Fluent in both classical and modern schools — matched to the style you choose."
       }
     },
@@ -134,7 +134,7 @@
           "type": "stage",
           "settings": {
             "label": "Stretching the canvas",
-            "caption": "Artist-grade linen is hand-stretched and primed over a solid wooden frame."
+            "caption": "Artist-grade linen canvas is hand-stretched and primed over a solid wooden frame."
           }
         },
         "stage-3": {

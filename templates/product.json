@@ -60,7 +60,7 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "",
+            "content": "<p>Every portrait is hand-painted in museum-grade oils on artist-grade linen canvas, stretched over a solid wooden frame. No prints, no AI, no shortcuts — just real paint, applied by hand in layers. Each piece is sealed with a protective varnish, hand-framed, and ships with a signed certificate of authenticity.</p>",
             "page": ""
           }
         },
@@ -69,7 +69,7 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "truck",
-            "content": "",
+            "content": "<p><strong>Shipping.</strong> Free shipping nationwide. Because each portrait is painted entirely by hand, please allow about 2–3 weeks from your approved sketch to your door — we'll email progress along the way.</p><p><strong>Revisions &amp; refunds.</strong> You approve a hand-drawn sketch before any paint touches the canvas, and you can revise it as many times as you like. Change your mind before painting begins and we'll refund you in full. Once painting starts you get up to three free adjustments, and we won't ship until the piece matches your approved sketch. If you're still not happy — with the adjustments or the finished portrait — we refund your order less a 50% materials &amp; labor fee.</p>",
             "page": ""
           }
         },
@@ -78,7 +78,7 @@
           "settings": {
             "heading": "Dimensions",
             "icon": "ruler",
-            "content": "",
+            "content": "<p>Each portrait is painted to order on hand-stretched linen canvas, available in 12 × 12 in, 12 × 16 in, 16 × 20 in and 20 × 24 in. Choose your size when you order — pick what best suits your wall and your photo, and if you're unsure, just ask and we'll recommend one.</p>",
             "page": ""
           }
         },
@@ -87,7 +87,7 @@
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
-            "content": "",
+            "content": "<p>Hang your portrait out of direct sunlight and away from heat or damp. To clean, gently dust the surface with a dry, soft cloth — never use water, solvents or household cleaners on an oil painting. Treated with a little care, it will stay vivid for generations.</p>",
             "page": ""
           }
         },
@@ -133,7 +133,7 @@
           "type": "faq",
           "settings": {
             "question": "How long until my portrait arrives?",
-            "answer": "<p>Each piece is painted entirely by hand, so we ask for 2–3 weeks from your approved proof to your door. We'll email progress along the way.</p>"
+            "answer": "<p>Each piece is painted entirely by hand, so we ask for 2–3 weeks from your approved sketch to your door. We'll email progress along the way.</p>"
           }
         },
         "faq-1": {
@@ -154,7 +154,7 @@
           "type": "faq",
           "settings": {
             "question": "What if it doesn't look quite right?",
-            "answer": "<p>We share a digital proof before anything ships. Request changes freely — we only print and frame once you love it.</p>"
+            "answer": "<p>You approve a hand-drawn sketch before any paint touches the canvas, and you can revise it as many times as you like — not a drop of oil until the drawing is right. Once painting begins you still get up to three free adjustments, and nothing ships until it matches the sketch you approved.</p>"
           }
         }
       },
@@ -180,16 +180,16 @@
             "rating": 5,
             "quote": "<p>I cried when I opened it. They captured Bruno's exact expression — it's the first thing every guest notices now.</p>",
             "name": "Hannah M.",
-            "meta": "Portrait of Bruno · Berlin"
+            "meta": "Portrait of Bruno · Chicago, IL"
           }
         },
         "review-1": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "<p>The proof came back in days and the artist nailed it on the first try. The brushwork in real life is stunning.</p>",
+            "quote": "<p>The sketch came back in days and the artist nailed it on the first try. The brushwork in real life is stunning.</p>",
             "name": "Daniel R.",
-            "meta": "Portrait of Luna · Munich"
+            "meta": "Portrait of Luna · Seattle, WA"
           }
         },
         "review-2": {
@@ -198,7 +198,7 @@
             "rating": 5,
             "quote": "<p>Ordered it as a memorial for our old girl. It feels like she's still watching over the living room. Worth every cent.</p>",
             "name": "Sofia L.",
-            "meta": "Portrait of Maple · Vienna"
+            "meta": "Portrait of Maple · Nashville, TN"
           }
         }
       },

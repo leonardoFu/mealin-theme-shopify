@@ -33,7 +33,7 @@
           "type": "card",
           "settings": {
             "title": "Obsessed with the eyes",
-            "text": "We revise until the likeness is right"
+            "text": "We refine the sketch until the likeness is right"
           }
         },
         "card-3": {
@@ -60,7 +60,7 @@
       "settings": {
         "background_tint": true,
         "heading": "Built to last",
-        "body": "<p>Every portrait is painted with real oil pigments on artist-grade, gallery-wrapped canvas — the same materials found in museum collections. The result is a piece with rich color depth and physical texture that stays vivid for decades, not a print that fades on a shelf. This is an heirloom, made to outlast the moment it captures.</p>"
+        "body": "<p>Every portrait is painted with museum-grade oils on artist-grade linen canvas — the same materials found in museum collections. The result is a piece with rich color depth and physical texture that stays vivid for decades, not a print that fades on a shelf. This is an heirloom, made to outlast the moment it captures.</p>"
       }
     },
     "cta": {
