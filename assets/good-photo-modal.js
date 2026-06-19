@@ -13,11 +13,12 @@
     lastFocused = document.activeElement;
     modal.setAttribute('open', '');
     document.body.classList.add('overflow-hidden');
+    // Focus the dialog container itself (not the close button) so the
+    // button's focus ring isn't shown on open; keyboard users can Tab to it.
     if (typeof trapFocus === 'function') {
-      trapFocus(modal, modal.querySelector('.good-photo-modal__close'));
+      trapFocus(modal, modal);
     } else {
-      const closeBtn = modal.querySelector('.good-photo-modal__close');
-      if (closeBtn) closeBtn.focus();
+      modal.focus();
     }
   }
 
