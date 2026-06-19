@@ -1,0 +1,176 @@
+/* Good photo guide modal — opened by plugin-rendered #good-photo-modal link */
+.good-photo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.good-photo-modal[open] {
+  display: flex;
+}
+
+.good-photo-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  cursor: pointer;
+}
+
+.good-photo-modal__content {
+  position: relative;
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  border-radius: var(--popup-corner-radius, 1rem);
+  box-shadow: var(--popup-shadow, 0 2rem 4rem rgba(0, 0, 0, 0.2));
+  width: 100%;
+  max-width: 64rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 3rem;
+}
+
+@media screen and (max-width: 749px) {
+  .good-photo-modal__content {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.good-photo-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: currentColor;
+  cursor: pointer;
+  padding: 0.6rem;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.good-photo-modal__close:hover {
+  background: rgba(var(--color-foreground), 0.08);
+}
+
+.good-photo-modal__title {
+  margin: 0 0 0.5rem;
+}
+
+.good-photo-modal__subtitle {
+  margin: 0 0 2.5rem;
+  opacity: 0.75;
+  max-width: 48rem;
+}
+
+.good-photo-modal__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media screen and (max-width: 749px) {
+  .good-photo-modal__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.good-photo-modal__col-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  margin: 0 0 1.2rem;
+}
+
+.good-photo-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.good-photo-modal__badge--good {
+  background: #e4f3ea;
+  color: #1f7a45;
+}
+
+.good-photo-modal__badge--bad {
+  background: #fbe6e6;
+  color: #b3261e;
+}
+
+.good-photo-modal__samples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.good-photo-modal__sample {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.good-photo-modal__sample img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.good-photo-modal__sample--placeholder {
+  border: 1px dashed rgba(var(--color-foreground), 0.25);
+}
+
+.good-photo-modal__sample-placeholder-icon {
+  width: 40%;
+  height: 40%;
+  opacity: 0.35;
+}
+
+.good-photo-modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.good-photo-modal__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  line-height: 1.4;
+}
+
+.good-photo-modal__list-icon {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-top: 0.2rem;
+}
+
+.good-photo-modal__list--good .good-photo-modal__list-icon {
+  color: #1f7a45;
+}
+
+.good-photo-modal__list--bad .good-photo-modal__list-icon {
+  color: #b3261e;
+}

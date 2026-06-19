@@ -1,0 +1,129 @@
+{% comment %}
+  Good photo guide modal for the product page.
+  Opened by the plugin-rendered link: <a id="good-photo-modal">What is a good photo</a>
+
+  Image slots are optional and set in the theme editor (Product section settings).
+  Until images are added, labelled placeholders are shown.
+
+  Accepts:
+  - good_image_1 / good_image_2 : image_picker settings (good examples)
+  - bad_image_1  / bad_image_2  : image_picker settings (avoid examples)
+{% endcomment %}
+
+{{ 'component-good-photo-modal.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'good-photo-modal.js' | asset_url }}" defer="defer"></script>
+
+<div id="GoodPhotoModal" class="good-photo-modal" role="dialog" aria-modal="true" aria-labelledby="GoodPhotoModalTitle" tabindex="-1">
+  <button type="button" class="good-photo-modal__overlay" data-good-photo-close aria-label="{{ 'accessibility.close' | t }}"></button>
+
+  <div class="good-photo-modal__content" role="document">
+    <button type="button" class="good-photo-modal__close" data-good-photo-close aria-label="{{ 'accessibility.close' | t }}">
+      <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <h2 id="GoodPhotoModalTitle" class="good-photo-modal__title h2">What makes a good photo?</h2>
+    <p class="good-photo-modal__subtitle">
+      Your portrait is hand-painted from the photo you send, so the clearer the reference, the more lifelike the result. Here's what helps our artists capture your pet at their best.
+    </p>
+
+    <div class="good-photo-modal__grid">
+      {%- comment -%} ---- GOOD column ---- {%- endcomment -%}
+      <div class="good-photo-modal__col">
+        <p class="good-photo-modal__col-heading">
+          <span class="good-photo-modal__badge good-photo-modal__badge--good" aria-hidden="true">✓</span>
+          Great reference photos
+        </p>
+
+        <div class="good-photo-modal__samples">
+          {%- if good_image_1 != blank -%}
+            <div class="good-photo-modal__sample">
+              {{ good_image_1 | image_url: width: 600 | image_tag: loading: 'lazy', alt: 'Example of a good reference photo' }}
+            </div>
+          {%- else -%}
+            {%- render 'good-photo-modal-placeholder', label: 'Good example' -%}
+          {%- endif -%}
+          {%- if good_image_2 != blank -%}
+            <div class="good-photo-modal__sample">
+              {{ good_image_2 | image_url: width: 600 | image_tag: loading: 'lazy', alt: 'Example of a good reference photo' }}
+            </div>
+          {%- else -%}
+            {%- render 'good-photo-modal-placeholder', label: 'Good example' -%}
+          {%- endif -%}
+        </div>
+
+        <ul class="good-photo-modal__list good-photo-modal__list--good">
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'good' -%}
+            <span><strong>Clear and in focus</strong> — sharp enough to see fur detail and eyes.</span>
+          </li>
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'good' -%}
+            <span><strong>Soft, natural light</strong> — daytime, near a window or outdoors in shade.</span>
+          </li>
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'good' -%}
+            <span><strong>Eye-level and close up</strong> — taken at your pet's height, filling the frame.</span>
+          </li>
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'good' -%}
+            <span><strong>Facing the camera</strong> — eyes and expression clearly visible.</span>
+          </li>
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'good' -%}
+            <span><strong>Original, full resolution</strong> — send the largest version you have.</span>
+          </li>
+        </ul>
+      </div>
+
+      {%- comment -%} ---- BAD column ---- {%- endcomment -%}
+      <div class="good-photo-modal__col">
+        <p class="good-photo-modal__col-heading">
+          <span class="good-photo-modal__badge good-photo-modal__badge--bad" aria-hidden="true">✕</span>
+          Photos to avoid
+        </p>
+
+        <div class="good-photo-modal__samples">
+          {%- if bad_image_1 != blank -%}
+            <div class="good-photo-modal__sample">
+              {{ bad_image_1 | image_url: width: 600 | image_tag: loading: 'lazy', alt: 'Example of a photo to avoid' }}
+            </div>
+          {%- else -%}
+            {%- render 'good-photo-modal-placeholder', label: 'Avoid' -%}
+          {%- endif -%}
+          {%- if bad_image_2 != blank -%}
+            <div class="good-photo-modal__sample">
+              {{ bad_image_2 | image_url: width: 600 | image_tag: loading: 'lazy', alt: 'Example of a photo to avoid' }}
+            </div>
+          {%- else -%}
+            {%- render 'good-photo-modal-placeholder', label: 'Avoid' -%}
+          {%- endif -%}
+        </div>
+
+        <ul class="good-photo-modal__list good-photo-modal__list--bad">
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'bad' -%}
+            <span><strong>Blurry or low quality</strong> — motion blur or pixelated screenshots.</span>
+          </li>
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'bad' -%}
+            <span><strong>Too dark or backlit</strong> — harsh shadows hide your pet's features.</span>
+          </li>
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'bad' -%}
+            <span><strong>Far away or tiny in frame</strong> — the face can't be seen clearly.</span>
+          </li>
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'bad' -%}
+            <span><strong>Shot from above</strong> — distorts proportions and the expression.</span>
+          </li>
+          <li>
+            {%- render 'good-photo-modal-tick', type: 'bad' -%}
+            <span><strong>Heavy filters</strong> — they change your pet's true colours.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

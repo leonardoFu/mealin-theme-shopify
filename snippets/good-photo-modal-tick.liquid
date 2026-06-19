@@ -1,0 +1,15 @@
+{%- comment -%}
+  Check / cross icon for the good-photo modal lists.
+  Accepts: type ('good' = check, 'bad' = cross)
+{%- endcomment -%}
+{%- if type == 'bad' -%}
+  <svg class="good-photo-modal__list-icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+    <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </svg>
+{%- else -%}
+  <svg class="good-photo-modal__list-icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+    <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M6 10.5l2.5 2.5L14 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+{%- endif -%}
