@@ -72,7 +72,7 @@
       "settings": {
         "label": "Painted by Hand",
         "heading": "Real paint. Real brushstrokes. Real artists.",
-        "body_text": "<p>Every portrait is painted by a trained fine-art portraitist using archival-grade oil pigments on linen canvas. No AI generation, no digital printing, no shortcuts.</p><p>The same techniques that have preserved masterworks for centuries will keep your companion's likeness vivid for generations to come.</p>"
+        "body_text": "<p>Every portrait is painted by a trained fine-art portraitist using museum-grade oils on artist-grade linen canvas. No AI generation, no digital printing, no shortcuts.</p><p>The same techniques that have preserved masterworks for centuries will keep your companion's likeness vivid for generations to come.</p>"
       }
     },
     "testimonials": {
@@ -128,8 +128,8 @@
         "promise_1": {
           "type": "promise",
           "settings": {
-            "title": "Revise until perfect",
-            "description": "We refine every detail until you see your companion exactly as you remember them."
+            "title": "Get the likeness right",
+            "description": "We revise your sketch as many times as you need — no paint goes on until you see your companion exactly as you remember them."
           }
         },
         "promise_2": {
