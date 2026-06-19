@@ -1,0 +1,254 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "faq-painting": {
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Are the paintings really hand-painted? Do you ever use prints or AI?",
+            "answer": "<p>Every Maelin portrait is painted entirely by hand in oil by a real artist — never a print, never AI, never a filter. From the first pencil line to the final brushstroke, a person is at the easel.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the paintings made of?",
+            "answer": "<p>Genuine oil paint on artist-grade canvas, finished with a protective varnish. Painted in layers and cured naturally, an oil portrait is built to last for generations.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Which pets do you paint?",
+            "answer": "<p>We specialise in cats and dogs — it's all we paint, and it's part of why we paint them so well. If you'd like more than one pet in a single piece, we can do that too.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Who will paint my portrait?",
+            "answer": "<p>Your portrait is created by a small circle of academy-trained artists, each fluent in classical and modern techniques and matched to the style you choose.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "label": "Frequently asked questions",
+        "heading": "About the <em>painting</em>",
+        "open_first": true,
+        "background": "#FDFCFA"
+      }
+    },
+    "faq-photo": {
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "What kind of photo works best?",
+            "answer": "<p>A clear, well-lit photo where your pet's eyes are sharp and in focus. Natural daylight beats flash, and a shot taken at their eye level captures the most character. Not sure which to use? Send a few and we'll help you choose.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I send more than one photo?",
+            "answer": "<p>Please do. We paint from one main photo and use the others as reference for colour, markings and personality.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "My only photo isn't perfect — is that a problem?",
+            "answer": "<p>Often it's perfectly workable. If an image is a little soft or older, we'll tell you honestly what we can achieve before you commit, and guide you toward the best possible result.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "What happens to my photos?",
+            "answer": "<p>They're used only to create your portrait and are never shared with anyone else.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "label": "Your photo",
+        "heading": "Sending the right <em>photo</em>",
+        "open_first": false,
+        "background": "#F9F6F0"
+      }
+    },
+    "faq-size": {
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "What sizes do you offer?",
+            "answer": "<p>Four sizes: 12×16, 16×20, 18×24 and 24×36 inches. A larger canvas gives the artist more room for fine detail — and more presence on your wall.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Do the paintings come framed?",
+            "answer": "<p>That's your choice. Every portrait is available as canvas only, or hand-framed for an additional cost — you select your option right on the product page.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Will my painting arrive ready to hang?",
+            "answer": "<p>If you choose a frame, your canvas is stretched, framed and ships ready to hang. Canvas-only orders ship rolled in a protective tube, ready for you to stretch or frame locally.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I choose the right size?",
+            "answer": "<p>Think about the wall and the number of pets. A single pet looks wonderful at any size; for two or more, or for a real statement piece, we'd point you toward 18×24 or 24×36.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "label": "Size & framing",
+        "heading": "Sizes &amp; <em>framing</em>",
+        "open_first": false,
+        "background": "#FDFCFA"
+      }
+    },
+    "faq-delivery": {
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "How long will my portrait take?",
+            "answer": "<p>Most portraits arrive within 3–4 weeks from order to your door — hand-painting, drying and delivery included. There's usually no waiting list; if that ever changes, we'll say so clearly on the product page.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I get it faster?",
+            "answer": "<p>If you're working toward a specific date, contact us before you order and we'll see what's possible on a case-by-case basis.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Where do you ship, and what does it cost?",
+            "answer": "<p>We ship right across the United States, and shipping is completely free.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "What if my painting arrives damaged?",
+            "answer": "<p>We pack every piece to travel safely, but if anything arrives damaged or with a quality issue, we'll repaint and reship it at no cost to you.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "label": "Timeline & delivery",
+        "heading": "Timing &amp; <em>delivery</em>",
+        "open_first": false,
+        "background": "#F9F6F0"
+      }
+    },
+    "faq-sketch": {
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "What happens after I place my order?",
+            "answer": "<p>You upload your photo and preferences, your artist sends a hand-drawn sketch for approval, and only once you're happy does the oil painting begin. We then varnish, finish and ship your piece.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Will I see anything before the painting is made?",
+            "answer": "<p>Yes — a hand-drawn line sketch. Not a drop of oil touches the canvas until you approve it.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I ask for changes? How many revisions do I get?",
+            "answer": "<p>At the sketch stage, revise as many times as you like — we keep refining the drawing until the likeness is right. Once painting begins, you have up to three rounds of adjustments included.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I have more than one pet in the painting?",
+            "answer": "<p>Absolutely. Choose the number of pets on the product page, and make sure every pet appears in the photos you upload. Additional pets are priced as an add-on.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "label": "Sketch & revisions",
+        "heading": "Your sketch &amp; <em>revisions</em>",
+        "open_first": false,
+        "background": "#FDFCFA"
+      }
+    },
+    "faq-pricing": {
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "How much does a portrait cost?",
+            "answer": "<p>Pricing is shown on each product page and depends on the size you choose, the number of pets and whether you add a frame — no surprises at checkout.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "What payment methods can I use?",
+            "answer": "<p>All major payment methods are accepted, securely, at checkout.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "What if I'm not completely happy?",
+            "answer": "<p>Your approved sketch and up to three painting adjustments are there to make sure the finished piece is right before it ever ships. And for any damage or quality issue in transit, we repaint and reship free of charge.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "label": "Pricing & guarantee",
+        "heading": "Pricing &amp; <em>peace of mind</em>",
+        "open_first": false,
+        "background": "#F9F6F0"
+      }
+    }
+  },
+  "order": [
+    "faq-painting",
+    "faq-photo",
+    "faq-size",
+    "faq-delivery",
+    "faq-sketch",
+    "faq-pricing"
+  ]
+}

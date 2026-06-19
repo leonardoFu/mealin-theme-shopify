@@ -823,6 +823,13 @@
       {{ product | structured_data }}
     </script>
   </div>
+
+  {%- render 'good-photo-modal',
+    good_image_1: section.settings.good_photo_image_1,
+    good_image_2: section.settings.good_photo_image_2,
+    bad_image_1: section.settings.bad_photo_image_1,
+    bad_image_2: section.settings.bad_photo_image_2
+  -%}
 </product-info>
 
 {% schema %}
@@ -2187,6 +2194,34 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Good photo guide modal"
+    },
+    {
+      "type": "paragraph",
+      "content": "Images shown in the \"What is a good photo\" popup. Leave blank to show placeholders."
+    },
+    {
+      "type": "image_picker",
+      "id": "good_photo_image_1",
+      "label": "Good example 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "good_photo_image_2",
+      "label": "Good example 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "bad_photo_image_1",
+      "label": "Avoid example 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "bad_photo_image_2",
+      "label": "Avoid example 2"
     },
     {
       "type": "header",
