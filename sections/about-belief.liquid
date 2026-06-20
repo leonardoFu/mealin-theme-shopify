@@ -1,0 +1,119 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .about-module {
+    padding: 7rem 0;
+    text-align: center;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+  }
+
+  {%- if section.settings.background_tint -%}
+    #shopify-section-{{ section.id }} .about-module {
+      background-color: rgba(var(--color-foreground), 0.03);
+    }
+  {%- endif -%}
+
+  #shopify-section-{{ section.id }} .about-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+    line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  }
+
+  #shopify-section-{{ section.id }} .about-body {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+  }
+
+  .about-wrap {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .about-wrap {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  .about-belief__eyebrow {
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    color: var(--maelin-gold-dark);
+    margin: 0 0 1.6rem;
+  }
+
+  .about-belief__statement {
+    font-size: calc(var(--font-heading-scale) * 2rem);
+    max-width: 68rem;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 750px) {
+    .about-belief__statement {
+      font-size: calc(var(--font-heading-scale) * 2.6rem);
+    }
+  }
+
+  .about-belief__statement p {
+    margin: 0;
+  }
+
+  .about-belief__statement strong {
+    font-weight: inherit;
+    color: var(--maelin-gold-dark);
+  }
+{%- endstyle -%}
+
+<div class="about-module">
+  <div class="about-wrap">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="about-belief__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.statement != blank -%}
+      <div class="about-heading about-belief__statement">{{ section.settings.statement }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About · Belief",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "background_tint",
+      "label": "Tinted background",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "What we believe"
+    },
+    {
+      "type": "richtext",
+      "id": "statement",
+      "label": "Statement",
+      "info": "Wrap a few words in <strong></strong> for the gold accent.",
+      "default": "<p>That conversation in Boston became the line we won't cross. Every Maelin portrait is painted <strong>by hand, in real oil, by a trained artist</strong> — never a print, never AI, never a screen. We'd rather paint slowly and get the likeness right than do it any other way.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About · Belief"
+    }
+  ]
+}
+{% endschema %}

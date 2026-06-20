@@ -1,0 +1,393 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .about-module {
+    padding: 6rem 0;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+  }
+
+  {%- if section.settings.background_tint -%}
+    #shopify-section-{{ section.id }} .about-module {
+      background-color: rgba(var(--color-foreground), 0.03);
+    }
+  {%- endif -%}
+
+  #shopify-section-{{ section.id }} .about-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
+    line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
+  }
+
+  #shopify-section-{{ section.id }} .about-body {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+  }
+
+  .about-wrap {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .about-wrap {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  .about-team__head {
+    text-align: center;
+    max-width: 60rem;
+    margin: 0 auto 4.4rem;
+  }
+
+  .about-team__lead {
+    font-size: calc(var(--font-heading-scale) * 2rem);
+    margin: 0 0 1.4rem;
+    line-height: 1.4;
+  }
+
+  @media screen and (min-width: 750px) {
+    .about-team__lead {
+      font-size: calc(var(--font-heading-scale) * 2.4rem);
+    }
+  }
+
+  .about-team__intro {
+    font-size: 1.6rem;
+    margin: 0;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.7);
+  }
+
+  /* Founder spotlight */
+  .about-founder {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+    align-items: center;
+    max-width: 88rem;
+    margin: 0 auto 5.2rem;
+    padding-bottom: 5.2rem;
+    border-bottom: 1px solid var(--maelin-border, rgba(0, 0, 0, 0.1));
+    text-align: center;
+  }
+
+  @media screen and (min-width: 600px) {
+    .about-founder {
+      grid-template-columns: 18rem 1fr;
+      gap: 4rem;
+      text-align: left;
+    }
+  }
+
+  .about-founder__frame {
+    width: 16rem;
+    height: 16rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid var(--maelin-gold);
+    padding: 0.6rem;
+    background-color: rgb(var(--color-background));
+  }
+
+  @media screen and (min-width: 600px) {
+    .about-founder__frame {
+      width: 18rem;
+      height: 18rem;
+      margin: 0;
+    }
+  }
+
+  .about-founder__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .about-founder__photo.placeholder {
+    fill: rgba(var(--color-foreground), 0.3);
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  .about-founder__name {
+    font-size: calc(var(--font-heading-scale) * 2.2rem);
+    margin: 0 0 0.4rem;
+  }
+
+  .about-founder__role {
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--maelin-gold-dark);
+    margin: 0 0 1.4rem;
+  }
+
+  .about-founder__bio {
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.7);
+  }
+
+  /* Painters grid */
+  .about-painters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 600px) {
+    .about-painters {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .about-painter {
+    padding: 3.2rem 2.2rem;
+    border: 1px solid var(--maelin-border, rgba(0, 0, 0, 0.1));
+    background-color: rgb(var(--color-background));
+    text-align: center;
+    transition: border-color 0.4s, transform 0.4s;
+  }
+
+  .about-painter:hover {
+    border-color: var(--maelin-gold);
+    transform: translateY(-3px);
+  }
+
+  .about-painter__frame {
+    width: 11rem;
+    height: 11rem;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--maelin-gold);
+    padding: 0.5rem;
+    background-color: rgb(var(--color-background));
+  }
+
+  .about-painter__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .about-painter__photo.placeholder {
+    fill: rgba(var(--color-foreground), 0.3);
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  .about-painter__name {
+    font-size: calc(var(--font-heading-scale) * 1.9rem);
+    margin: 0 0 0.4rem;
+  }
+
+  .about-painter__school {
+    font-family: var(--serif-elegant, 'Cormorant Garamond', serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--maelin-gold-dark);
+    margin: 0 0 1.2rem;
+  }
+
+  .about-painter__bio {
+    font-size: 1.4rem;
+    margin: 0 auto;
+    max-width: 30rem;
+    text-align: left;
+    line-height: 1.65;
+    color: rgba(var(--color-foreground), 0.65);
+  }
+{%- endstyle -%}
+
+<div class="about-module">
+  <div class="about-wrap">
+    {%- if section.settings.lead != blank or section.settings.intro != blank -%}
+      <div class="about-team__head">
+        {%- if section.settings.lead != blank -%}
+          <p class="about-heading about-team__lead">{{ section.settings.lead }}</p>
+        {%- endif -%}
+        {%- if section.settings.intro != blank -%}
+          <p class="about-body about-team__intro">{{ section.settings.intro }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.founder_name != blank or section.settings.founder_photo != blank -%}
+      <div class="about-founder">
+        <div class="about-founder__frame">
+          {%- if section.settings.founder_photo != blank -%}
+            {{
+              section.settings.founder_photo
+              | image_url: width: 540
+              | image_tag:
+                loading: 'lazy',
+                widths: '180, 360, 540',
+                sizes: '18rem',
+                class: 'about-founder__photo',
+                alt: section.settings.founder_name
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'about-founder__photo placeholder' }}
+          {%- endif -%}
+        </div>
+        <div class="about-founder__info">
+          {%- if section.settings.founder_name != blank -%}
+            <h3 class="about-heading about-founder__name">{{ section.settings.founder_name }}</h3>
+          {%- endif -%}
+          {%- if section.settings.founder_role != blank -%}
+            <p class="about-founder__role">{{ section.settings.founder_role }}</p>
+          {%- endif -%}
+          {%- if section.settings.founder_bio != blank -%}
+            <p class="about-body about-founder__bio">{{ section.settings.founder_bio }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="about-painters">
+        {%- for block in section.blocks -%}
+          <div class="about-painter" {{ block.shopify_attributes }}>
+            <div class="about-painter__frame">
+              {%- if block.settings.photo != blank -%}
+                {{
+                  block.settings.photo
+                  | image_url: width: 330
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '110, 220, 330',
+                    sizes: '11rem',
+                    class: 'about-painter__photo',
+                    alt: block.settings.name
+                }}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'about-painter__photo placeholder' }}
+              {%- endif -%}
+            </div>
+            {%- if block.settings.name != blank -%}
+              <h3 class="about-heading about-painter__name">{{ block.settings.name }}</h3>
+            {%- endif -%}
+            {%- if block.settings.school != blank -%}
+              <p class="about-painter__school">{{ block.settings.school }}</p>
+            {%- endif -%}
+            {%- if block.settings.bio != blank -%}
+              <p class="about-body about-painter__bio">{{ block.settings.bio }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About · Meet us",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "background_tint",
+      "label": "Tinted background",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "lead",
+      "label": "Lead line",
+      "default": "The people behind your portrait"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro",
+      "default": "A small studio: one cat-obsessed founder and a circle of academy-trained painters who'd rather work slowly than work any other way."
+    },
+    {
+      "type": "header",
+      "content": "Founder"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_photo",
+      "label": "Founder photo",
+      "info": "Square images work best (shown in a circular frame). A photo of Neo with his cat is ideal."
+    },
+    {
+      "type": "text",
+      "id": "founder_name",
+      "label": "Name",
+      "default": "Neo"
+    },
+    {
+      "type": "text",
+      "id": "founder_role",
+      "label": "Role",
+      "default": "Founder · Arizona"
+    },
+    {
+      "type": "textarea",
+      "id": "founder_bio",
+      "label": "Bio",
+      "default": "Oil-painting obsessive, lifelong cat person, and the one who answers your emails. Neo started Maelin after a single portrait of his own cat made it impossible to go back to anything a screen could print."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "painter",
+      "name": "Painter",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Portrait photo",
+          "info": "Square images work best (shown in a circular frame)."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Alex"
+        },
+        {
+          "type": "text",
+          "id": "school",
+          "label": "School / academy",
+          "default": "Academy of Fine Arts Nuremberg"
+        },
+        {
+          "type": "textarea",
+          "id": "bio",
+          "label": "One-line bio",
+          "default": "Blends classical realism with bold abstract expressionism to turn a beloved pet into timeless, gallery-quality art."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About · Meet us",
+      "blocks": [
+        { "type": "painter", "settings": { "name": "Alex", "school": "Academy of Fine Arts Nuremberg", "bio": "Blends classical realism with bold abstract expressionism to turn a beloved pet into timeless, gallery-quality art." } },
+        { "type": "painter", "settings": { "name": "Lukas", "school": "State Academy of Fine Arts Stuttgart", "bio": "Combines geometric structure with soft textural layers to capture every pet's character in deeply structured, gallery-quality art." } },
+        { "type": "painter", "settings": { "name": "Leon", "school": "Dresden Academy of Fine Arts", "bio": "Captures organic colour palettes and soft light to turn your companion into a serene, gallery-quality portrait." } },
+        { "type": "painter", "settings": { "name": "Mia", "school": "Kunstakademie Düsseldorf", "bio": "Infuses rich textural depth with meticulous modern brushwork to turn a treasured pet into powerful, gallery-quality art." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

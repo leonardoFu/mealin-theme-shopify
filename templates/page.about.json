@@ -1,0 +1,92 @@
+{
+  "sections": {
+    "intro": {
+      "type": "about-intro",
+      "settings": {
+        "background_tint": false,
+        "eyebrow": "About Maelin Studio",
+        "headline": "A few people who love oil paint — and your cat.",
+        "subline": "A small studio painting your companion by hand, in real oil — the way the masters did it."
+      }
+    },
+    "story": {
+      "type": "about-story",
+      "settings": {
+        "background_tint": false,
+        "media_position": "left",
+        "eyebrow": "How it started",
+        "heading": "A photo, a cat, and a chance meeting in Boston",
+        "story": "<p>I'm Neo — and before any of this, I was just a guy in Arizona who loved two things: oil painting, and my cat.</p><p>In 2024, on a trip to Boston, I spent an afternoon at the Museum of Fine Arts. Standing in front of the same painting were two others who'd travelled a long way to see it — Alex and Lukas, classically trained painters who'd flown in from Germany. We got talking, the way strangers do in front of something beautiful, about where art is heading — digital tools, AI, and what all of it means for something as old and slow as oil on canvas.</p><p>Later I sent Alex a photo of my cat. He painted her. When it arrived, it stopped me — and everyone I showed it to. That a real hand and real paint could hold an animal's character in a way no screen ever could — that was the whole idea.</p><p>Alex and Lukas brought in two more friends they trust at the easel — Leon and Mia. And that's how Maelin Studio began.</p>",
+        "signature": "— Neo, Founder · Arizona"
+      }
+    },
+    "belief": {
+      "type": "about-belief",
+      "settings": {
+        "background_tint": true,
+        "eyebrow": "What we believe",
+        "statement": "<p>That conversation in Boston became the line we won't cross. Every Maelin portrait is painted <strong>by hand, in real oil, by a trained artist</strong> — never a print, never AI, never a screen. We'd rather paint slowly and get the likeness right than do it any other way.</p>"
+      }
+    },
+    "team": {
+      "type": "about-team",
+      "blocks": {
+        "painter-1": {
+          "type": "painter",
+          "settings": {
+            "photo": "shopify://shop_images/Alex.jpg",
+            "name": "Alex",
+            "school": "Academy of Fine Arts Nuremberg",
+            "bio": "Blends classical realism with bold abstract expressionism to turn a beloved pet into timeless, gallery-quality art."
+          }
+        },
+        "painter-2": {
+          "type": "painter",
+          "settings": {
+            "photo": "shopify://shop_images/Lukas.jpg",
+            "name": "Lukas",
+            "school": "State Academy of Fine Arts Stuttgart",
+            "bio": "Combines geometric structure with soft textural layers to capture every pet's character in deeply structured, gallery-quality art."
+          }
+        },
+        "painter-3": {
+          "type": "painter",
+          "settings": {
+            "photo": "shopify://shop_images/Leon.jpg",
+            "name": "Leon",
+            "school": "Dresden Academy of Fine Arts",
+            "bio": "Captures organic colour palettes and soft light to turn your companion into a serene, gallery-quality portrait."
+          }
+        },
+        "painter-4": {
+          "type": "painter",
+          "settings": {
+            "photo": "shopify://shop_images/Mia.jpg",
+            "name": "Mia",
+            "school": "Kunstakademie Düsseldorf",
+            "bio": "Infuses rich textural depth with meticulous modern brushwork to turn a treasured pet into powerful, gallery-quality art."
+          }
+        }
+      },
+      "block_order": ["painter-1", "painter-2", "painter-3", "painter-4"],
+      "settings": {
+        "background_tint": false,
+        "lead": "The people behind your portrait",
+        "intro": "A small studio: one cat-obsessed founder and a circle of academy-trained painters who'd rather work slowly than work any other way.",
+        "founder_name": "Neo",
+        "founder_role": "Founder · Arizona",
+        "founder_bio": "Oil-painting obsessive, lifelong cat person, and the one who answers your emails. Neo started Maelin after a single portrait of his own cat made it impossible to go back to anything a screen could print."
+      }
+    },
+    "cta": {
+      "type": "about-cta",
+      "settings": {
+        "background_tint": true,
+        "headline": "Ready to start your portrait?",
+        "button_label": "Start your portrait",
+        "subline": "No commitment — just pick a size and upload a photo."
+      }
+    }
+  },
+  "order": ["intro", "story", "belief", "team", "cta"]
+}
