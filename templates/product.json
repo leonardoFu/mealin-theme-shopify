@@ -119,6 +119,8 @@
         "color_scheme": "",
         "good_photo_image_1": "shopify://shop_images/Generated_Image_June_19_2026_-_4_57PM.jpg",
         "good_photo_image_2": "shopify://shop_images/Generated_Image_June_19_2026_-_5_12PM.jpg",
+        "bad_photo_image_1": "shopify://shop_images/Gemini_Generated_Image_tg1rp1tg1rp1tg1r.png",
+        "bad_photo_image_2": "shopify://shop_images/CleanShot_2026-06-19_at_17.34.01_2x_54ab6e1b-bd64-4117-a00d-5052cf52674c.png",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
