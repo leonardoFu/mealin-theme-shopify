@@ -82,7 +82,7 @@
         "painter-2": {
           "type": "painter",
           "settings": {
-            "photo": "shopify://shop_images/Lukas.jpg",
+            "photo": "shopify://shop_images/Generated_Image_June_19_2026_-_7_56PM.jpg",
             "name": "Lukas",
             "school": "State Academy of Fine Arts Stuttgart",
             "bio": "Combines geometric structure with soft textural layers to capture every pet's character in deeply structured, gallery-quality art."
@@ -240,7 +240,9 @@
         "headline": "Ready to start your portrait?",
         "button_label": "Start your portrait",
         "button_url": "",
-        "subline": "No commitment — just pick a size and upload a photo."
+        "subline": "No commitment — just pick a size and upload a photo.",
+        "faq_text": "Still have a question? Read our FAQ",
+        "faq_url": ""
       }
     }
   },
