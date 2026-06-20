@@ -94,10 +94,28 @@
         "founder_bio": "Oil-painting obsessive, lifelong cat person — and the one who answers your emails."
       }
     },
+    "name": {
+      "type": "about-name",
+      "blocks": {
+        "letter-1": { "type": "letter", "settings": { "letter": "M", "name_letter": "M", "name_after": "ia" } },
+        "letter-2": { "type": "letter", "settings": { "letter": "a", "name_letter": "A", "name_after": "lex" } },
+        "letter-3": { "type": "letter", "settings": { "letter": "e", "name_before": "L", "name_letter": "e", "name_after": "on" } },
+        "letter-4": { "type": "letter", "settings": { "letter": "l", "name_letter": "L", "name_after": "ukas" } },
+        "letter-5": { "type": "letter", "settings": { "letter": "i", "name_before": "M", "name_letter": "i", "name_after": "a" } },
+        "letter-6": { "type": "letter", "settings": { "letter": "n", "name_letter": "N", "name_after": "eo" } }
+      },
+      "block_order": ["letter-1", "letter-2", "letter-3", "letter-4", "letter-5", "letter-6"],
+      "settings": {
+        "background_tint": true,
+        "eyebrow": "Where the name comes from",
+        "heading": "Five of us. One name.",
+        "result": "Together — Maelin Studio."
+      }
+    },
     "cta": {
       "type": "about-cta",
       "settings": {
-        "background_tint": true,
+        "background_tint": false,
         "headline": "Ready to start your portrait?",
         "button_label": "Start your portrait",
         "button_url": "",
@@ -110,6 +128,7 @@
     "story",
     "belief",
     "team",
+    "name",
     "cta"
   ]
 }
