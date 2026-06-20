@@ -117,6 +117,8 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
+        "good_photo_image_1": "shopify://shop_images/Generated_Image_June_19_2026_-_4_57PM.jpg",
+        "good_photo_image_2": "shopify://shop_images/Generated_Image_June_19_2026_-_5_12PM.jpg",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
