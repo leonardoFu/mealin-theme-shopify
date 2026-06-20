@@ -53,7 +53,7 @@
         "painter-2": {
           "type": "painter",
           "settings": {
-            "photo": "shopify://shop_images/Lukas.jpg",
+            "photo": "shopify://shop_images/Generated_Image_June_19_2026_-_7_56PM.jpg",
             "name": "Lukas",
             "school": "State Academy of Fine Arts Stuttgart",
             "bio": "Geometric structure softened by rich texture."
@@ -97,14 +97,75 @@
     "name": {
       "type": "about-name",
       "blocks": {
-        "letter-1": { "type": "letter", "settings": { "letter": "M", "name_letter": "M", "name_after": "ia" } },
-        "letter-2": { "type": "letter", "settings": { "letter": "a", "name_letter": "A", "name_after": "lex" } },
-        "letter-3": { "type": "letter", "settings": { "letter": "e", "name_before": "L", "name_letter": "e", "name_after": "on" } },
-        "letter-4": { "type": "letter", "settings": { "letter": "l", "name_letter": "L", "name_after": "ukas" } },
-        "letter-5": { "type": "letter", "settings": { "letter": "i", "name_before": "M", "name_letter": "i", "name_after": "a" } },
-        "letter-6": { "type": "letter", "settings": { "letter": "n", "name_letter": "N", "name_after": "eo" } }
+        "letter-1": {
+          "type": "letter",
+          "settings": {
+            "letter": "M",
+            "name_before": "",
+            "name_letter": "M",
+            "name_after": "ia",
+            "caption": ""
+          }
+        },
+        "letter-2": {
+          "type": "letter",
+          "settings": {
+            "letter": "a",
+            "name_before": "",
+            "name_letter": "A",
+            "name_after": "lex",
+            "caption": ""
+          }
+        },
+        "letter-3": {
+          "type": "letter",
+          "settings": {
+            "letter": "e",
+            "name_before": "L",
+            "name_letter": "e",
+            "name_after": "on",
+            "caption": ""
+          }
+        },
+        "letter-4": {
+          "type": "letter",
+          "settings": {
+            "letter": "l",
+            "name_before": "",
+            "name_letter": "L",
+            "name_after": "ukas",
+            "caption": ""
+          }
+        },
+        "letter-5": {
+          "type": "letter",
+          "settings": {
+            "letter": "i",
+            "name_before": "M",
+            "name_letter": "i",
+            "name_after": "a",
+            "caption": ""
+          }
+        },
+        "letter-6": {
+          "type": "letter",
+          "settings": {
+            "letter": "n",
+            "name_before": "",
+            "name_letter": "N",
+            "name_after": "eo",
+            "caption": ""
+          }
+        }
       },
-      "block_order": ["letter-1", "letter-2", "letter-3", "letter-4", "letter-5", "letter-6"],
+      "block_order": [
+        "letter-1",
+        "letter-2",
+        "letter-3",
+        "letter-4",
+        "letter-5",
+        "letter-6"
+      ],
       "settings": {
         "background_tint": true,
         "eyebrow": "Where the name comes from",
