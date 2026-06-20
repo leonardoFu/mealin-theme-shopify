@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "intro": {
@@ -68,11 +77,17 @@
           }
         }
       },
-      "block_order": ["painter-1", "painter-2", "painter-3", "painter-4"],
+      "block_order": [
+        "painter-1",
+        "painter-2",
+        "painter-3",
+        "painter-4"
+      ],
       "settings": {
         "background_tint": false,
         "lead": "The people behind your portrait",
         "intro": "One cat-obsessed founder and a circle of academy-trained painters.",
+        "founder_photo": "shopify://shop_images/Generated_Image_June_19_2026_-_7_39PM.jpg",
         "founder_name": "Neo",
         "founder_role": "Founder · Arizona",
         "founder_bio": "Oil-painting obsessive, lifelong cat person — and the one who answers your emails."
@@ -84,9 +99,16 @@
         "background_tint": true,
         "headline": "Ready to start your portrait?",
         "button_label": "Start your portrait",
+        "button_url": "",
         "subline": "No commitment — just pick a size and upload a photo."
       }
     }
   },
-  "order": ["intro", "story", "belief", "team", "cta"]
+  "order": [
+    "intro",
+    "story",
+    "belief",
+    "team",
+    "cta"
+  ]
 }
