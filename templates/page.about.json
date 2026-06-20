@@ -22,6 +22,7 @@
       "type": "about-story",
       "settings": {
         "background_tint": false,
+        "image": "shopify://shop_images/CleanShot_2026-06-19_at_19.52.32_2x_f1578b26-90b6-44f1-bec1-01b4c9af8df5.png",
         "media_position": "left",
         "eyebrow": "How it started",
         "heading": "A photo, a cat, and a chance meeting in Boston",
