@@ -26,7 +26,7 @@
             "reviews_to_display": "product_store_reviews",
             "default_tab": "automatic",
             "only_photos": false,
-            "hide_thumbnails": false,
+            "hide_thumbnails": true,
             "product_handle": "",
             "aggregated": true,
             "data-limit": 20,
