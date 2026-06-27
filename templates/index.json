@@ -380,7 +380,7 @@
         "loox_reviews_loox_card_carousel_section_LM9TcV"
       ],
       "custom_css": [
-        ".scroll-trigger {max-width: 1440px; margin: 50px auto;}"
+        ".scroll-trigger {max-width: 1440px; margin: 80px auto;}"
       ],
       "settings": {
         "include_margins": true
