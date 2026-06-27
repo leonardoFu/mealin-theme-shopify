@@ -356,21 +356,21 @@
           "type": "shopify://apps/loox-reviews/blocks/loox-card-carousel-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
             "maxWidth": 1100,
-            "borderRadius": 8,
+            "borderRadius": 0,
             "itemsPerView": 4,
             "mobileItemsPerView": 1,
             "maxNumberOfCharacters": 100,
-            "imageRatio": "0.72",
+            "imageRatio": "1.25",
             "reviewerNameColor": "#000000",
             "textColor": "#000000",
             "itemBackgroundColor": "#ffffff",
-            "starsColor": "",
+            "starsColor": "#826828",
             "starsBackgroundColor": "#ffffff",
             "arrows_backgroundColor": "#FFFFFF",
-            "arrows_iconColor": "#9A9A9A",
-            "shadow": "offset-dark",
-            "border_active": false,
-            "border_width": 2,
+            "arrows_iconColor": "#1A1A1A",
+            "shadow": "none",
+            "border_active": true,
+            "border_width": 1,
             "border_color": "#000000",
             "productIds": ""
           }
@@ -379,6 +379,7 @@
       "block_order": [
         "loox_reviews_loox_card_carousel_section_LM9TcV"
       ],
+      "custom_css": [],
       "settings": {
         "include_margins": true
       }
