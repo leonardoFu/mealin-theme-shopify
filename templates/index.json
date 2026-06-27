@@ -357,7 +357,7 @@
           "settings": {
             "maxWidth": 1520,
             "borderRadius": 0,
-            "itemsPerView": 4,
+            "itemsPerView": 5,
             "mobileItemsPerView": 1,
             "maxNumberOfCharacters": 100,
             "imageRatio": "1.25",
