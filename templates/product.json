@@ -224,6 +224,9 @@
       "block_order": [
         "loox_reviews_loox_card_carousel_section_VgUMT9"
       ],
+      "custom_css": [
+        ".scroll-trigger {max-width: 1440px; margin: 0 30px; }"
+      ],
       "settings": {
         "include_margins": true
       }
