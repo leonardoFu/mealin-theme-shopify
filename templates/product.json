@@ -200,7 +200,7 @@
         "loox_reviews_loox_card_carousel_section_VgUMT9": {
           "type": "shopify://apps/loox-reviews/blocks/loox-card-carousel-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
-            "maxWidth": 1100,
+            "maxWidth": 1400,
             "borderRadius": 0,
             "itemsPerView": 4,
             "mobileItemsPerView": 1,
