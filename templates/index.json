@@ -328,43 +328,6 @@
     },
     "1781847210605a4f7e": {
       "type": "apps",
-      "blocks": {
-        "judge_me_reviews_cards_carousel_NdRqjg": {
-          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "show_sample_reviews": true,
-            "reviews_selection": "product_reviews",
-            "products": [],
-            "star_rating": "all",
-            "show_review_media": true,
-            "display_order": "media_first",
-            "no_image_fallback": "review_text_only",
-            "max_reviews": 20,
-            "review_length": "medium",
-            "text_size": "medium",
-            "image_ratio": "1",
-            "reviews_shown": 4,
-            "show_reviewer_name": true,
-            "show_product_name": true,
-            "hide_arrows_mobile": true,
-            "arrows_position": "sides",
-            "max_width": 1100,
-            "corner_styling": "soft",
-            "header_text_color": "#000000",
-            "text_color": "#000000",
-            "card_color": "#f9f9f9",
-            "stars_color": "",
-            "arrows_color": "#000000",
-            "transition_speed": 5,
-            "header_text": "Customers are saying",
-            "show_average_rating": true,
-            "rating_display": "default"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_cards_carousel_NdRqjg"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -386,6 +349,40 @@
       ],
       "settings": {}
     },
+    "17818471199bf37f35": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_card_carousel_section_LM9TcV": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-card-carousel-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "maxWidth": 1100,
+            "borderRadius": 8,
+            "itemsPerView": 4,
+            "mobileItemsPerView": 1,
+            "maxNumberOfCharacters": 100,
+            "imageRatio": "0.72",
+            "reviewerNameColor": "#000000",
+            "textColor": "#000000",
+            "itemBackgroundColor": "#ffffff",
+            "starsColor": "",
+            "starsBackgroundColor": "#ffffff",
+            "arrows_backgroundColor": "#FFFFFF",
+            "arrows_iconColor": "#9A9A9A",
+            "shadow": "offset-dark",
+            "border_active": false,
+            "border_width": 2,
+            "border_color": "#000000",
+            "productIds": ""
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_card_carousel_section_LM9TcV"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "cta_banner": {
       "type": "cta-banner",
       "settings": {
@@ -396,12 +393,6 @@
         "button_link_1": "",
         "button_label_2": "How it works?",
         "button_link_2": ""
-      }
-    },
-    "17818471199bf37f35": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
       }
     }
   },
@@ -416,7 +407,7 @@
     "1781847121cf25a4bd",
     "1781847210605a4f7e",
     "testimonial",
-    "cta_banner",
-    "17818471199bf37f35"
+    "17818471199bf37f35",
+    "cta_banner"
   ]
 }
