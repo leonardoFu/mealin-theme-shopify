@@ -72,12 +72,38 @@
         "button_url": "",
         "subline": "No commitment — just pick a size and upload a photo."
       }
+    },
+    "178253530217d64e73": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_8gbbQr": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "product_store_reviews",
+            "default_tab": "automatic",
+            "only_photos": false,
+            "hide_thumbnails": true,
+            "product_handle": "custom-hand-painted-pet-portrait-classic-realism-oil-on-canvas",
+            "aggregated": true,
+            "data-limit": 20,
+            "maxwidth": 1080,
+            "is_sample": false
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_8gbbQr"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "hero",
     "why",
     "materials",
-    "cta"
+    "cta",
+    "178253530217d64e73"
   ]
 }
