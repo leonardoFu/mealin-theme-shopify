@@ -227,21 +227,25 @@
         "cta_link": ""
       }
     },
-    "17818466443d62f528": {
+    "1782534933e930b78f": {
       "type": "apps",
       "blocks": {
-        "judge_me_reviews_review_widget_eiR38d": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "loox_reviews_loox_dynamic_section_86XWxx": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
-            "review_data": "real_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
+            "reviews_to_display": "product_store_reviews",
+            "default_tab": "product_reviews",
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": false
           }
         }
       },
       "block_order": [
-        "judge_me_reviews_review_widget_eiR38d"
+        "loox_reviews_loox_dynamic_section_86XWxx"
       ],
       "settings": {
         "include_margins": true
@@ -252,6 +256,6 @@
     "main",
     "faq",
     "reviews",
-    "17818466443d62f528"
+    "1782534933e930b78f"
   ]
 }
