@@ -225,7 +225,7 @@
         "loox_reviews_loox_card_carousel_section_VgUMT9"
       ],
       "custom_css": [
-        ".scroll-trigger {max-width: 1440px; margin: 0 30px; }"
+        ".scroll-trigger {max-width: 1440px; margin: 50px auto;}"
       ],
       "settings": {
         "include_margins": true
