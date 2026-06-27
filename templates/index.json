@@ -360,7 +360,7 @@
             "itemsPerView": 4,
             "mobileItemsPerView": 1,
             "maxNumberOfCharacters": 100,
-            "imageRatio": "1.25",
+            "imageRatio": "1",
             "reviewerNameColor": "#000000",
             "textColor": "#000000",
             "itemBackgroundColor": "#ffffff",
