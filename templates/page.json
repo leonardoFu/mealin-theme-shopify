@@ -23,7 +23,7 @@
         "loox_reviews_loox_agg_section_WMVB8G": {
           "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
-            "reviews_to_display": "",
+            "reviews_to_display": "product_store_reviews",
             "default_tab": "automatic",
             "only_photos": false,
             "hide_thumbnails": false,
@@ -31,7 +31,7 @@
             "aggregated": true,
             "data-limit": 20,
             "maxwidth": 1080,
-            "is_sample": true
+            "is_sample": false
           }
         }
       },
