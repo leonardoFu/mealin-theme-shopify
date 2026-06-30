@@ -211,8 +211,8 @@
             "itemBackgroundColor": "#ffffff",
             "starsColor": "#826828",
             "starsBackgroundColor": "#ffffff",
-            "arrows_backgroundColor": "#FFFFFF",
-            "arrows_iconColor": "#1A1A1A",
+            "arrows_backgroundColor": "#ffffff",
+            "arrows_iconColor": "#1a1a1a",
             "shadow": "none",
             "border_active": true,
             "border_width": 1,
@@ -225,7 +225,7 @@
         "loox_reviews_loox_card_carousel_section_VgUMT9"
       ],
       "custom_css": [
-        ".scroll-trigger {max-width: 1440px; margin: 50px auto;}"
+        ".scroll-trigger {max-width: 1440px; margin: 50px auto; height: 556px; overflow: hidden; margin-bottom: 100px;}"
       ],
       "settings": {
         "include_margins": true
