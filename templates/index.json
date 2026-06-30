@@ -145,7 +145,7 @@
         "bento-1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/20260614-211936_b3853da7-bdfe-4aec-bef6-3bca1647083b.png",
+            "image": "shopify://shop_images/rec27GOGFXnvod.jpg",
             "title": "Golden Elegance",
             "subtitle": "Oil on Canvas — 16 × 20 in",
             "price": ""
@@ -163,7 +163,7 @@
         "bento-3": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/20260614-220326.png",
+            "image": "shopify://shop_images/rec27GQ4UXvRPN.jpg",
             "title": "Noble Spirit",
             "subtitle": "Oil on Canvas — 20 × 24 in",
             "price": ""
@@ -172,7 +172,7 @@
         "bento-4": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/20260614-220339.png",
+            "image": "shopify://shop_images/rec27GOJthdYA3.jpg",
             "title": "Cloud of Joy",
             "subtitle": "Oil on Canvas — 12 × 12 in",
             "price": ""
@@ -181,7 +181,7 @@
         "bento-5": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/20260614-220604.png",
+            "image": "shopify://shop_images/rec27GOJthdYA3.jpg",
             "title": "Best Friends Forever",
             "subtitle": "Oil on Canvas — 20 × 16 in",
             "price": ""
@@ -366,8 +366,8 @@
             "itemBackgroundColor": "#ffffff",
             "starsColor": "#826828",
             "starsBackgroundColor": "#ffffff",
-            "arrows_backgroundColor": "#FFFFFF",
-            "arrows_iconColor": "#1A1A1A",
+            "arrows_backgroundColor": "#ffffff",
+            "arrows_iconColor": "#1a1a1a",
             "shadow": "none",
             "border_active": true,
             "border_width": 1,
